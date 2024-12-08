@@ -32,16 +32,19 @@
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.8;
+      background-color: #FFEBF0;
     }
 
     h2 {
       font-size: 2.5rem;
       font-weight: 600;
+      color: black;
     }
 
     p {
       font-size: 1.2rem;
       line-height: 1.8;
+      color: black;
     }
 
     /* Header */
@@ -93,62 +96,29 @@
       color: #FF6384;
     }
 
-    /* Mobile Menu */
-    .mobile-nav-toggle {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .mobile-nav-toggle {
-        display: block;
-        font-size: 2rem;
-        cursor: pointer;
-        margin-left: 20px;
-      }
-
-      .navmenu ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background: #FFEBF0;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 15px;
-        width: 200px;
-      }
-
-      .navmenu ul.active {
-        display: flex;
-      }
-    }
-
     /* About Section */
     .about {
-      background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
       padding: 100px 20px;
       text-align: center;
     }
 
     .about img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
     }
 
     .about h2 {
-      color: black;
       margin-top: 20px;
       font-size: 2.5rem;
       font-weight: 600;
     }
 
     .about p {
-      color: black;
-      font-size: 1.2rem;
+      max-width: 800px;
       margin: 20px auto;
-      max-width: 600px;
     }
 
     .about ul {
@@ -205,7 +175,6 @@
         <li><a href="books.html">Books</a></li>
         <li><a href="conversation.html">Conversation</a></li>
       </ul>
-      <i class="mobile-nav-toggle bi bi-list"></i>
     </nav>
     <div class="header-social-links">
       <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
@@ -220,15 +189,16 @@
       <div class="container" data-aos="fade-up">
         <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
         <h2>About Opeyemi Taiwo Adeniran</h2>
-        <p>I am an AI/ML researcher, technology entrepreneur, and innovator passionate about driving growth and solving real-world problems.</p>
+        <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
+        <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
         <ul>
           <li><i class="bi bi-envelope"></i> <strong>Email:</strong> opeyemitaiwo81@gmail.com</li>
           <li><i class="bi bi-file-earmark-person"></i> <strong>Resume:</strong> <a href="https://opethaiwoh.github.io/opeyemi.github.io/" target="_blank">View Resume</a></li>
           <li><i class="bi bi-person-lines-fill"></i> <strong>Degree:</strong> PhD Student</li>
           <li><i class="bi bi-journal-text"></i> <strong>Publications:</strong> <a href="https://www.researchgate.net/profile/Opeyemi-Adeniran-3" target="_blank">View Publications</a></li>
+          <li><i class="bi bi-file-earmark-text"></i> <strong>Long Bio:</strong> <a href="https://docs.google.com/document/d/1fwHGUdVhgyZ8MSyUjcHT28i4tYdfvFBFHyClC0E68Gc/edit?usp=sharing" target="_blank">Download Long Bio</a></li>
           <li><i class="bi bi-file-image"></i> <strong>Headshot:</strong> <a href="https://drive.google.com/drive/folders/1Ajy_vh_t_8VmQUljrs_lzGMeUv8GkJLC?usp=sharing" target="_blank">Download</a></li>
         </ul>
-        <p>With expertise in machine learning, computer vision, and image processing, I develop AI-driven solutions that empower aspiring technologists and promote diversity in tech.</p>
       </div>
     </section>
   </main>
@@ -246,11 +216,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script>
-    document.querySelector('.mobile-nav-toggle').addEventListener('click', function () {
-      document.querySelector('.navmenu ul').classList.toggle('active');
-    });
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
