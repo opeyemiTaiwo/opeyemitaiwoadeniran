@@ -1,223 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opeyemi Taiwo Adeniran</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header & Footer</title>
 
-    <!-- AOS Library for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Icons (Bootstrap Icons) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.8;
-        }
+    /* HEADER STYLES */
+    .header {
+      background-color: #FFEBF0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 9999;
+      padding: 15px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-        h2 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
+    .header .container-fluid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        p {
-            font-family: 'Lora', serif;
-        }
+    .logo img {
+      height: 50px;
+    }
 
-        .main section {
-            padding: 50px 0;
-        }
+    .navmenu ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .navmenu ul li a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-        /* Starter Section */
-        #starter-section {
-            background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
-            text-align: center;
-        }
+    .navmenu ul li a:hover, .navmenu ul li a.active {
+      color: #FF6384;
+    }
 
-        #starter-section img {
-            width: 250px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .header-social-links a {
+      color: #000;
+      font-size: 1.2rem;
+      margin-left: 10px;
+      transition: color 0.3s;
+    }
 
-        /* Call to Action Section */
-        .cta {
-            background: linear-gradient(135deg, #FF6384, #FF9068);
-            color: white;
-            text-align: center;
-        }
+    .header-social-links a:hover {
+      color: #FF6384;
+    }
 
-        .cta a {
-            background-color: white;
-            color: black;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    /* Mobile Navigation */
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
 
-        /* Services Section */
-        .service-item {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
+    @media (max-width: 768px) {
+      .navmenu ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #FFEBF0;
+        padding: 20px;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        border-radius: 10px;
+      }
 
-        .service-item:hover {
-            transform: translateY(-10px);
-        }
+      .navmenu ul.active {
+        display: flex;
+      }
 
-        /* Book a Session Button */
-        .button {
-            background: linear-gradient(90deg, #FF6384, #FF9068);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
+      .mobile-nav-toggle {
+        display: block;
+      }
+    }
 
-        .button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+    /* FOOTER STYLES */
+    #footer {
+      background-color: #FFEBF0;
+      padding: 20px 0;
+      text-align: center;
+      border-top: 2px solid #FF6384;
+    }
 
-        /* Back to Top Button */
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #FF6384;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 50%;
-            display: none;
-            z-index: 9999;
-            cursor: pointer;
-        }
+    #footer .copyright {
+      margin-bottom: 15px;
+    }
 
-        #back-to-top:hover {
-            background-color: #FF9068;
-        }
-    </style>
+    #footer .copyright p {
+      color: #333;
+      font-size: 0.9rem;
+    }
+
+    #footer .social-links a {
+      color: #000;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    #footer .social-links a:hover {
+      color: #FF6384;
+    }
+
+    /* General Utility Classes */
+    .d-flex {
+      display: flex;
+    }
+
+    .justify-content-center {
+      justify-content: center;
+    }
+
+    .align-items-center {
+      align-items: center;
+    }
+
+    .light-background {
+      background-color: #FFEBF0;
+    }
+
+    .sticky-top {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+  </style>
 </head>
 
 <body>
 
-    <header id="header" class="header d-flex align-items-center light-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+<!-- HEADER -->
+<header id="header" class="header d-flex align-items-center sticky-top">
+  <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <img src="me/opt.JPG" alt="Opeyemi Taiwo Adeniran Logo">
+    </a>
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="me/opt.JPG" alt="">
-      </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ventures.html">Ventures</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="conversation.html">Conversation</a></li>
+      </ul>
+      <i class="mobile-nav-toggle bi bi-list"></i>
+    </nav>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="ventures.html" class="active">Ventures</a></li>
-          <li><a href="books.html">Books</a></li>
-           <li><a href="Conversation with Opeyemi.html">Conversation with Opeyemi</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="header-social-links">
-        <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="instagram.com/stories/opethaiwoh/" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/opeyemi-adeniran/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
-
+    <div class="header-social-links d-flex">
+      <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com/stories/opethaiwoh/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/opeyemi-adeniran/" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
-  </header>
+  </div>
+</header>
 
-    
-<main class="main">
+<!-- FOOTER -->
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="copyright">
+      <p>© <strong>Opeyemi Taiwo Adeniran</strong> | All Rights Reserved</p>
+    </div>
 
-    <!-- Starter Section -->
-    <section id="starter-section">
-        <div class="container" data-aos="fade-up">
-            <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
-            <h2>Welcome! I'm Opeyemi Taiwo Adeniran</h2>
-            <p>It’s a pleasure to meet you, and I’m thrilled to have you here on my page!</p>
-        </div>
-    </section>
+    <div class="social-links d-flex justify-content-center">
+      <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com/stories/opethaiwoh/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/opeyemi-adeniran/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
 
-    <!-- Services Section -->
-    <section id="services" style="background: linear-gradient(135deg, #FFEBF0, #FDE8E9);">
-        <div class="container">
-            <h2 style="text-align: center;">Ventures</h2>
-            <div style="display: flex; justify-content: space-between; gap: 20px;">
-                <div class="service-item">
-                    <h3>She Model Tech</h3>
-                    <p>Empowering women to lead in the tech industry and drive diversity.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Morgan TechFest</h3>
-                    <p>A student-led tech conference with symposiums and panel discussions.</p>
-                </div>
-                <div class="service-item">
-                    <h3>TechTalents City</h3>
-                    <p>An educational platform to upskill and switch to tech careers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Elevate Your Career?</h2>
-            <p>Book a session with Opeyemi and start your journey to growth, success, and purpose.</p>
-            <a href="https://paypal.me/ipreferteainstead" class="button">Book a Session</a>
-        </div>
-    </section>
-
-</main>
-
-<!-- Back to Top Button -->
-<button id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    AOS.init();
-    window.addEventListener('scroll', function() {
-        const backToTopButton = document.getElementById('back-to-top');
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    });
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('.navmenu ul');
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
 </script>
 
 </body>
-    
 </html>
