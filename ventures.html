@@ -33,11 +33,13 @@
     h2 {
       font-size: 2.5rem;
       font-weight: 600;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 1.2rem;
       line-height: 1.8;
+      margin-bottom: 20px;
     }
 
     /* Header */
@@ -95,10 +97,6 @@
       text-align: center;
     }
 
-    .ventures .section-title {
-      margin-bottom: 30px;
-    }
-
     .ventures-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -113,6 +111,8 @@
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: black;
     }
 
     .venture-card:hover {
@@ -189,23 +189,23 @@
         <p>My entrepreneurial journey began with a passion for technology and a vision to drive innovation by empowering others.</p>
         <div class="ventures-grid" data-aos="fade-up">
           <!-- Venture 1 -->
-          <div class="venture-card">
+          <a href="https://www.shemodeltech.com/" target="_blank" class="venture-card">
             <i class="bi bi-activity"></i>
             <h3>She Model Tech</h3>
             <p>Empowering women, including underprivileged communities, to lead in the tech industry and drive diversity.</p>
-          </div>
+          </a>
           <!-- Venture 2 -->
-          <div class="venture-card">
+          <a href="https://www.morgantechfest.com/" target="_blank" class="venture-card">
             <i class="bi bi-broadcast"></i>
             <h3>Morgan TechFest</h3>
             <p>A student-led conference inspiring students through tech talks, research symposiums, and panel discussions.</p>
-          </div>
+          </a>
           <!-- Venture 3 -->
-          <div class="venture-card">
+          <a href="https://www.techtalentscity.com/" target="_blank" class="venture-card">
             <i class="bi bi-easel"></i>
             <h3>TechTalents City</h3>
             <p>An educational platform to learn in-demand tech skills, upskill, and switch careers effectively.</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
