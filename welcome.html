@@ -1,127 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Header</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opeyemi Taiwo Adeniran</title>
 
-  <!-- Icons (Bootstrap Icons) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- AOS Library for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-  <style>
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-    }
+    <!-- Icons (Bootstrap Icons) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    /* Header Styles */
-    .header {
-      background-color: #FFEBF0;
-      padding: 15px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 9999;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .header .container-fluid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+        }
 
-    /* Logo */
-    .logo img {
-      max-height: 50px;
-    }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
 
-    /* Navigation Menu */
-    .navmenu ul {
-      display: flex;
-      list-style: none;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
+        p {
+            font-family: 'Lora', serif;
+        }
 
-    .navmenu ul li a {
-      font-size: 1rem;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: black;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+        .main section {
+            padding: 50px 0;
+        }
 
-    .navmenu ul li a:hover, .navmenu ul li a.active {
-      color: #FF6384;
-    }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    /* Social Links */
-    .header-social-links a {
-      color: black;
-      font-size: 1.2rem;
-      margin-left: 10px;
-      transition: color 0.3s;
-    }
+        /* Header Styles */
+        .header {
+            background-color: #FFEBF0;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    .header-social-links a:hover {
-      color: #FF6384;
-    }
+        .header .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .navmenu ul {
-        display: none;
-        flex-direction: column;
-        background: #FFEBF0;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
+        .logo img {
+            max-height: 50px;
+        }
 
-      .navmenu ul.active {
-        display: flex;
-      }
+        .navmenu ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
 
-      .mobile-nav-toggle {
-        display: block;
-        font-size: 2rem;
-        cursor: pointer;
-      }
+        .navmenu ul li a {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-      .header-social-links {
-        display: none; /* Optional: Hide social links on smaller screens */
-      }
-    }
+        .navmenu ul li a:hover, .navmenu ul li a.active {
+            color: #FF6384;
+        }
 
-    /* Utility Classes */
-    .d-flex {
-      display: flex;
-    }
+        .header-social-links a {
+            color: black;
+            font-size: 1.2rem;
+            margin-left: 10px;
+            transition: color 0.3s;
+        }
 
-    .justify-content-center {
-      justify-content: center;
-    }
+        .header-social-links a:hover {
+            color: #FF6384;
+        }
 
-    .align-items-center {
-      align-items: center;
-    }
-  </style>
+        @media (max-width: 768px) {
+            .navmenu ul {
+                display: none;
+                flex-direction: column;
+                background: #FFEBF0;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 200px;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .navmenu ul.active {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+
+            .header-social-links {
+                display: none; /* Optional: Hide social links on smaller screens */
+            }
+        }
+
+        /* Footer Styles */
+        #footer {
+            background-color: #FFEBF0;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #FF6384;
+        }
+
+        #footer .copyright {
+            margin-bottom: 15px;
+        }
+
+        #footer .copyright p {
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        #footer .social-links a {
+            color: black;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        #footer .social-links a:hover {
+            color: #FF6384;
+        }
+
+        /* Starter Section */
+        #starter-section {
+            background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
+            text-align: center;
+        }
+
+        #starter-section img {
+            width: 250px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Call to Action Section */
+        .cta {
+            background: linear-gradient(135deg, #FF6384, #FF9068);
+            color: white;
+            text-align: center;
+        }
+
+        .cta a {
+            background-color: white;
+            color: black;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Section */
+        .service-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FF6384;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            display: none;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        #back-to-top:hover {
+            background-color: #FF9068;
+        }
+    </style>
 </head>
 
 <body>
@@ -129,12 +229,9 @@
 <!-- HEADER -->
 <header id="header" class="header d-flex align-items-center sticky-top">
   <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-    <!-- Logo -->
     <a href="index.html" class="logo d-flex align-items-center">
       <img src="me/opt.JPG" alt="Logo">
     </a>
-
-    <!-- Navigation Menu -->
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -145,8 +242,6 @@
       </ul>
       <i class="mobile-nav-toggle bi bi-list"></i>
     </nav>
-
-    <!-- Social Links -->
     <div class="header-social-links d-flex">
       <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter"></i></a>
       <a href="https://instagram.com/stories/opethaiwoh/" class="instagram"><i class="bi bi-instagram"></i></a>
@@ -155,14 +250,83 @@
   </div>
 </header>
 
-<script>
-  // Mobile Menu Toggle
-  const mobileToggle = document.querySelector('.mobile-nav-toggle');
-  const navMenu = document.querySelector('.navmenu ul');
+<!-- MAIN CONTENT -->
+<main class="main">
+    <!-- Starter Section -->
+    <section id="starter-section">
+        <div class="container" data-aos="fade-up">
+            <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
+            <h2>Welcome! I'm Opeyemi Taiwo Adeniran</h2>
+            <p>It’s a pleasure to meet you, and I’m thrilled to have you here on my page!</p>
+        </div>
+    </section>
 
-  mobileToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
+    <!-- Services Section -->
+    <section id="services" style="background: linear-gradient(135deg, #FFEBF0, #FDE8E9);">
+        <div class="container">
+            <h2 style="text-align: center;">Ventures</h2>
+            <div style="display: flex; justify-content: space-between; gap: 20px;">
+                <div class="service-item">
+                    <h3>She Model Tech</h3>
+                    <p>Empowering women to lead in the tech industry and drive diversity.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Morgan TechFest</h3>
+                    <p>A student-led tech conference with symposiums and panel discussions.</p>
+                </div>
+                <div class="service-item">
+                    <h3>TechTalents City</h3>
+                    <p>An educational platform to upskill and switch to tech careers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Elevate Your Career?</h2>
+            <p>Book a session with Opeyemi and start your journey to growth, success, and purpose.</p>
+            <a href="https://paypal.me/ipreferteainstead" class="button">Book a Session</a>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="copyright">
+      <p>© <strong>Opeyemi Taiwo Adeniran</strong> | All Rights Reserved</p>
+    </div>
+    <div class="social-links d-flex justify-content-center">
+      <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com/stories/opethaiwoh/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/opeyemi-adeniran/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+    window.addEventListener('scroll', function() {
+        const backToTopButton = document.getElementById('back-to-top');
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    // Mobile Menu Toggle
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('.navmenu ul');
+    mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 </script>
 
 </body>
