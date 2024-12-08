@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,124 +25,199 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* General */
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.8;
+    }
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    /* Starter Section */
+    #starter-section {
+      background: linear-gradient(135deg, #FFEBF0, #FFE4E6);
+      color: black;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    #starter-section img {
+      width: 300px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #starter-section .container p {
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    #starter-section p.italic {
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    /* Call to Action Section */
+    .cta {
+      background: linear-gradient(135deg, #FF6384, #FF9068);
+      color: white;
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .cta a {
+      background-color: white;
+      color: black;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .cta a:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    #footer {
+      background: #FFEBF0;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 2px solid #FF6384;
+    }
+
+    #footer p {
+      color: #333;
+    }
+
+    #footer .social-links a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: black;
+      transition: color 0.3s ease;
+    }
+
+    #footer .social-links a:hover {
+      color: #FF6384;
+    }
+
+    /* Scroll to Top */
+    #scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #FF6384;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #scroll-top:hover {
+      background-color: #FF9068;
+      transform: scale(1.1);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      #starter-section img {
+        width: 250px;
+      }
+    }
+  </style>
 </head>
 
-<body class="starter-page-page">
+<body>
 
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="me/opt.JPG" alt="">
+  <!-- HEADER -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+      <a href="index.html" class="logo">
+        <img src="me/opt.JPG" alt="Opeyemi Logo" style="max-height: 50px;">
       </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="ventures.html" class="active">Ventures</a></li>
-          <li><a href="books.html">Books</a></li>
-           <li><a href="Conversation with Opeyemi.html">Conversation with Opeyemi</a></li>
+      <nav>
+        <ul class="d-flex list-unstyled gap-4 m-0">
+          <li><a href="index.html" class="text-dark fw-bold">Home</a></li>
+          <li><a href="about.html" class="text-dark">About</a></li>
+          <li><a href="ventures.html" class="text-dark">Ventures</a></li>
+          <li><a href="books.html" class="text-dark">Books</a></li>
+          <li><a href="conversation.html" class="text-dark">Conversation</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <div class="header-social-links">
-        <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="instagram.com/stories/opethaiwoh/" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/opeyemi-adeniran/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
-
     </div>
   </header>
 
-<main class="main">
-
+  <!-- MAIN -->
+  <main>
     <!-- Starter Section -->
-    <section id="starter-section" class="starter-section section" style="background-color: #FFEBF0; color: black; padding: 50px 0;">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up" style="text-align: center;">
-            <h2 style="color: black; font-size: 2.5rem;">Welcome! I'm Opeyemi Taiwo Adeniran</h2>
-            <p style="color: black; font-size: 1.2rem; line-height: 1.8;">It’s a pleasure to meet you, and I’m thrilled to have you here on my page!</p>
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-
-            <!-- Image -->
-            <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran" style="width: 300px; height: auto; border-radius: 50%; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-
-            <!-- Main paragraph -->
-            <p style="max-width: 600px; margin-bottom: 20px; font-size: 1.2rem; line-height: 1.8; color: black;">
-                I hope you're having an amazing day! But if it's not going as planned, 
-                remember there are people who would be grateful to be in your position. 
-                So, take a moment to appreciate what you have and wear a smile. 😊
-            </p>
-
-            <!-- Italic paragraph -->
-            <p style="max-width: 600px; font-style: italic; font-size: 1.1rem; color: black;">
-                Let’s get started! Explore the menu to learn more about me, my ventures, books, and Conversations with Opeyemi.
-            </p>
-
-        </div>
-
-    </section><!-- /Starter Section -->
-
-</main>
-
-
-  <footer id="footer" class="footer light-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Opeyemi Taiwo Adeniran</strong> <span>All Rights Reserved<br></span></p>
+    <section id="starter-section" data-aos="fade-in">
+      <div class="container">
+        <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
+        <h2>Welcome! I'm Opeyemi Taiwo Adeniran</h2>
+        <p>I’m thrilled to have you here on my page. Let’s explore and achieve together!</p>
+        <p class="italic">Explore my journey, ventures, books, and insights.</p>
       </div>
-      <div class="social-links d-flex justify-content-center">
-       <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="instagram.com/stories/opethaiwoh/" class="instagram"><i class="bi bi-instagram"></i></a>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta" data-aos="fade-up">
+      <div class="container">
+        <h2>Ready to Connect?</h2>
+        <p>Book a session with me and start your journey to success.</p>
+        <a href="https://paypal.me/ipreferteainstead">Book a Session</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <p>&copy; 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://instagram.com/stories/opethaiwoh/" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/in/opeyemi-adeniran/" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-       
-      </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Scroll to Top -->
+  <a href="#" id="scroll-top"><i class="bi bi-arrow-up"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
