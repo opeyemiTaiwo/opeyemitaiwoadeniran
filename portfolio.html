@@ -1,192 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Opeyemi Taiwo Adeniran</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation - Opeyemi Taiwo Adeniran</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Icons (Bootstrap Icons) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
 
-  <!-- AOS Animation Library -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- AOS Library for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-  <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #FFEBF0;
-      color: black;
-      line-height: 1.8;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFEBF0;
+            line-height: 1.8;
+        }
 
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
+        p {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
 
-    /* Header */
-    #header {
-      background-color: #FFEBF0;
-      padding: 15px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 9999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+        /* Header */
+        #header {
+            background-color: #FFEBF0;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    #header .logo img {
-      max-height: 50px;
-    }
+        #header .logo img {
+            max-height: 50px;
+        }
 
-    #header .navmenu ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
+        #header .navmenu ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
 
-    #header .navmenu ul li a {
-      font-size: 1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: black;
-      transition: color 0.3s ease;
-    }
+        #header .navmenu ul li a {
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s ease;
+        }
 
-    #header .navmenu ul li a:hover,
-    #header .navmenu ul li a.active {
-      color: #FF6384;
-    }
+        #header .navmenu ul li a:hover,
+        #header .navmenu ul li a.active {
+            color: #FF6384;
+        }
 
-    #header .header-social-links a {
-      font-size: 1.2rem;
-      margin-left: 15px;
-      color: black;
-      transition: color 0.3s ease;
-    }
+        #header .header-social-links a {
+            font-size: 1.2rem;
+            margin-left: 15px;
+            color: black;
+            transition: color 0.3s ease;
+        }
 
-    #header .header-social-links a:hover {
-      color: #FF6384;
-    }
+        #header .header-social-links a:hover {
+            color: #FF6384;
+        }
 
-    /* About Section */
-    .about {
-      padding: 100px 20px;
-      text-align: center;
-    }
+        /* Conversation Section */
+        .conversation {
+            padding: 100px 20px;
+            text-align: center;
+        }
 
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 30px;
-      margin-top: 40px;
-    }
+        .conversation-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .about img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    }
+        .conversation-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-    .about-details {
-      max-width: 600px;
-      text-align: left;
-    }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6384, #FF9068);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
 
-    .about-details p {
-      margin-bottom: 20px;
-    }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
 
-    /* Contact Links Section */
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
+        /* Footer */
+        #footer {
+            background-color: #FFEBF0;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 2px solid #FF6384;
+        }
 
-    .link-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      width: 220px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
+        #footer .social-links a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: black;
+            transition: color 0.3s ease;
+        }
 
-    .link-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .link-card i {
-      font-size: 2rem;
-      color: #FF6384;
-      margin-bottom: 10px;
-    }
-
-    .link-card p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-
-    .link-card a {
-      font-size: 0.9rem;
-      color: #FF6384;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .link-card a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    #footer {
-      background-color: #FFEBF0;
-      text-align: center;
-      padding: 20px 0;
-      border-top: 2px solid #FF6384;
-    }
-
-    #footer .social-links a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: black;
-      transition: color 0.3s ease;
-    }
-
-    #footer .social-links a:hover {
-      color: #FF6384;
-    }
-  </style>
+        #footer .social-links a:hover {
+            color: #FF6384;
+        }
+    </style>
 </head>
 
 <body>
@@ -199,10 +165,9 @@
     <nav class="navmenu">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="ventures.html">Ventures</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="books.html">Books</a></li>
-        <li><a href="conversation.html">Conversation</a></li>
+        <li><a href="conversation.html" class="active">Conversation</a></li>
       </ul>
     </nav>
     <div class="header-social-links">
@@ -214,44 +179,12 @@
 
   <!-- MAIN -->
   <main class="main">
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About Opeyemi Taiwo Adeniran</h2>
-        <div class="about-container" data-aos="fade-up">
-          <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
-          <div class="about-details">
-            <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
-            <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
-          </div>
-        </div>
-
-        <div class="contact-links">
-          <div class="link-card">
-            <i class="bi bi-envelope"></i>
-            <p>Email</p>
-            <a href="mailto:opeyemitaiwo81@gmail.com">opeyemitaiwo81@gmail.com</a>
-          </div>
-          <div class="link-card">
-            <i class="bi bi-file-earmark-person"></i>
-            <p>Resume</p>
-            <a href="https://opethaiwoh.github.io/opeyemi.github.io/" target="_blank">View Resume</a>
-          </div>
-          <div class="link-card">
-            <i class="bi bi-journal-text"></i>
-            <p>Publications</p>
-            <a href="https://www.researchgate.net/profile/Opeyemi-Adeniran-3" target="_blank">View Publications</a>
-          </div>
-          <div class="link-card">
-            <i class="bi bi-file-earmark-text"></i>
-            <p>Long Bio</p>
-            <a href="https://docs.google.com/document/d/1fwHGUdVhgyZ8MSyUjcHT28i4tYdfvFBFHyClC0E68Gc/edit" target="_blank">Download Long Bio</a>
-          </div>
-          <div class="link-card">
-            <i class="bi bi-camera"></i>
-            <p>Headshot</p>
-            <a href="https://drive.google.com/drive/folders/1Ajy_vh_t_8VmQUljrs_lzGMeUv8GkJLC?usp=sharing" target="_blank">Download</a>
-          </div>
-        </div>
+    <section class="conversation">
+      <div class="conversation-container" data-aos="fade-up">
+        <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
+        <h2>Book a Conversation</h2>
+        <p>Book a 30-minute live session with me to explore tech, career growth, and transformative ideas. Let’s turn your potential into progress together!</p>
+        <a href="https://paypal.me/ipreferteainstead" class="cta-button">Book a Session</a>
       </div>
     </section>
   </main>
@@ -272,5 +205,4 @@
     AOS.init();
   </script>
 </body>
-
 </html>
