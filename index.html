@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <style>
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -24,144 +25,109 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        h2 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        p {
-            font-family: 'Lora', serif;
-        }
-
-        /* Header Styles */
-        .header {
-            background-color: #FFEBF0;
-            padding: 15px 0;
+        /* Header */
+        #header {
+            background: #FFEBF0;
+            padding: 15px 20px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 9999;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .header .container-fluid {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .logo {
-            padding-left: 10px;
-        }
-
-        .logo img {
+        #header .logo img {
             max-height: 50px;
         }
 
-        .navmenu ul {
+        #header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        #header .navmenu ul {
             display: flex;
             list-style: none;
-            justify-content: center;
-            align-items: center;
             gap: 20px;
             margin: 0;
             padding: 0;
         }
 
-        .navmenu ul li a {
+        #header .navmenu ul li {
+            display: inline-block;
+        }
+
+        #header .navmenu ul li a {
             font-size: 1rem;
-            text-transform: uppercase;
             font-weight: bold;
+            text-transform: uppercase;
             color: black;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
-        .navmenu ul li a:hover, .navmenu ul li a.active {
+        #header .navmenu ul li a:hover,
+        #header .navmenu ul li a.active {
             color: #FF6384;
         }
 
-        .header-social-links {
-            padding-right: 10px;
-        }
-
-        .header-social-links a {
-            color: black;
+        #header .header-social-links a {
+            margin-left: 15px;
             font-size: 1.2rem;
-            margin-left: 10px;
-            transition: color 0.3s;
+            color: black;
+            transition: color 0.3s ease;
         }
 
-        .header-social-links a:hover {
+        #header .header-social-links a:hover {
             color: #FF6384;
         }
 
-        /* Mobile Responsive */
+        .mobile-nav-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* Mobile Menu */
         @media (max-width: 768px) {
             .mobile-nav-toggle {
-                display: block; /* Show toggle only on mobile */
-                font-size: 2rem;
-                cursor: pointer;
+                display: block; /* Show the hamburger menu */
             }
 
             .navmenu ul {
-                display: none; /* Hide navigation links on mobile */
+                display: none; /* Hide the menu by default */
                 flex-direction: column;
-                background: #FFEBF0;
                 position: absolute;
                 top: 70px;
-                right: 10px;
+                right: 20px;
+                background: #FFEBF0;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 width: 200px;
                 padding: 15px;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }
 
             .navmenu ul.active {
-                display: flex; /* Show navigation links when toggle is clicked */
+                display: flex; /* Show menu when toggled */
             }
 
             .header-social-links {
-                display: none; /* Optional: Hide social links on smaller screens */
+                display: none; /* Hide social links on mobile */
             }
         }
 
-        /* Footer Styles */
-        #footer {
-            background-color: #FFEBF0;
-            padding: 20px 0;
-            text-align: center;
-            border-top: 2px solid #FF6384;
-        }
-
-        #footer .copyright {
-            margin-bottom: 15px;
-        }
-
-        #footer .copyright p {
-            color: #333;
-            font-size: 0.9rem;
-        }
-
-        #footer .social-links a {
-            color: black;
-            font-size: 1.2rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        #footer .social-links a:hover {
-            color: #FF6384;
-        }
-
-        /* Main Content Sections */
+        /* Main Content */
         #starter-section {
             background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
             text-align: center;
-            padding: 50px 0;
+            padding: 100px 20px;
         }
 
         #starter-section img {
@@ -171,11 +137,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* Call to Action */
         .cta {
             background: linear-gradient(135deg, #FF6384, #FF9068);
             color: white;
             text-align: center;
-            padding: 50px 0;
+            padding: 50px 20px;
         }
 
         .cta a {
@@ -187,20 +154,36 @@
             font-weight: bold;
             text-decoration: none;
             display: inline-block;
+            margin-top: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
 
-        .service-item {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
+        .cta a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        #footer {
+            background: #FFEBF0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            padding: 20px 0;
+            border-top: 2px solid #FF6384;
         }
 
-        .service-item:hover {
-            transform: translateY(-10px);
+        #footer p {
+            color: #333;
+        }
+
+        #footer .social-links a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        #footer .social-links a:hover {
+            color: #FF6384;
         }
     </style>
 </head>
@@ -209,30 +192,23 @@
 
   <!-- HEADER -->
   <header id="header">
-    <div class="container d-flex justify-content-between align-items-center">
-      <!-- Logo -->
-      <a href="index.html" class="logo">
-        <img src="me/opt.JPG" alt="Opeyemi Logo">
-      </a>
-
-      <!-- Navigation Menu -->
-      <nav id="navmenu">
-        <ul class="d-flex">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="ventures.html">Ventures</a></li>
-          <li><a href="books.html">Books</a></li>
-          <li><a href="conversation.html">Conversation</a></li>
-        </ul>
-        <i class="mobile-nav-toggle bi bi-list"></i>
-      </nav>
-
-      <!-- Social Links -->
-      <div class="header-social-links">
-        <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-        <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-        <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
-      </div>
+    <div class="logo">
+      <a href="index.html"><img src="me/opt.JPG" alt="Logo"></a>
+    </div>
+    <nav class="navmenu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ventures.html">Ventures</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="conversation.html">Conversation</a></li>
+      </ul>
+      <i class="mobile-nav-toggle bi bi-list"></i>
+    </nav>
+    <div class="header-social-links">
+      <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
     </div>
   </header>
 
@@ -270,20 +246,12 @@
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
-  <a href="#" id="scroll-top"><i class="bi bi-arrow-up"></i></a>
-
   <!-- JavaScript -->
   <script>
-    // Mobile Menu Toggle
     document.querySelector('.mobile-nav-toggle').addEventListener('click', function () {
-      document.querySelector('#navmenu ul').classList.toggle('active');
+      document.querySelector('.navmenu ul').classList.toggle('active');
     });
-
-    // AOS Animation Initialization
-    AOS.init();
   </script>
-
 </body>
 
 </html>
