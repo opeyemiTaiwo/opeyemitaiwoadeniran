@@ -128,6 +128,80 @@
                 display: none; /* Optional: Hide social links on smaller screens */
             }
         }
+
+        /* Footer Styles */
+        #footer {
+            background-color: #FFEBF0;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #FF6384;
+        }
+
+        #footer .copyright {
+            margin-bottom: 15px;
+        }
+
+        #footer .copyright p {
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        #footer .social-links a {
+            color: black;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        #footer .social-links a:hover {
+            color: #FF6384;
+        }
+
+        /* Main Content Sections */
+        #starter-section {
+            background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #starter-section img {
+            width: 250px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #FF6384, #FF9068);
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .cta a {
+            background-color: white;
+            color: black;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
     </style>
 </head>
 <body>
@@ -140,7 +214,6 @@
             <img src="me/opt.JPG" alt="Logo">
         </a>
 
-        
         <!-- Navigation Menu -->
         <nav id="navmenu" class="navmenu">
             <ul>
@@ -153,7 +226,6 @@
             <i class="mobile-nav-toggle bi bi-list" style="display: none;"></i>
         </nav>
 
-        
         <!-- Social Links -->
         <div class="header-social-links">
             <a href="https://x.com/opethaiwoh" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -165,17 +237,48 @@
 
 <!-- MAIN CONTENT -->
 <main class="main" style="padding-top: 80px;">
-    <section id="starter-section" style="background: linear-gradient(135deg, #FFEBF0, #FDE8E9); text-align: center; padding: 50px 0;">
+    <!-- Starter Section -->
+    <section id="starter-section">
         <div class="container" data-aos="fade-up">
-            <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran" style="width: 250px; border-radius: 50%; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
             <h2>Welcome! I'm Opeyemi Taiwo Adeniran</h2>
             <p>It’s a pleasure to meet you, and I’m thrilled to have you here on my page!</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="background: linear-gradient(135deg, #FFEBF0, #FDE8E9); padding: 50px 0;">
+        <div class="container">
+            <h2 style="text-align: center;">Ventures</h2>
+            <div style="display: flex; justify-content: space-between; gap: 20px;">
+                <div class="service-item">
+                    <h3>She Model Tech</h3>
+                    <p>Empowering women to lead in the tech industry and drive diversity.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Morgan TechFest</h3>
+                    <p>A student-led tech conference with symposiums and panel discussions.</p>
+                </div>
+                <div class="service-item">
+                    <h3>TechTalents City</h3>
+                    <p>An educational platform to upskill and switch to tech careers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Elevate Your Career?</h2>
+            <p>Book a session with Opeyemi and start your journey to growth, success, and purpose.</p>
+            <a href="https://paypal.me/ipreferteainstead" class="button">Book a Session</a>
         </div>
     </section>
 </main>
 
 <!-- FOOTER -->
-<footer id="footer" class="footer" style="background-color: #FFEBF0; padding: 20px 0; text-align: center; border-top: 2px solid #FF6384;">
+<footer id="footer">
     <div class="container">
         <div class="copyright">
             <p>© <strong>Opeyemi Taiwo Adeniran</strong> | All Rights Reserved</p>
@@ -196,6 +299,11 @@
     mobileToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
     });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
 </script>
 
 </body>
