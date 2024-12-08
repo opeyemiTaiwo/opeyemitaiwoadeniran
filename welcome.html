@@ -4,99 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opeyemi Taiwo Adeniran</title>
+
     <!-- AOS Library for animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-family: 'Lora', serif;
+        }
+
+        .main section {
+            padding: 50px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Starter Section */
+        #starter-section {
+            background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
+            text-align: center;
+        }
+
+        #starter-section img {
+            width: 250px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Call to Action Section */
+        .cta {
+            background: linear-gradient(135deg, #FF6384, #FF9068);
+            color: white;
+            text-align: center;
+        }
+
+        .cta a {
+            background-color: white;
+            color: black;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Section */
+        .service-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Book a Session Button */
+        .button {
+            background: linear-gradient(90deg, #FF6384, #FF9068);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FF6384;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            display: none;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        #back-to-top:hover {
+            background-color: #FF9068;
+        }
+    </style>
 </head>
-<body style="font-family: 'Poppins', sans-serif; margin: 0; padding: 0;">
+
+<body>
 
 <main class="main">
 
     <!-- Starter Section -->
-    <section id="starter-section" style="background: linear-gradient(135deg, #FFEBF0, #FDE8E9); color: black; padding: 50px 0;">
-        <div style="text-align: center;">
-            <h2 style="font-size: 2.5rem;">Welcome! I'm Opeyemi Taiwo Adeniran</h2>
-            <p style="font-size: 1.2rem; line-height: 1.8;">It’s a pleasure to meet you, and I’m thrilled to have you here on my page!</p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran" style="width: 300px; height: auto; border-radius: 50%; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-            <p style="max-width: 600px; font-size: 1.2rem; line-height: 1.8;">
-                I hope you're having an amazing day! If not, take a moment to appreciate what you have and wear a smile. 😊
-            </p>
-        </div>
-    </section>
-
-    <!-- Conversation Section -->
-    <section id="conversation" style="background: linear-gradient(135deg, #FFEBF0, #FDE8E9); padding: 50px 0;">
-        <div style="text-align: center; padding: 20px 0;">
-            <h2 style="font-size: 2.5rem;">Conversation with Opeyemi</h2>
-            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
-                Book your 30-minute session now to explore tech, career growth, and big ideas. Together, we’ll turn your potential into progress!
-            </p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; align-items: center;">
-            <img src="me/OPEYEMI-1B (2).JPG" alt="Conversation with Opeyemi" style="width: 300px; height: auto; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-            <a href="https://paypal.me/ipreferteainstead" 
-               style="background-color: black; color: white; text-decoration: none; padding: 12px 30px; border-radius: 25px; 
-                      font-size: 1rem; font-weight: bold; display: inline-block; margin-top: 20px; 
-                      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                Book a Session
-            </a>
+    <section id="starter-section">
+        <div class="container" data-aos="fade-up">
+            <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
+            <h2>Welcome! I'm Opeyemi Taiwo Adeniran</h2>
+            <p>It’s a pleasure to meet you, and I’m thrilled to have you here on my page!</p>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" style="background: linear-gradient(135deg, #FFEBF0, #FDE8E9); padding: 50px 0;">
-        <div style="text-align: center;">
-            <h2 style="font-size: 2.5rem;">Ventures</h2>
-            <p style="font-size: 1.2rem;">My entrepreneurial journey is driven by a passion for technology and a vision to drive innovation by empowering others.</p>
-        </div>
-
-        <div style="display: flex; justify-content: center; gap: 20px;">
-            <div style="background: white; border-radius: 10px; padding: 20px; width: 30%; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                <h3>She Model Tech</h3>
-                <p>Empowering women from underprivileged communities to lead in the tech industry and drive diversity.</p>
-            </div>
-
-            <div style="background: white; border-radius: 10px; padding: 20px; width: 30%; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                <h3>Morgan TechFest</h3>
-                <p>A student-led conference that inspires and empowers students through research symposiums, project showcases, and tech talks.</p>
-            </div>
-
-            <div style="background: white; border-radius: 10px; padding: 20px; width: 30%; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                <h3>TechTalents City</h3>
-                <p>An educational platform empowering professionals and beginners to upskill or switch careers with live classes and real-world projects.</p>
+    <section id="services" style="background: linear-gradient(135deg, #FFEBF0, #FDE8E9);">
+        <div class="container">
+            <h2 style="text-align: center;">Ventures</h2>
+            <div style="display: flex; justify-content: space-between; gap: 20px;">
+                <div class="service-item">
+                    <h3>She Model Tech</h3>
+                    <p>Empowering women to lead in the tech industry and drive diversity.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Morgan TechFest</h3>
+                    <p>A student-led tech conference with symposiums and panel discussions.</p>
+                </div>
+                <div class="service-item">
+                    <h3>TechTalents City</h3>
+                    <p>An educational platform to upskill and switch to tech careers.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call-to-Action (CTA) Section -->
-    <section style="background: linear-gradient(135deg, #FF6384, #FF9068); color: white; padding: 50px 0;">
-        <div style="text-align: center;">
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
             <h2>Ready to Elevate Your Career?</h2>
-            <p>Book a session with Opeyemi to start your journey to growth, success, and purpose.</p>
-            <a href="https://paypal.me/ipreferteainstead" 
-               style="background-color: white; color: black; text-decoration: none; padding: 12px 30px; border-radius: 25px; 
-                      font-size: 1rem; font-weight: bold; display: inline-block; 
-                      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                Book a Session
-            </a>
+            <p>Book a session with Opeyemi and start your journey to growth, success, and purpose.</p>
+            <a href="https://paypal.me/ipreferteainstead" class="button">Book a Session</a>
         </div>
     </section>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" 
-            style="position: fixed; bottom: 20px; right: 20px; background-color: #FF6384; color: white; 
-                   padding: 10px 15px; border-radius: 50%; display: none; z-index: 9999; cursor: pointer;"
-            onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-        ↑
-    </button>
 
 </main>
-    
-<!-- AOS (Animate on Scroll) -->
-    
+
+<!-- Back to Top Button -->
+<button id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
     AOS.init();
