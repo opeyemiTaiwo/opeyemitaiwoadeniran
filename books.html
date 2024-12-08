@@ -67,30 +67,38 @@
     </div>
   </header>
 
-  <main class="main">
+ <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section" style="position: relative; overflow: hidden;">
 
-      <img src="me/bg.jpg" alt="" data-aos="fade-in">
+        <!-- Background Image -->
+        <img src="me/bg.jpg" alt="Tech Background" style="width: 100%; height: auto; position: absolute; top: 0; left: 0; z-index: -1; filter: brightness(0.8);">
 
-      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-          <div style="margin-top: 20px;">
-    <h2 style="color: white;">Career Paths in Tech</h2>
-    <p style="color: white;">Embark on a journey to explore the endless possibilities in the world of technology. 
-      "Career Path in Tech" is a comprehensive series designed to guide aspiring technologists and
-      professionals in navigating their careers in specific tech domains. </p>
-</div>
-            <a href="about.html" class="btn-get-started">Grab a book</a>
-          </div>
+        <!-- Content Section -->
+        <div class="container text-center" data-aos="zoom-out" data-aos-delay="100" style="padding: 100px 20px;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 style="color: white; font-size: 3rem; font-weight: bold;">Career Paths in Tech</h2>
+                    <p style="color: white; font-size: 1.2rem; line-height: 1.8;">
+                        Explore the endless possibilities in the world of technology. 
+                        <strong>"Career Paths in Tech"</strong> is a comprehensive series designed to guide aspiring technologists and
+                        professionals in navigating their careers in various tech domains.
+                    </p>
+                    <a href="about.html" class="btn-get-started" 
+                       style="display: inline-block; background-color: #007bff; color: white; text-decoration: none; 
+                              padding: 12px 30px; border-radius: 25px; font-size: 1rem; font-weight: bold; 
+                              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin-top: 20px;">
+                        Explore the Books
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
 
     </section><!-- /Hero Section -->
 
-  </main>
+</main>
+
 
   <footer id="footer" class="footer light-background">
 
