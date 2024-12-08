@@ -2,17 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ventures - Opeyemi Taiwo Adeniran</title>
-  <meta name="description" content="Explore Opeyemi's ventures that focus on technology, innovation, and empowerment.">
-  <meta name="keywords" content="Ventures, Opeyemi Taiwo Adeniran, Technology, Innovation">
 
-  <!-- Favicons -->
-  <link href="me/opt.JPG" rel="icon">
-  <link href="me/opt.JPG" rel="apple-touch-icon">
-
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
 
   <!-- Icons -->
@@ -31,13 +25,14 @@
 
     body {
       font-family: 'Poppins', sans-serif;
+      background-color: #FFEBF0;
+      color: black;
       line-height: 1.8;
     }
 
     h2 {
       font-size: 2.5rem;
       font-weight: 600;
-      text-align: center;
     }
 
     p {
@@ -47,7 +42,7 @@
 
     /* Header */
     #header {
-      background: #FFEBF0;
+      background-color: #FFEBF0;
       padding: 15px 20px;
       position: fixed;
       width: 100%;
@@ -73,8 +68,8 @@
       font-size: 1rem;
       font-weight: bold;
       text-transform: uppercase;
-      color: black;
       text-decoration: none;
+      color: black;
       transition: color 0.3s ease;
     }
 
@@ -85,7 +80,7 @@
 
     #header .header-social-links a {
       font-size: 1.2rem;
-      margin-left: 10px;
+      margin-left: 15px;
       color: black;
       transition: color 0.3s ease;
     }
@@ -94,79 +89,57 @@
       color: #FF6384;
     }
 
-    /* Mobile Menu */
-    .mobile-nav-toggle {
-      display: none;
+    /* Ventures Section */
+    .ventures {
+      padding: 100px 20px;
+      text-align: center;
     }
 
-    @media (max-width: 768px) {
-      .mobile-nav-toggle {
-        display: block;
-        font-size: 2rem;
-        cursor: pointer;
-        margin-left: 20px;
-      }
-
-      .navmenu ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background: #FFEBF0;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 15px;
-        width: 200px;
-      }
-
-      .navmenu ul.active {
-        display: flex;
-      }
+    .ventures .section-title {
+      margin-bottom: 30px;
     }
 
-    /* Services Section */
-    .services {
-      background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
-      padding: 80px 20px;
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
 
-    .service-item {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
+    .venture-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 30px;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service-item:hover {
+    .venture-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .service-item .icon {
+    .venture-card i {
       font-size: 3rem;
       color: #FF6384;
       margin-bottom: 15px;
     }
 
-    .service-item h3 {
+    .venture-card h3 {
       font-size: 1.5rem;
-      font-weight: bold;
-      color: black;
       margin-bottom: 10px;
+      font-weight: 600;
     }
 
-    .service-item p {
+    .venture-card p {
       font-size: 1rem;
-      line-height: 1.6;
-      color: black;
+      color: #333;
     }
 
     /* Footer */
     #footer {
-      background: #FFEBF0;
+      background-color: #FFEBF0;
       text-align: center;
       padding: 20px 0;
       border-top: 2px solid #FF6384;
@@ -200,7 +173,6 @@
         <li><a href="books.html">Books</a></li>
         <li><a href="conversation.html">Conversation</a></li>
       </ul>
-      <i class="mobile-nav-toggle bi bi-list"></i>
     </nav>
     <div class="header-social-links">
       <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
@@ -210,41 +182,29 @@
   </header>
 
   <!-- MAIN -->
-  <main>
-    <!-- Services Section -->
-    <section id="services" class="services">
+  <main class="main">
+    <section id="ventures" class="ventures">
       <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2>Ventures</h2>
-          <p>My entrepreneurial journey began with a passion for technology and a vision to drive innovation by empowering others.</p>
-        </div>
-
-        <div class="row gy-4">
-          <!-- Service 1 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item">
-              <div class="icon"><i class="bi bi-activity"></i></div>
-              <h3>She Model Tech</h3>
-              <p>Empowering women, including underprivileged communities, to lead in the tech industry and drive diversity.</p>
-            </div>
+        <h2 class="section-title">Ventures</h2>
+        <p>My entrepreneurial journey began with a passion for technology and a vision to drive innovation by empowering others.</p>
+        <div class="ventures-grid" data-aos="fade-up">
+          <!-- Venture 1 -->
+          <div class="venture-card">
+            <i class="bi bi-activity"></i>
+            <h3>She Model Tech</h3>
+            <p>Empowering women, including underprivileged communities, to lead in the tech industry and drive diversity.</p>
           </div>
-
-          <!-- Service 2 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item">
-              <div class="icon"><i class="bi bi-broadcast"></i></div>
-              <h3>Morgan TechFest</h3>
-              <p>A student-led conference inspiring students through tech talks, research symposiums, and panel discussions.</p>
-            </div>
+          <!-- Venture 2 -->
+          <div class="venture-card">
+            <i class="bi bi-broadcast"></i>
+            <h3>Morgan TechFest</h3>
+            <p>A student-led conference inspiring students through tech talks, research symposiums, and panel discussions.</p>
           </div>
-
-          <!-- Service 3 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item">
-              <div class="icon"><i class="bi bi-easel"></i></div>
-              <h3>TechTalents City</h3>
-              <p>An educational platform empowering professionals to learn in-demand tech skills and switch careers effectively.</p>
-            </div>
+          <!-- Venture 3 -->
+          <div class="venture-card">
+            <i class="bi bi-easel"></i>
+            <h3>TechTalents City</h3>
+            <p>An educational platform to learn in-demand tech skills, upskill, and switch careers effectively.</p>
           </div>
         </div>
       </div>
@@ -253,22 +213,15 @@
 
   <!-- FOOTER -->
   <footer id="footer">
-    <div class="container">
-      <p>&copy; 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-        <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-        <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
-      </div>
+    <p>© 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
     </div>
   </footer>
 
   <!-- JavaScript -->
-  <script>
-    document.querySelector('.mobile-nav-toggle').addEventListener('click', function () {
-      document.querySelector('.navmenu ul').classList.toggle('active');
-    });
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
