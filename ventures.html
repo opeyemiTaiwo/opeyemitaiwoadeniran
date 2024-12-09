@@ -15,197 +15,220 @@
   <!-- AOS Animation Library -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-  <style>
-    /* General Reset */
+<style>
+    /* Existing General Reset */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
+    /* Existing Body Styles */
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #FFEBF0;
-      color: black;
-      line-height: 1.8;
-      padding-top: 80px; /* Prevent overlap with header */
+        font-family: 'Poppins', sans-serif;
+        background-color: #FFEBF0;
+        color: black;
+        line-height: 1.8;
+        padding-top: 80px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    /* Header */
+    /* Header Section */
     #header {
-      background-color: #FFEBF0;
-      padding: 15px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 9999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #FFEBF0;
+        padding: 15px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     #header .logo img {
-      max-height: 50px;
+        max-height: 50px;
     }
 
     #header .navmenu ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
+        display: flex;
+        list-style: none;
+        gap: 20px;
     }
 
     #header .navmenu ul li a {
-      font-size: 1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: black;
-      transition: color 0.3s ease;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+        transition: color 0.3s ease;
     }
 
     #header .navmenu ul li a:hover,
     #header .navmenu ul li a.active {
-      color: #FF6384;
+        color: #FF6384;
     }
 
     /* Mobile Menu */
     #header .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: black;
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: black;
     }
 
     #header .navmenu {
-      display: block;
+        display: block;
     }
 
     @media (max-width: 768px) {
-      #header .menu-toggle {
-        display: block;
-        z-index: 1000;
-      }
+        #header .menu-toggle {
+            display: block;
+            z-index: 1000;
+        }
 
-      #header .navmenu {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #FFEBF0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        width: 200px;
-        display: none;
-      }
+        #header .navmenu {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #FFEBF0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 200px;
+            display: none;
+        }
 
-      #header .navmenu.show {
-        display: block;
-      }
+        #header .navmenu.show {
+            display: block;
+        }
 
-      #header .navmenu ul {
-        flex-direction: column;
-        padding: 10px;
-      }
+        #header .navmenu ul {
+            flex-direction: column;
+            padding: 10px;
+        }
 
-      #header .navmenu ul li {
-        text-align: left;
-      }
-
-      #header .navmenu ul li a {
-        padding: 10px 15px;
-        display: block;
-        font-size: 1rem;
-        text-transform: none;
-      }
+        #header .navmenu ul li a {
+            padding: 10px 15px;
+            display: block;
+            font-size: 1rem;
+        }
     }
 
     /* Ventures Section */
     .ventures {
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #FFEBF0, #FFD6E4); /* Gradient background */
-      text-align: center;
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #FFEBF0, #FFD6E4);
+        text-align: center;
     }
 
-    .ventures-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-      justify-content: center;
+    .timeline {
+        position: relative;
+        margin-top: 50px;
+        padding: 0 20px;
     }
 
-    .venture-card {
-      background-color: white;
-      border-radius: 15px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-decoration: none;
-      color: black;
-      max-width: 300px;
-      margin: 0 auto;
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #FF6384;
+        transform: translateX(-50%);
     }
 
-    .venture-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    .timeline-item {
+        margin: 30px 0;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
     }
 
-    .venture-card i {
-      font-size: 3rem;
-      color: #FF6384;
-      margin-bottom: 15px;
+    .timeline-item:nth-child(odd) {
+        justify-content: flex-end;
     }
 
-    .venture-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      font-weight: 600;
+    .timeline-item:nth-child(even) {
+        justify-content: flex-start;
     }
 
-    .venture-card p {
-      font-size: 1rem;
-      color: #333;
+    .timeline-content {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 45%;
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        text-align: left;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        background: #FF6384;
+        border-radius: 50%;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+        right: calc(50% - 15px);
+        transform: translate(50%, -50%);
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: calc(50% - 15px);
+        transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 768px) {
+        .timeline::before {
+            display: none;
+        }
+
+        .timeline-content {
+            width: 90% !important;
+            text-align: center !important;
+        }
+
+        .timeline-dot {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h3 {
+            font-size: 1.5rem !important;
+        }
+
+        p {
+            font-size: 0.9rem !important;
+        }
     }
 
     /* Footer */
     #footer {
-      background-color: #FFEBF0;
-      text-align: center;
-      padding: 20px 0;
-      border-top: 2px solid #FF6384;
+        background-color: #FFEBF0;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 2px solid #FF6384;
     }
 
     #footer .social-links a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: black;
-      transition: color 0.3s ease;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        color: black;
+        transition: color 0.3s ease;
     }
 
     #footer .social-links a:hover {
-      color: #FF6384;
+        color: #FF6384;
     }
   </style>
 </head>
@@ -228,41 +251,58 @@
     </nav>
   </header>
 
-  
 <main class="main">
   <section id="ventures" class="ventures" style="background: #FFEBF0; padding: 50px 20px;">
     <div class="container">
       <h2 class="section-title" style="font-family: 'Lora', serif; font-size: 2.8rem; font-weight: bold; text-align: center; margin-bottom: 20px; color: #333;">Ventures</h2>
       <p style="max-width: 900px; margin: 0 auto; font-family: 'Poppins', sans-serif; font-size: 1.2rem; line-height: 1.8; text-align: center; color: #555;">
-        Driven by a passion for technology and a commitment to empowering others, my entrepreneurial journey has been defined by innovation and impact.
-        As the founder of <strong>She Model Tech</strong>, <strong>Morgan TechFest</strong>, and <strong>TechTalents City</strong>, I have built transformative platforms that inspire creativity, foster learning, and unlock opportunities for individuals to thrive in the ever-evolving world of technology.
+       Driven by a passion for technology and a commitment to empowering others, my entrepreneurial journey has been defined by innovation and impact. 
       </p>
-      <div class="ventures-grid" data-aos="fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; padding: 10px; background: linear-gradient(135deg, #FF6384, #FF9068); border-radius: 25px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <!-- Venture 1 -->
-        <a href="https://www.shemodeltech.com/" target="_blank" class="venture-card" style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; color: black;">
-          <i class="bi bi-activity" style="font-size: 3rem; color: #FF6384; margin-bottom: 20px;"></i>
-          <h3 style="font-family: 'Lora', serif; font-size: 1.6rem; margin-bottom: 14px; color: #333;">She Model Tech</h3>
-          <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">Empowering women, including underprivileged communities, to lead in the tech industry and drive diversity.</p>
-        </a>
-        <!-- Venture 2 -->
-        <a href="https://www.morgantechfest.com/" target="_blank" class="venture-card" style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; color: black;">
-          <i class="bi bi-broadcast" style="font-size: 3rem; color: #FF6384; margin-bottom: 20px;"></i>
-          <h3 style="font-family: 'Lora', serif; font-size: 1.6rem; margin-bottom: 14px; color: #333;">Morgan TechFest</h3>
-          <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">A student-led conference inspiring students through tech talks, research symposiums, and panel discussions.</p>
-        </a>
-        <!-- Venture 3 -->
-        <a href="https://www.techtalentscity.com/" target="_blank" class="venture-card" style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; color: black;">
-          <i class="bi bi-easel" style="font-size: 3rem; color: #FF6384; margin-bottom: 20px;"></i>
-          <h3 style="font-family: 'Lora', serif; font-size: 1.6rem; margin-bottom: 14px; color: #333;">TechTalents City</h3>
-          <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">An educational platform to learn in-demand tech skills, upskill, and switch careers effectively.</p>
-        </a>
+
+      <div class="timeline" style="margin-top: 50px; position: relative; padding: 0 20px;">
+        <!-- Vertical Line -->
+        <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: #FF6384; transform: translateX(-50%);"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item" style="margin: 30px 0; position: relative; display: flex; justify-content: flex-end; flex-wrap: wrap;">
+          <div class="timeline-content" style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: right;">
+            <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; color: #333; margin-bottom: 10px;">She Model Tech</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">
+              Empowering women, including underprivileged communities, to lead in the tech industry and drive diversity.
+            </p>
+            <a href="https://www.shemodeltech.com/" target="_blank" style="color: #FF6384; text-decoration: none; font-weight: bold;">Visit Site</a>
+          </div>
+          <div class="timeline-dot" style="position: absolute; right: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(50%, -50%);"></div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item" style="margin: 30px 0; position: relative; display: flex; justify-content: flex-start; flex-wrap: wrap;">
+          <div class="timeline-content" style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: left;">
+            <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; color: #333; margin-bottom: 10px;">Morgan TechFest</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">
+              A student-led conference inspiring students through tech talks, research symposiums, and panel discussions.
+            </p>
+            <a href="https://www.morgantechfest.com/" target="_blank" style="color: #FF6384; text-decoration: none; font-weight: bold;">Visit Site</a>
+          </div>
+          <div class="timeline-dot" style="position: absolute; left: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(-50%, -50%);"></div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item" style="margin: 30px 0; position: relative; display: flex; justify-content: flex-end; flex-wrap: wrap;">
+          <div class="timeline-content" style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: right;">
+            <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; color: #333; margin-bottom: 10px;">TechTalents City</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">
+              An educational platform to learn in-demand tech skills, upskill, and switch careers effectively.
+            </p>
+            <a href="https://www.techtalentscity.com/" target="_blank" style="color: #FF6384; text-decoration: none; font-weight: bold;">Visit Site</a>
+          </div>
+          <div class="timeline-dot" style="position: absolute; right: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(50%, -50%);"></div>
+        </div>
       </div>
     </div>
   </section>
 </main>
-
-
-
+  
   <!-- FOOTER -->
   <footer id="footer">
     <p>© 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
