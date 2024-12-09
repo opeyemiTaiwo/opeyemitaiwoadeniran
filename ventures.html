@@ -28,6 +28,7 @@
       background-color: #FFEBF0;
       color: black;
       line-height: 1.8;
+      padding-top: 80px; /* Prevent overlap with header */
     }
 
     h2 {
@@ -60,98 +61,74 @@
       max-height: 50px;
     }
 
-/* Responsive Navigation Menu */
-#header .navmenu ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    #header .navmenu ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
 
-#header .navmenu ul li {
-  display: inline-block;
-}
-
-#header .navmenu ul li a {
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
-  transition: color 0.3s ease;
-}
-
-#header .navmenu ul li a:hover,
-#header .navmenu ul li a.active {
-  color: #FF6384;
-}
-
-/* Mobile Menu Styling */
-#header .navmenu {
-  display: none;
-}
-
-#header .menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: black;
-}
-
-/* Show menu on mobile */
-@media (max-width: 768px) {
-  #header .menu-toggle {
-    display: block;
-    z-index: 1000;
-  }
-
-  #header .navmenu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #FFEBF0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 200px;
-  }
-
-  #header .navmenu ul {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  #header .navmenu ul li {
-    text-align: left;
-    padding: 10px 15px;
-  }
-
-  #header .navmenu ul li a {
-    display: block;
-    font-size: 1rem;
-    text-transform: none;
-  }
-
-  #header .navmenu ul li a:hover,
-  #header .navmenu ul li a.active {
-    color: #FF6384;
-    background-color: #fff;
-  }
-
-  #header .navmenu.show {
-    display: block;
-  }
-
-    #header .header-social-links a {
-      font-size: 1.2rem;
-      margin-left: 15px;
+    #header .navmenu ul li a {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
       color: black;
       transition: color 0.3s ease;
     }
 
-    #header .header-social-links a:hover {
+    #header .navmenu ul li a:hover,
+    #header .navmenu ul li a.active {
       color: #FF6384;
+    }
+
+    /* Mobile Menu */
+    #header .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: black;
+    }
+
+    #header .navmenu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      #header .menu-toggle {
+        display: block;
+        z-index: 1000;
+      }
+
+      #header .navmenu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #FFEBF0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 200px;
+        display: none;
+      }
+
+      #header .navmenu.show {
+        display: block;
+      }
+
+      #header .navmenu ul {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      #header .navmenu ul li {
+        text-align: left;
+      }
+
+      #header .navmenu ul li a {
+        padding: 10px 15px;
+        display: block;
+        font-size: 1rem;
+        text-transform: none;
+      }
     }
 
     /* Ventures Section */
@@ -222,13 +199,12 @@
 </head>
 
 <body>
-
   <!-- HEADER -->
- <header id="header">
+  <header id="header">
     <div class="logo">
-      <a href="index.html"><img src="me/opt.JPG" alt="Logo"></a>
+      <a href="index.html"><img src="me/opt.JPG" alt="Opeyemi Logo"></a>
     </div>
-    <div class="menu-toggle"><i class="bi bi-list"></i></div> <!-- Mobile menu toggle button -->
+    <div class="menu-toggle"><i class="bi bi-list"></i></div>
     <nav class="navmenu">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -238,11 +214,6 @@
         <li><a href="conversation.html">Conversation</a></li>
       </ul>
     </nav>
-    <div class="header-social-links">
-      <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-      <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-      <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
-    </div>
   </header>
 
   <!-- MAIN -->
@@ -285,19 +256,18 @@
     </div>
   </footer>
 
-<!-- JavaScript -->
+  <!-- JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".navmenu");
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".navmenu");
 
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
     });
-  });
-</script>
-  
+  </script>
 </body>
 
 </html>
