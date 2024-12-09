@@ -14,9 +14,6 @@
   <!-- Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
 
-  <!-- AOS Animation Library -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
   <style>
     /* General Reset */
     * {
@@ -30,7 +27,6 @@
       background-color: #FFEBF0;
       color: black;
       line-height: 1.8;
-      padding-top: 80px;
     }
 
     h2 {
@@ -63,13 +59,21 @@
       max-height: 50px;
     }
 
-    #header .navmenu ul {
+    #header .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: black;
+    }
+
+    #header .navmenu {
       display: flex;
+      align-items: center;
       list-style: none;
       gap: 20px;
     }
 
-    #header .navmenu ul li a {
+    #header .navmenu li a {
       font-size: 1rem;
       font-weight: bold;
       text-transform: uppercase;
@@ -78,9 +82,52 @@
       transition: color 0.3s ease;
     }
 
-    #header .navmenu ul li a:hover,
-    #header .navmenu ul li a.active {
+    #header .navmenu li a:hover,
+    #header .navmenu li a.active {
       color: #FF6384;
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      #header .menu-toggle {
+        display: block;
+      }
+
+      #header .navmenu {
+        display: none;
+        flex-direction: column;
+        background-color: #FFEBF0;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 9999;
+      }
+
+      #header .navmenu.show {
+        display: flex;
+      }
+
+      #header .navmenu li {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      #header .navmenu li a {
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      #header .navmenu li a:hover {
+        background-color: #FF6384;
+        color: white;
+      }
     }
 
     /* Career Paths Section */
@@ -182,10 +229,11 @@
   <!-- HEADER -->
   <header id="header">
     <div class="logo">
-      <a href="index.html"><img src="me/opt.JPG" alt="Opeyemi Logo"></a>
+      <a href="index.html"><img src="me/opt.JPG" alt="Logo"></a>
     </div>
-    <nav class="navmenu">
-      <ul>
+    <div class="menu-toggle"><i class="bi bi-list"></i></div>
+    <nav>
+      <ul class="navmenu">
         <li><a href="index.html" class="active">HOME</a></li>
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="ventures.html">VENTURES</a></li>
@@ -223,11 +271,15 @@
     <p>&copy; 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- JavaScript for Menu Toggle -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      AOS.init();
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".navmenu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
     });
   </script>
 </body>
