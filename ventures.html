@@ -258,21 +258,21 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".navmenu");
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navMenu = document.querySelector(".navmenu");
 
-      menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-      });
-    });
-  </script>
-  <script>
-  AOS.init();
-</script>
+            menuToggle.addEventListener("click", () => {
+                navMenu.classList.toggle("show");
+            });
 
+            // Initialize AOS
+            AOS.init();
+        });
+    </script>
+  
 </body>
 
 </html>
