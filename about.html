@@ -125,17 +125,6 @@
       }
     }
 
-    #header .header-social-links a {
-      font-size: 1.2rem;
-      margin-left: 15px;
-      color: black;
-      transition: color 0.3s ease;
-    }
-
-    #header .header-social-links a:hover {
-      color: #FF6384;
-    }
-
     /* About Section */
     .about {
       padding: 100px 20px;
@@ -163,28 +152,27 @@
       text-align: left;
     }
 
+    .about-details p {
+      margin-bottom: 20px;
+    }
+
     /* Contact Links Section */
     .contact-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      margin-top: 40px;
+      margin: 40px 0;
+      padding: 20px;
     }
 
     .link-card {
-      background-color: white;
-      border-radius: 10px;
+      background: white;
       padding: 20px;
-      width: 250px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .link-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 200px;
     }
 
     .link-card i {
@@ -193,11 +181,16 @@
       margin-bottom: 10px;
     }
 
+    .link-card p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
     .link-card a {
-      font-size: 1rem;
-      text-decoration: none;
       color: black;
-      transition: color 0.3s ease;
+      text-decoration: none;
+      font-size: 0.9rem;
+      word-wrap: break-word;
     }
 
     .link-card a:hover {
@@ -226,7 +219,6 @@
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header id="header">
     <div class="logo">
@@ -242,11 +234,6 @@
         <li><a href="conversation.html">Conversation</a></li>
       </ul>
     </nav>
-    <div class="header-social-links">
-      <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-      <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-      <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
-    </div>
   </header>
 
   <!-- MAIN -->
@@ -257,14 +244,13 @@
         <div class="about-container" data-aos="fade-up">
           <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran Portrait">
           <div class="about-details">
-            <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
-            <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
+            <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems.</p>
+            <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi promotes diversity in tech.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Links -->
     <section class="contact-links">
       <div class="link-card">
         <i class="bi bi-envelope"></i>
@@ -274,22 +260,7 @@
       <div class="link-card">
         <i class="bi bi-file-earmark-person"></i>
         <p>Resume</p>
-        <a href="https://opethaiwoh.github.io/opeyemi.github.io/" target="_blank">View Resume</a>
-      </div>
-      <div class="link-card">
-        <i class="bi bi-journal-text"></i>
-        <p>Publications</p>
-        <a href="https://www.researchgate.net/profile/Opeyemi-Adeniran-3" target="_blank">View Publications</a>
-      </div>
-      <div class="link-card">
-        <i class="bi bi-file-earmark-text"></i>
-        <p>Long Bio</p>
-        <a href="https://docs.google.com/document/d/1fwHGUdVhgyZ8MSyUjcHT28i4tYdfvFBFHyClC0E68Gc/edit" target="_blank">Download Long Bio</a>
-      </div>
-      <div class="link-card">
-        <i class="bi bi-camera"></i>
-        <p>Headshot</p>
-        <a href="https://drive.google.com/drive/folders/1Ajy_vh_t_8VmQUljrs_lzGMeUv8GkJLC?usp=sharing" target="_blank">Download</a>
+        <a href="#" target="_blank">View Resume</a>
       </div>
     </section>
   </main>
@@ -298,9 +269,9 @@
   <footer id="footer">
     <p>© 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
     <div class="social-links">
-      <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-      <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-      <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
+      <a href="#"><i class="bi bi-twitter"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
     </div>
   </footer>
 
@@ -319,7 +290,6 @@
       AOS.init();
     });
   </script>
-
 </body>
 
 </html>
