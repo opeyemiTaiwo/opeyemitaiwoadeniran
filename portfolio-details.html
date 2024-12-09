@@ -1,256 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<main class="main">
+  <section id="ventures" class="ventures" style="background: #FFEBF0; padding: 50px 20px;">
+    <div class="container">
+      <h2 class="section-title" style="font-family: 'Lora', serif; font-size: 2.8rem; font-weight: bold; text-align: center; margin-bottom: 20px; color: #333;">Ventures</h2>
+      <p style="max-width: 900px; margin: 0 auto; font-family: 'Poppins', sans-serif; font-size: 1.2rem; line-height: 1.8; text-align: center; color: #555;">
+        Driven by a passion for technology and a commitment to empowering others, my entrepreneurial journey has been defined by innovation and impact.
+        As the founder of <strong>She Model Tech</strong>, <strong>Morgan TechFest</strong>, and <strong>TechTalents City</strong>, I have built transformative platforms that inspire creativity, foster learning, and unlock opportunities for individuals to thrive in the ever-evolving world of technology.
+      </p>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Career Path in Tech - Opeyemi Taiwo Adeniran</title>
-  <meta name="description" content="Explore Career Path in Tech by Opeyemi Taiwo Adeniran, a guide to success in the tech industry.">
-  <meta name="keywords" content="Tech Career, Opeyemi Taiwo Adeniran, Career Path in Tech, Technology, Books">
-
-  <!-- Favicons -->
-  <link href="me/opt.JPG" rel="icon">
-  <link href="me/opt.JPG" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-
-  <!-- AOS Animation Library -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-  <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #FFEBF0;
-      color: black;
-      line-height: 1.8;
-      padding-top: 80px; /* Prevent overlap with header */
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      text-align: center;
-      margin: 20px auto; /* Center the text and add spacing */
-      max-width: 700px; /* Limit the width of the text */
-    }
-
-    /* Header */
-    #header {
-      background: #FFEBF0;
-      padding: 15px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 9999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    #header .logo img {
-      max-height: 50px;
-    }
-
-    #header .navmenu ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    #header .navmenu ul li a {
-      font-size: 1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: black;
-      transition: color 0.3s ease;
-    }
-
-    #header .navmenu ul li a:hover,
-    #header .navmenu ul li a.active {
-      color: #FF6384;
-    }
-
-    /* Mobile Menu */
-    #header .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: black;
-    }
-
-    #header .navmenu {
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      #header .menu-toggle {
-        display: block;
-        z-index: 1000;
-      }
-
-      #header .navmenu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #FFEBF0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        width: 200px;
-        flex-direction: column;
-      }
-
-      #header .navmenu.show {
-        display: flex;
-      }
-
-      #header .navmenu ul {
-        flex-direction: column;
-        padding: 10px;
-      }
-
-      #header .navmenu ul li a {
-        display: block;
-        font-size: 1rem;
-        padding: 10px;
-      }
-    }
-
-    /* Main Content Section */
-    .career-paths {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    /* Background applied only to the content within this section */
-    .career-paths-content {
-      background: linear-gradient(135deg, #FFEBF0, #FFD6E4);
-      padding: 50px 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .career-paths img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin-bottom: 20px;
-    }
-
-    .btn-get-book {
-      background: #FF6384;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 25px;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      display: inline-block;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-get-book:hover {
-      transform: scale(1.1);
-      background-color: #FF9068;
-    }
-
-    /* Footer */
-    #footer {
-      background: #FFEBF0;
-      text-align: center;
-      padding: 20px 0;
-      border-top: 2px solid #FF6384;
-    }
-
-    #footer .social-links a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: black;
-      transition: color 0.3s ease;
-    }
-
-    #footer .social-links a:hover {
-      color: #FF6384;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header id="header">
-    <div class="logo">
-      <a href="index.html"><img src="me/opt.JPG" alt="Opeyemi Logo"></a>
-    </div>
-    <div class="menu-toggle"><i class="bi bi-list"></i></div>
-    <nav class="navmenu">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="ventures.html">Ventures</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="conversation.html">Conversation</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- MAIN -->
-  <main>
-    <section id="career-paths" class="career-paths">
-      <div class="career-paths-content" data-aos="fade-up">
-        <img src="me/careerpathsintech.jpg" alt="Career Path in Tech Book Cover">
-        <h2>Career Path in Tech</h2>
-        <p>This book provides invaluable insights and practical advice for aspiring professionals in the tech industry. Whether you’re starting out or seeking to advance your career, this guide is your roadmap to success.</p>
-        <p>It’s designed to bridge the gap between aspiration and achievement in the tech industry. Packed with expert advice, real-world examples, and actionable steps, this guide helps you unlock your full potential and thrive in a dynamic field.</p>
-        <a href="https://selar.co/0e7kuo" class="btn-get-book">Get the Book</a>
+      <!-- Venture Section -->
+      <div class="venture-item" style="margin-top: 40px; display: flex; align-items: center; gap: 20px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+        <i class="bi bi-activity" style="font-size: 3rem; color: #FF6384; flex-shrink: 0;"></i>
+        <div>
+          <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; margin-bottom: 10px; color: #333;">She Model Tech</h3>
+          <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">Empowering women, including underprivileged communities, to lead in the tech industry and drive diversity.</p>
+          <a href="https://www.shemodeltech.com/" target="_blank" style="text-decoration: none; color: #FF6384; font-weight: bold;">Visit Site</a>
+        </div>
       </div>
-    </section>
-  </main>
 
-  <!-- FOOTER -->
-  <footer id="footer">
-    <p>© 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
-    <div class="social-links">
-      <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-      <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-      <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
+      <div class="venture-item" style="margin-top: 20px; display: flex; align-items: center; gap: 20px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+        <i class="bi bi-broadcast" style="font-size: 3rem; color: #FF6384; flex-shrink: 0;"></i>
+        <div>
+          <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; margin-bottom: 10px; color: #333;">Morgan TechFest</h3>
+          <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">A student-led conference inspiring students through tech talks, research symposiums, and panel discussions.</p>
+          <a href="https://www.morgantechfest.com/" target="_blank" style="text-decoration: none; color: #FF6384; font-weight: bold;">Visit Site</a>
+        </div>
+      </div>
+
+      <div class="venture-item" style="margin-top: 20px; display: flex; align-items: center; gap: 20px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+        <i class="bi bi-easel" style="font-size: 3rem; color: #FF6384; flex-shrink: 0;"></i>
+        <div>
+          <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; margin-bottom: 10px; color: #333;">TechTalents City</h3>
+          <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">An educational platform to learn in-demand tech skills, upskill, and switch careers effectively.</p>
+          <a href="https://www.techtalentscity.com/" target="_blank" style="text-decoration: none; color: #FF6384; font-weight: bold;">Visit Site</a>
+        </div>
+      </div>
+
     </div>
-  </footer>
-  
-  <!-- JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".navmenu");
-
-      menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-      });
-
-      // Initialize AOS
-      AOS.init();
-    });
-  </script>
-</body>
-
-</html>
+  </section>
+</main>
