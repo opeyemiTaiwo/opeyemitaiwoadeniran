@@ -1,10 +1,226 @@
+<style>
+    /* Existing General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Existing Body Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #FFEBF0;
+        color: black;
+        line-height: 1.8;
+        padding-top: 80px;
+    }
+
+    /* Header Section */
+    #header {
+        background-color: #FFEBF0;
+        padding: 15px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #header .logo img {
+        max-height: 50px;
+    }
+
+    #header .navmenu ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+
+    #header .navmenu ul li a {
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+        transition: color 0.3s ease;
+    }
+
+    #header .navmenu ul li a:hover,
+    #header .navmenu ul li a.active {
+        color: #FF6384;
+    }
+
+    /* Mobile Menu */
+    #header .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: black;
+    }
+
+    #header .navmenu {
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        #header .menu-toggle {
+            display: block;
+            z-index: 1000;
+        }
+
+        #header .navmenu {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #FFEBF0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 200px;
+            display: none;
+        }
+
+        #header .navmenu.show {
+            display: block;
+        }
+
+        #header .navmenu ul {
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        #header .navmenu ul li a {
+            padding: 10px 15px;
+            display: block;
+            font-size: 1rem;
+        }
+    }
+
+    /* Ventures Section */
+    .ventures {
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #FFEBF0, #FFD6E4);
+        text-align: center;
+    }
+
+    .timeline {
+        position: relative;
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #FF6384;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        margin: 30px 0;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .timeline-item:nth-child(odd) {
+        justify-content: flex-end;
+    }
+
+    .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+    }
+
+    .timeline-content {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 45%;
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        text-align: left;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        background: #FF6384;
+        border-radius: 50%;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+        right: calc(50% - 15px);
+        transform: translate(50%, -50%);
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: calc(50% - 15px);
+        transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 768px) {
+        .timeline::before {
+            display: none;
+        }
+
+        .timeline-content {
+            width: 90% !important;
+            text-align: center !important;
+        }
+
+        .timeline-dot {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h3 {
+            font-size: 1.5rem !important;
+        }
+
+        p {
+            font-size: 0.9rem !important;
+        }
+    }
+
+    /* Footer */
+    #footer {
+        background-color: #FFEBF0;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 2px solid #FF6384;
+    }
+
+    #footer .social-links a {
+        margin: 0 10px;
+        font-size: 1.5rem;
+        color: black;
+        transition: color 0.3s ease;
+    }
+
+    #footer .social-links a:hover {
+        color: #FF6384;
+    }
+  </style>
+
 <main class="main">
   <section id="ventures" class="ventures" style="background: #FFEBF0; padding: 50px 20px;">
     <div class="container">
       <h2 class="section-title" style="font-family: 'Lora', serif; font-size: 2.8rem; font-weight: bold; text-align: center; margin-bottom: 20px; color: #333;">Ventures</h2>
       <p style="max-width: 900px; margin: 0 auto; font-family: 'Poppins', sans-serif; font-size: 1.2rem; line-height: 1.8; text-align: center; color: #555;">
-        Driven by a passion for technology and a commitment to empowering others, my entrepreneurial journey has been defined by innovation and impact.
-        As the founder of <strong>She Model Tech</strong>, <strong>Morgan TechFest</strong>, and <strong>TechTalents City</strong>, I have built transformative platforms that inspire creativity, foster learning, and unlock opportunities for individuals to thrive in the ever-evolving world of technology.
+        Explore the ventures I founded to empower individuals and drive innovation in the tech industry.
       </p>
 
       <div class="timeline" style="margin-top: 50px; position: relative; padding: 0 20px;">
@@ -12,43 +228,41 @@
         <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: #FF6384; transform: translateX(-50%);"></div>
 
         <!-- Timeline Item 1 -->
-        <div style="margin: 30px 0; position: relative; display: flex; justify-content: flex-end;">
-          <div style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: right;">
+        <div class="timeline-item" style="margin: 30px 0; position: relative; display: flex; justify-content: flex-end; flex-wrap: wrap;">
+          <div class="timeline-content" style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: right;">
             <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; color: #333; margin-bottom: 10px;">She Model Tech</h3>
             <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">
               Empowering women, including underprivileged communities, to lead in the tech industry and drive diversity.
             </p>
             <a href="https://www.shemodeltech.com/" target="_blank" style="color: #FF6384; text-decoration: none; font-weight: bold;">Visit Site</a>
           </div>
-          <div style="position: absolute; right: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(50%, -50%);"></div>
+          <div class="timeline-dot" style="position: absolute; right: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(50%, -50%);"></div>
         </div>
 
         <!-- Timeline Item 2 -->
-        <div style="margin: 30px 0; position: relative; display: flex; justify-content: flex-start;">
-          <div style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: left;">
+        <div class="timeline-item" style="margin: 30px 0; position: relative; display: flex; justify-content: flex-start; flex-wrap: wrap;">
+          <div class="timeline-content" style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: left;">
             <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; color: #333; margin-bottom: 10px;">Morgan TechFest</h3>
             <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">
               A student-led conference inspiring students through tech talks, research symposiums, and panel discussions.
             </p>
             <a href="https://www.morgantechfest.com/" target="_blank" style="color: #FF6384; text-decoration: none; font-weight: bold;">Visit Site</a>
           </div>
-          <div style="position: absolute; left: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(-50%, -50%);"></div>
+          <div class="timeline-dot" style="position: absolute; left: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(-50%, -50%);"></div>
         </div>
 
         <!-- Timeline Item 3 -->
-        <div style="margin: 30px 0; position: relative; display: flex; justify-content: flex-end;">
-          <div style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: right;">
+        <div class="timeline-item" style="margin: 30px 0; position: relative; display: flex; justify-content: flex-end; flex-wrap: wrap;">
+          <div class="timeline-content" style="background: white; padding: 20px; width: 45%; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: right;">
             <h3 style="font-family: 'Lora', serif; font-size: 1.8rem; color: #333; margin-bottom: 10px;">TechTalents City</h3>
             <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555;">
               An educational platform to learn in-demand tech skills, upskill, and switch careers effectively.
             </p>
             <a href="https://www.techtalentscity.com/" target="_blank" style="color: #FF6384; text-decoration: none; font-weight: bold;">Visit Site</a>
           </div>
-          <div style="position: absolute; right: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(50%, -50%);"></div>
+          <div class="timeline-dot" style="position: absolute; right: calc(50% - 15px); top: 50%; width: 30px; height: 30px; background: #FF6384; border-radius: 50%; transform: translate(50%, -50%);"></div>
         </div>
       </div>
     </div>
   </section>
-</main>
-
 </main>
