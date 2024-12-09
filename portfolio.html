@@ -90,7 +90,7 @@
     }
 
     #header .navmenu {
-      display: none;
+      display: flex;
     }
 
     @media (max-width: 768px) {
@@ -100,6 +100,7 @@
       }
 
       #header .navmenu {
+        display: none;
         position: absolute;
         top: 60px;
         right: 0;
@@ -107,8 +108,8 @@
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         width: 200px;
-        display: none;
         flex-direction: column;
+        padding: 10px;
       }
 
       #header .navmenu.show {
@@ -119,9 +120,14 @@
         flex-direction: column;
       }
 
+      #header .navmenu ul li {
+        margin: 10px 0;
+      }
+
       #header .navmenu ul li a {
-        padding: 10px 15px;
         display: block;
+        font-size: 1rem;
+        padding: 10px;
       }
     }
 
@@ -203,8 +209,8 @@
         <div class="about-container" data-aos="fade-up">
           <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran Portrait">
           <div class="about-details">
-            <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems.</p>
-            <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists and supports career development.</p>
+            <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
+            <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
           </div>
         </div>
       </div>
