@@ -302,3 +302,32 @@
     </div>
   </section>
 </main>
+  
+  <!-- FOOTER -->
+  <footer id="footer">
+    <p>© 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".navmenu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+
+      // Initialize AOS
+      AOS.init();
+    });
+  </script>
+</body>
+
+</html>
