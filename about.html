@@ -28,16 +28,19 @@
       background-color: #FFEBF0;
       color: black;
       line-height: 1.8;
+      padding-top: 80px; /* Prevent overlap with header */
     }
 
     h2 {
       font-size: 2.5rem;
       font-weight: 600;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 1.2rem;
       line-height: 1.8;
+      margin-bottom: 20px;
     }
 
     /* Header */
@@ -58,16 +61,10 @@
       max-height: 50px;
     }
 
-    /* Responsive Navigation Menu */
     #header .navmenu ul {
       display: flex;
       list-style: none;
       gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    #header .navmenu ul li {
-      display: inline-block;
     }
 
     #header .navmenu ul li a {
@@ -84,11 +81,7 @@
       color: #FF6384;
     }
 
-    /* Mobile Menu Styling */
-    #header .navmenu {
-      display: none;
-    }
-
+    /* Mobile Menu */
     #header .menu-toggle {
       display: none;
       font-size: 1.5rem;
@@ -96,7 +89,10 @@
       color: black;
     }
 
-    /* Show menu on mobile */
+    #header .navmenu {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       #header .menu-toggle {
         display: block;
@@ -104,40 +100,27 @@
       }
 
       #header .navmenu {
-        display: none;
         position: absolute;
         top: 60px;
         right: 0;
         background-color: #FFEBF0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         width: 200px;
+        display: none;
+      }
+
+      #header .navmenu.show {
+        display: block;
       }
 
       #header .navmenu ul {
         flex-direction: column;
-        gap: 0;
-      }
-
-      #header .navmenu ul li {
-        text-align: left;
-        padding: 10px 15px;
+        padding: 10px;
       }
 
       #header .navmenu ul li a {
-        display: block;
-        font-size: 1rem;
-        text-transform: none;
-      }
-
-      #header .navmenu ul li a:hover,
-      #header .navmenu ul li a.active {
-        color: #FF6384;
-        background-color: #fff;
-      }
-
-      #header .navmenu.show {
+        padding: 10px 15px;
         display: block;
       }
     }
@@ -152,6 +135,56 @@
     #header .header-social-links a:hover {
       color: #FF6384;
     }
+
+    /* About Section */
+    .about {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .about img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-details {
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .about-details p {
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    #footer {
+      background-color: #FFEBF0;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 2px solid #FF6384;
+    }
+
+    #footer .social-links a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: black;
+      transition: color 0.3s ease;
+    }
+
+    #footer .social-links a:hover {
+      color: #FF6384;
+    }
   </style>
 </head>
 
@@ -160,9 +193,9 @@
   <!-- HEADER -->
   <header id="header">
     <div class="logo">
-      <a href="index.html"><img src="me/opt.JPG" alt="Logo"></a>
+      <a href="index.html"><img src="me/opt.JPG" alt="Opeyemi Logo"></a>
     </div>
-    <div class="menu-toggle"><i class="bi bi-list"></i></div> <!-- Mobile menu toggle button -->
+    <div class="menu-toggle"><i class="bi bi-list"></i></div>
     <nav class="navmenu">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -180,12 +213,12 @@
   </header>
 
   <!-- MAIN -->
-  <main class="main">
+  <main>
     <section id="about" class="about">
       <div class="container">
         <h2>About Opeyemi Taiwo Adeniran</h2>
         <div class="about-container" data-aos="fade-up">
-          <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
+          <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran Portrait">
           <div class="about-details">
             <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
             <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
@@ -215,9 +248,12 @@
       menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("show");
       });
+
+      // Initialize AOS
+      AOS.init();
     });
   </script>
-  
+
 </body>
 
 </html>
