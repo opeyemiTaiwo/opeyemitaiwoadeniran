@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,7 +48,11 @@
             max-height: 50px;
         }
 
-        #header nav .navmenu ul {
+        #header .navmenu {
+            display: flex;
+        }
+
+        #header .navmenu ul {
             display: flex;
             list-style: none;
             gap: 20px;
@@ -75,10 +80,6 @@
             color: black;
         }
 
-        #header .navmenu {
-            display: none;
-        }
-
         @media (max-width: 768px) {
             #header .menu-toggle {
                 display: block;
@@ -86,27 +87,34 @@
             }
 
             #header .navmenu {
+                display: none;
                 position: absolute;
                 top: 60px;
-                right: 0;
+                right: 20px;
                 background-color: #FFEBF0;
                 border-radius: 10px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 width: 200px;
-                display: none;
+                flex-direction: column;
+                padding: 10px;
             }
 
             #header .navmenu.show {
-                display: block;
+                display: flex;
             }
 
             #header .navmenu ul {
                 flex-direction: column;
-                padding: 15px 0;
+                gap: 10px;
             }
 
             #header .navmenu ul li {
-                padding: 10px 20px;
+                text-align: left;
+            }
+
+            #header .navmenu ul li a {
+                padding: 10px;
+                width: 100%;
             }
         }
 
@@ -196,7 +204,6 @@
 
     <!-- MAIN -->
     <main>
-        <!-- Starter Section -->
         <section id="starter-section">
             <div class="container">
                 <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran">
@@ -206,7 +213,6 @@
             </div>
         </section>
 
-        <!-- Call to Action -->
         <section class="cta">
             <div class="container">
                 <h2>Ready to Connect?</h2>
@@ -218,18 +224,15 @@
 
     <!-- FOOTER -->
     <footer id="footer">
-        <div class="container">
-            <p>&copy; 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-                <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-                <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
-            </div>
+        <p>&copy; 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
+            <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const menuToggle = document.querySelector(".menu-toggle");
@@ -241,4 +244,5 @@
         });
     </script>
 </body>
+
 </html>
