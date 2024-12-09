@@ -1,247 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Opeyemi Taiwo Adeniran</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-
-  <!-- AOS Animation Library -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-  <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #FFEBF0;
-      color: black;
-      line-height: 1.8;
-      padding-top: 80px; /* Prevent overlap with header */
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    /* Header */
-    #header {
-      background-color: #FFEBF0;
-      padding: 15px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 9999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    #header .logo img {
-      max-height: 50px;
-    }
-
-    #header .navmenu ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    #header .navmenu ul li a {
-      font-size: 1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: black;
-      transition: color 0.3s ease;
-    }
-
-    #header .navmenu ul li a:hover,
-    #header .navmenu ul li a.active {
-      color: #FF6384;
-    }
-
-    /* Mobile Menu */
-    #header .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: black;
-    }
-
-    #header .navmenu {
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      #header .menu-toggle {
-        display: block;
-        z-index: 1000;
-      }
-
-      #header .navmenu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #FFEBF0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        width: 200px;
-        flex-direction: column;
-      }
-
-      #header .navmenu.show {
-        display: flex;
-      }
-
-      #header .navmenu ul {
-        flex-direction: column;
-        padding: 10px;
-      }
-
-      #header .navmenu ul li {
-        text-align: left;
-      }
-
-      #header .navmenu ul li a {
-        display: block;
-        font-size: 1rem;
-        padding: 10px;
-      }
-    }
-
-    /* About Section */
-    .about {
+<style>
+  /* Main Content Section */
+  .career-paths {
+      background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
       padding: 100px 20px;
       text-align: center;
-    }
+  }
 
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .about img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .about-details {
-      max-width: 600px;
-      text-align: left;
-    }
-
-    .about-details p {
+  .career-paths img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       margin-bottom: 20px;
-    }
+  }
 
-    /* Footer */
-    #footer {
-      background-color: #FFEBF0;
+  .career-paths h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
       text-align: center;
-      padding: 20px 0;
-      border-top: 2px solid #FF6384;
-    }
+  }
 
-    #footer .social-links a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: black;
-      transition: color 0.3s ease;
-    }
+  .career-paths p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-align: center;
+      margin: 20px auto; /* Center the text */
+      max-width: 700px; /* Limit the width of text */
+  }
 
-    #footer .social-links a:hover {
-      color: #FF6384;
-    }
-  </style>
-</head>
+  .btn-get-book {
+      background: #FF6384;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
-<body>
-  <!-- HEADER -->
-  <header id="header">
-    <div class="logo">
-      <a href="index.html"><img src="me/opt.JPG" alt="Opeyemi Logo"></a>
-    </div>
-    <div class="menu-toggle"><i class="bi bi-list"></i></div>
-    <nav class="navmenu">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="ventures.html">Ventures</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="conversation.html">Conversation</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- MAIN -->
-  <main>
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About Opeyemi Taiwo Adeniran</h2>
-        <div class="about-container" data-aos="fade-up">
-          <img src="me/OPEYEMI-1B (2).JPG" alt="Opeyemi Taiwo Adeniran Portrait">
-          <div class="about-details">
-            <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
-            <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer id="footer">
-    <p>© 2024 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
-    <div class="social-links">
-      <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-      <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-      <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".navmenu");
-
-      menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-      });
-
-      // Initialize AOS
-      AOS.init();
-    });
-  </script>
-</body>
-
-</html>
+  .btn-get-book:hover {
+      transform: scale(1.1);
+      background-color: #FF9068;
+  }
+</style>
