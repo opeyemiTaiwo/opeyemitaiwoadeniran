@@ -99,7 +99,7 @@
         background-color: #FFEBF0;
         position: absolute;
         top: 60px;
-        right: 0;
+        right: 0; /* Aligns the menu to the right */
         width: 200px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
@@ -112,7 +112,7 @@
       }
 
       #header .navmenu li {
-        text-align: center;
+        text-align: right; /* Aligns menu text to the right */
         margin: 10px 0;
       }
 
@@ -127,91 +127,6 @@
       #header .navmenu li a:hover {
         background-color: #FF6384;
         color: white;
-      }
-    }
-
-    /* Career Paths Section */
-    .career-paths {
-      background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
-      padding: 60px 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 50px auto;
-      max-width: 1200px;
-    }
-
-    .career-paths .content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .image-container {
-      flex: 1;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .image-container img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .text-container {
-      flex: 1;
-      max-width: 600px;
-    }
-
-    .text-container h2 {
-      font-family: 'Lora', serif;
-      color: #333;
-    }
-
-    .text-container p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #555;
-    }
-
-    .btn-get-book {
-      background: #FF6384;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 25px;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-get-book:hover {
-      transform: scale(1.1);
-      background-color: #FF9068;
-    }
-
-    @media (max-width: 768px) {
-      .career-paths .content {
-        flex-direction: column;
-      }
-
-      .text-container {
-        text-align: center;
-      }
-
-      .text-container h2 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .btn-get-book {
-        font-size: 0.9rem;
-        padding: 12px 20px;
       }
     }
 
