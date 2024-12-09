@@ -58,88 +58,89 @@
       max-height: 50px;
     }
 
-/* Responsive Navigation Menu */
-#header .navmenu ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    /* Responsive Navigation Menu */
+    #header .navmenu ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-#header .navmenu ul li {
-  display: inline-block;
-}
+    #header .navmenu ul li {
+      display: inline-block;
+    }
 
-#header .navmenu ul li a {
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
-  transition: color 0.3s ease;
-}
+    #header .navmenu ul li a {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: black;
+      transition: color 0.3s ease;
+    }
 
-#header .navmenu ul li a:hover,
-#header .navmenu ul li a.active {
-  color: #FF6384;
-}
+    #header .navmenu ul li a:hover,
+    #header .navmenu ul li a.active {
+      color: #FF6384;
+    }
 
-/* Mobile Menu Styling */
-#header .navmenu {
-  display: none;
-}
+    /* Mobile Menu Styling */
+    #header .navmenu {
+      display: none;
+    }
 
-#header .menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: black;
-}
+    #header .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: black;
+    }
 
-/* Show menu on mobile */
-@media (max-width: 768px) {
-  #header .menu-toggle {
-    display: block;
-    z-index: 1000;
-  }
+    /* Show menu on mobile */
+    @media (max-width: 768px) {
+      #header .menu-toggle {
+        display: block;
+        z-index: 1000;
+      }
 
-  #header .navmenu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #FFEBF0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 200px;
-  }
+      #header .navmenu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #FFEBF0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 200px;
+      }
 
-  #header .navmenu ul {
-    flex-direction: column;
-    gap: 0;
-  }
+      #header .navmenu ul {
+        flex-direction: column;
+        gap: 0;
+      }
 
-  #header .navmenu ul li {
-    text-align: left;
-    padding: 10px 15px;
-  }
+      #header .navmenu ul li {
+        text-align: left;
+        padding: 10px 15px;
+      }
 
-  #header .navmenu ul li a {
-    display: block;
-    font-size: 1rem;
-    text-transform: none;
-  }
+      #header .navmenu ul li a {
+        display: block;
+        font-size: 1rem;
+        text-transform: none;
+      }
 
-  #header .navmenu ul li a:hover,
-  #header .navmenu ul li a.active {
-    color: #FF6384;
-    background-color: #fff;
-  }
+      #header .navmenu ul li a:hover,
+      #header .navmenu ul li a.active {
+        color: #FF6384;
+        background-color: #fff;
+      }
 
-  #header .navmenu.show {
-    display: block;
-  }
+      #header .navmenu.show {
+        display: block;
+      }
+    }
 
     #header .header-social-links a {
       font-size: 1.2rem;
@@ -149,104 +150,6 @@
     }
 
     #header .header-social-links a:hover {
-      color: #FF6384;
-    }
-
-    /* About Section */
-    .about {
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .about img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .about-details {
-      max-width: 600px;
-      text-align: left;
-    }
-
-    .about-details p {
-      margin-bottom: 20px;
-    }
-
-    /* Contact Links Section */
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-
-    .link-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      width: 220px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-
-    .link-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .link-card i {
-      font-size: 2rem;
-      color: #FF6384;
-      margin-bottom: 10px;
-    }
-
-    .link-card p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-
-    .link-card a {
-      font-size: 0.9rem;
-      color: #FF6384;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .link-card a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    #footer {
-      background-color: #FFEBF0;
-      text-align: center;
-      padding: 20px 0;
-      border-top: 2px solid #FF6384;
-    }
-
-    #footer .social-links a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: black;
-      transition: color 0.3s ease;
-    }
-
-    #footer .social-links a:hover {
       color: #FF6384;
     }
   </style>
@@ -288,34 +191,6 @@
             <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
           </div>
         </div>
-
-        <div class="contact-links">
-          <div class="link-card">
-            <i class="bi bi-envelope"></i>
-            <p>Email</p>
-            <a href="mailto:opeyemitaiwo81@gmail.com">opeyemitaiwo81@gmail.com</a>
-          </div>
-          <div class="link-card">
-            <i class="bi bi-file-earmark-person"></i>
-            <p>Resume</p>
-            <a href="https://opethaiwoh.github.io/opeyemi.github.io/" target="_blank">View Resume</a>
-          </div>
-          <div class="link-card">
-            <i class="bi bi-journal-text"></i>
-            <p>Publications</p>
-            <a href="https://www.researchgate.net/profile/Opeyemi-Adeniran-3" target="_blank">View Publications</a>
-          </div>
-          <div class="link-card">
-            <i class="bi bi-file-earmark-text"></i>
-            <p>Long Bio</p>
-            <a href="https://docs.google.com/document/d/1fwHGUdVhgyZ8MSyUjcHT28i4tYdfvFBFHyClC0E68Gc/edit" target="_blank">Download Long Bio</a>
-          </div>
-          <div class="link-card">
-            <i class="bi bi-camera"></i>
-            <p>Headshot</p>
-            <a href="https://drive.google.com/drive/folders/1Ajy_vh_t_8VmQUljrs_lzGMeUv8GkJLC?usp=sharing" target="_blank">Download</a>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -333,15 +208,15 @@
   <!-- JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".navmenu");
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".navmenu");
 
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
     });
-  });
-</script>
+  </script>
 </body>
 
 </html>
