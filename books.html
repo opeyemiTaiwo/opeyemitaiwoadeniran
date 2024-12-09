@@ -231,23 +231,15 @@
 
 /* Career Paths Section */
 .career-paths {
-  background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
-  padding: 80px 20px; /* Reduced padding for smaller screens */
+  background: linear-gradient(135deg, #FFEBF0, #FFD6E4);
+  padding: 60px 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 30px auto;
+  margin: 50px auto;
   max-width: 1200px;
 }
 
-.career-paths img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-}
-
-.career-paths .content {
+.career-paths .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -255,24 +247,51 @@
   gap: 30px;
 }
 
-.career-paths .content-text {
+.image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.details-container {
   flex: 1;
   max-width: 600px;
+  text-align: left;
+}
+
+.details-container h2 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.details-container p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555;
 }
 
 .btn-get-book {
+  display: inline-block;
   background: #FF6384;
   color: white;
-  padding: 12px 30px;
+  padding: 15px 30px;
   border-radius: 25px;
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  display: inline-block;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
-  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-get-book:hover {
@@ -282,29 +301,21 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .career-paths {
-    padding: 60px 20px; /* Smaller padding for tablets */
-  }
-
-  .career-paths .content {
+  .career-paths .container {
     flex-direction: column; /* Stack content vertically */
-    align-items: center;
+    text-align: center;
   }
 
-  .career-paths img {
-    margin: 0 auto 20px auto; /* Center image */
+  .details-container {
+    text-align: center; /* Center text for smaller screens */
+    max-width: 100%;
   }
 
-  .career-paths .content-text {
-    text-align: center; /* Center text for better alignment */
-    max-width: 100%; /* Allow text to take full width */
+  .details-container h2 {
+    font-size: 2rem; /* Smaller heading size */
   }
 
-  .career-paths h2 {
-    font-size: 2rem; /* Adjust heading size */
-  }
-
-  .career-paths p {
+  .details-container p {
     font-size: 1rem; /* Adjust paragraph size */
     margin-bottom: 15px;
   }
@@ -312,21 +323,20 @@
 
 @media (max-width: 480px) {
   .career-paths {
-    padding: 40px 15px; /* Further reduce padding for smaller devices */
+    padding: 40px 15px; /* Smaller padding for narrow screens */
   }
 
-  .career-paths h2 {
-    font-size: 1.8rem; /* Further reduce heading size */
-    margin-bottom: 15px;
+  .details-container h2 {
+    font-size: 1.8rem; /* Smaller heading size */
   }
 
-  .career-paths p {
-    font-size: 0.9rem; /* Smaller font size for readability */
+  .details-container p {
+    font-size: 0.9rem; /* Smaller paragraph size */
   }
 
   .btn-get-book {
     font-size: 0.9rem;
-    padding: 10px 20px; /* Adjust padding for smaller buttons */
+    padding: 12px 20px; /* Adjust button size */
   }
 }
 
