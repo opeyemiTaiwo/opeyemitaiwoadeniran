@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,6 +65,10 @@
         }
 
         /* Navigation Menu */
+        #header .navmenu {
+            display: flex;
+        }
+
         #header .navmenu ul {
             display: flex;
             list-style: none;
@@ -92,34 +97,30 @@
             color: black;
         }
 
-        #header .navmenu {
-            display: none;
-        }
-
         @media (max-width: 768px) {
             #header .menu-toggle {
                 display: block;
-                z-index: 1000;
             }
 
             #header .navmenu {
+                display: none;
+                flex-direction: column;
                 position: absolute;
                 top: 60px;
                 right: 0;
                 background-color: #FFEBF0;
-                border-radius: 10px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 10px;
                 width: 200px;
-                display: none;
             }
 
             #header .navmenu.show {
-                display: block;
+                display: flex;
             }
 
             #header .navmenu ul {
                 flex-direction: column;
-                padding: 10px;
             }
 
             #header .navmenu ul li {
