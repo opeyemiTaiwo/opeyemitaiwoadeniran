@@ -37,7 +37,6 @@
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 20px;
-      text-align: center;
     }
 
     p {
@@ -84,41 +83,6 @@
       color: #FF6384;
     }
 
-    #header .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: black;
-    }
-
-    @media (max-width: 768px) {
-      #header .menu-toggle {
-        display: block;
-      }
-
-      #header .navmenu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #FFEBF0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        width: 200px;
-        flex-direction: column;
-      }
-
-      #header .navmenu.show {
-        display: flex;
-      }
-
-      #header .navmenu ul {
-        flex-direction: column;
-        padding: 10px;
-        gap: 10px;
-      }
-    }
-
     /* Career Paths Section */
     .career-paths {
       background: linear-gradient(135deg, #FFEBF0, #FDE8E9);
@@ -127,7 +91,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin: 50px auto;
       max-width: 1200px;
-      text-align: center;
     }
 
     .career-paths .content {
@@ -138,11 +101,32 @@
       gap: 30px;
     }
 
-    .career-paths img {
-      width: 100%;
+    .image-container {
+      flex: 1;
       max-width: 400px;
+      text-align: center;
+    }
+
+    .image-container img {
+      width: 100%;
       border-radius: 10px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-container {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .text-container h2 {
+      font-family: 'Lora', serif;
+      color: #333;
+    }
+
+    .text-container p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555;
     }
 
     .btn-get-book {
@@ -153,10 +137,9 @@
       font-size: 1rem;
       font-weight: bold;
       text-decoration: none;
+      display: inline-block;
       transition: transform 0.3s ease, background-color 0.3s ease;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin-top: 20px;
-      display: inline-block;
     }
 
     .btn-get-book:hover {
@@ -167,6 +150,14 @@
     @media (max-width: 768px) {
       .career-paths .content {
         flex-direction: column;
+      }
+
+      .text-container {
+        text-align: center;
+      }
+
+      .text-container h2 {
+        font-size: 2rem;
       }
     }
 
@@ -193,7 +184,6 @@
     <div class="logo">
       <a href="index.html"><img src="me/opt.JPG" alt="Opeyemi Logo"></a>
     </div>
-    <div class="menu-toggle"><i class="bi bi-list"></i></div>
     <nav class="navmenu">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
@@ -210,13 +200,18 @@
     <section id="career-paths" class="career-paths">
       <div class="content">
         <!-- Book Cover -->
-        <div>
+        <div class="image-container">
           <img src="me/careerpathsintech.jpg" alt="Career Path in Tech Book Cover">
         </div>
         <!-- Book Details -->
-        <div>
+        <div class="text-container">
           <h2>Career Path in Tech</h2>
-          <p>This book provides invaluable insights and practical advice for aspiring professionals in the tech industry.</p>
+          <p>
+            This book provides invaluable insights and practical advice for aspiring professionals in the tech industry. Whether you’re starting out or seeking to advance your career, this guide is your roadmap to success.
+          </p>
+          <p>
+            Packed with expert advice, real-world examples, and actionable steps, this guide helps you unlock your full potential and thrive in a dynamic field.
+          </p>
           <a href="https://selar.co/0e7kuo" class="btn-get-book">Get the Book</a>
         </div>
       </div>
@@ -232,13 +227,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".navmenu");
-
-      menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-      });
-
       AOS.init();
     });
   </script>
