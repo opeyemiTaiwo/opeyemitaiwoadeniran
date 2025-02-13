@@ -138,29 +138,61 @@
             line-height: 1.8;
         }
 
+
         /* Contact Section */
-        .contact-details {
-            background: linear-gradient(135deg, #FF6384, #FF9068);
-            padding: 50px 20px;
-            border-radius: 15px;
-            margin: 50px auto;
-            max-width: 1200px;
-            color: white;
-        }
+.contact-details {
+    background: linear-gradient(135deg, #FF6384, #FF9068);
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 1200px;
+    color: white;
+}
 
-        .link-card {
-            background: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            transition: transform 0.3s ease;
-        }
+.link-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    transition: transform 0.3s ease;
+}
 
-        .link-card:hover {
-            transform: translateY(-5px);
-        }
+.link-card i {
+    font-size: 2rem;
+    color: #FF6384;
+    margin-bottom: 10px;
+}
+
+.link-card p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+.link-card a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    display: block;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Add this for mobile responsiveness */
+@media (max-width: 768px) {
+    .link-card {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+       
 
         /* Footer */
         #footer {
