@@ -6,8 +6,7 @@
     <title>Tech Career Discovery Program</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -16,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
     <style>
-         * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -30,23 +29,39 @@
             padding-top: 80px;
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         /* Header Styling */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
 
-        .logo img {
-            width: 120px;
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo a:hover {
+            color: #FF6384;
         }
 
         /* Navigation Menu */
@@ -58,47 +73,266 @@
         .navmenu ul {
             list-style: none;
             display: flex;
-            gap: 20px;
-        }
-
-        .navmenu ul li {
-            display: inline;
+            gap: 25px;
         }
 
         .navmenu ul li a {
             text-decoration: none;
             color: black;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background 0.3s ease, color 0.3s ease;
+            font-weight: 500;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
 
         .navmenu ul li a:hover,
         .navmenu ul li a.active {
             background: #FF6384;
             color: white;
+            box-shadow: 0 4px 15px rgba(255, 99, 132, 0.3);
         }
 
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #FF6384, #FF9068);
+            color: white;
+            border-radius: 25px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 20px 40px rgba(255, 99, 132, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.2;
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            background: white;
+            padding: 60px 30px;
+            border-radius: 25px;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .pain-point-card {
+            background: linear-gradient(to bottom right, #FFEBF0, white);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 700px;
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 99, 132, 0.1);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .pain-point-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #FF6384;
+        }
+
+        /* Journey Section */
+        .journey {
+            padding: 60px 30px;
+            background: linear-gradient(135deg, #FF6384, #FF9068);
+            color: white;
+            border-radius: 25px;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .week-card {
+            background: linear-gradient(to bottom right, white, #fafafa);
+            color: black;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 15px;
+            width: calc(50% - 30px);
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #FF6384;
+            transition: all 0.3s ease;
+        }
+
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: white;
+            padding: 60px 30px;
+            border-radius: 25px;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .price-card {
+            background: linear-gradient(to bottom right, #FFEBF0, white);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 99, 132, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #FF6384;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: white;
+            color: #FF6384;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 99, 132, 0.3);
+            background: #FF6384;
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: white;
+            padding: 60px 30px;
+            border-radius: 25px;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .faq-item {
+            background: linear-gradient(to bottom right, #FFEBF0, white);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 99, 132, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #FF6384;
+        }
+
+        .faq-item h3 {
+            color: #FF6384;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #FF6384;
+            border-radius: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .week-card {
+                width: calc(100% - 30px);
+            }
         }
 
         @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px;
+                margin: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pain-point-card,
+            .week-card,
+            .price-card,
+            .faq-item {
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
             .navmenu {
                 display: none;
-                flex-direction: column;
                 position: absolute;
-                top: 60px;
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background: white;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                text-align: center;
-                padding: 15px 0;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .navmenu.active {
+                display: block;
             }
 
             .navmenu ul {
@@ -109,179 +343,19 @@
             .menu-toggle {
                 display: block;
             }
-
-            .navmenu.active {
-                display: flex;
-            }
         }
-    /* Hero Section */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #FF6384, #FF9068);
-    color: white;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-}
 
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
+        /* Animation Classes */
+        [data-aos] {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
 
-/* Pain Points Section */
-.pain-points {
-    background: white;
-    padding: 50px 20px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pain-point-card {
-    background: #FFEBF0;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Journey Section */
-.journey {
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #FF6384, #FF9068);
-    color: white;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.week-card {
-    background: white;
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    width: 45%;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Pricing Section */
-.pricing {
-    background: white;
-    padding: 50px 20px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    text-align: center;
-}
-
-.price-card {
-    background: #FFEBF0;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* CTA Button */
-.cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #FF6384;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: transform 0.3s ease;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* FAQ Section */
-.faq {
-    background: white;
-    padding: 50px 20px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    text-align: center;
-}
-
-.faq-item {
-    background: #FFEBF0;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px auto;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .journey {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .week-card {
-        width: 80%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 70px 20px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .pain-point-card {
-        width: 100%;
-    }
-
-    .week-card {
-        width: 100%;
-    }
-
-    .price-card {
-        width: 100%;
-    }
-
-    .faq-item {
-        width: 100%;
-    }
-}
-
+        [data-aos].aos-animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
