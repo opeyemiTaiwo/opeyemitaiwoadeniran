@@ -311,6 +311,123 @@
     }
 }
 
+    .perfect-for-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.perfect-for-card {
+    background: linear-gradient(135deg, #FF6384, #FF9068);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfect-for-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.perfect-for-card i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .perfect-for-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .perfect-for-container {
+        grid-template-columns: 1fr;
+    }
+}
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #FF6384;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #FF9068;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .pricing-card {
+        width: 90%;
+    }
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.faq-item {
+    background: #FFEBF0;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: left;
+}
+
+.faq-item:hover {
+    background: #FFC2D1;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .faq-item {
+        padding: 10px;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -391,50 +508,64 @@
         </section>
 
         <!-- Perfect For Section -->
-        <section class="pricing" data-aos="fade-up">
-            <h2 style="text-align: center; margin-bottom: 30px;">Perfect For</h2>
-            <div class="price-card">
-                <i class="bi bi-person-check" style="font-size: 2rem; color: #FF6384;"></i>
-                <p>Career Switchers Ready for a New Chapter</p>
-            </div>
-            <div class="price-card">
-                <i class="bi bi-mortarboard" style="font-size: 2rem; color: #FF6384;"></i>
-                <p>Fresh Graduates Looking to Start Strong</p>
-            </div>
-            <div class="price-card">
-                <i class="bi bi-graph-up" style="font-size: 2rem; color: #FF6384;"></i>
-                <p>Professionals Seeking Higher-Paying Tech Roles</p>
-            </div>
-        </section>
+        <section class="perfect-for">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">Perfect For</h2>
+    <div class="perfect-for-container">
+        <div class="perfect-for-card">
+            <i class="bi bi-people-fill"></i>
+            <p>Career Switchers Ready for a New Chapter</p>
+        </div>
+        <div class="perfect-for-card">
+            <i class="bi bi-mortarboard"></i>
+            <p>Fresh Graduates Looking to Start Strong</p>
+        </div>
+        <div class="perfect-for-card">
+            <i class="bi bi-graph-up"></i>
+            <p>Professionals Seeking Higher-Paying Tech Roles</p>
+        </div>
+    </div>
+</section>
+
 
         <!-- Investment Section -->
-        <section class="pricing" data-aos="fade-up">
-            <h2 style="text-align: center; margin-bottom: 30px;">Investment in Your Future</h2>
-            <div class="price-card">
-                <h3>Full Program</h3>
-                <p style="font-size: 2rem; margin: 20px 0;">$497</p>
-                <p>or</p>
-                <p>$297 deposit + $250 Week 3</p>
-                <a href="#" class="cta-button" style="margin-top: 20px;">Secure Your Spot</a>
-            </div>
-        </section>
+        <section class="pricing">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">Investment in Your Future</h2>
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <h3>Full Program</h3>
+            <p style="font-size: 2.5rem; font-weight: bold; margin: 20px 0;">$497</p>
+            <p>or</p>
+            <p>$297 deposit + $250 Week 3</p>
+            <a href="#" class="cta-button">Secure Your Spot</a>
+        </div>
+    </div>
+</section>
 
         <!-- FAQ Section -->
-        <section class="faq" data-aos="fade-up">
-            <h2 style="text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>Do I need tech experience?</h3>
+        <section class="faq">
+    <h2 style="text-align: center; margin-bottom: 30px;">Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>Do I need tech experience?</h3>
+            <div class="faq-answer">
                 <p>Not at all! Just bring your dedication and willingness to learn. We'll handle the rest.</p>
             </div>
-            <div class="faq-item">
-                <h3>How much time should I commit?</h3>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>How much time should I commit?</h3>
+            <div class="faq-answer">
                 <p>Just 2 focused hours every Saturday, plus recommended self-study time.</p>
             </div>
-            <div class="faq-item">
-                <h3>What support do I get?</h3>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <h3>What support do I get?</h3>
+            <div class="faq-answer">
                 <p>Weekly sessions and email support between meetings.</p>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
 
         <!-- Final CTA -->
         <section style="text-align: center; padding: 50px 20px;" data-aos="fade-up">
@@ -453,10 +584,19 @@
         </div>
         <p>© 2025 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
     </footer>
+    
+<!-- AOS Animation Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+<!-- FAQ Expand/Collapse Script -->
+<script>
+    function toggleFAQ(element) {
+        const answer = element.querySelector('.faq-answer');
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+</script>
 </body>
 </html>
