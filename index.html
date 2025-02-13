@@ -172,6 +172,18 @@
       </ul>
     </nav>
   </header>
+    
+<!-- JavaScript for Menu Toggle -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.navmenu');
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
 
     <main>
         <!-- Enhanced Hero Section -->
@@ -229,25 +241,6 @@
         <p>© 2025 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true
-        });
 
-        // Mobile menu toggle
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuToggle = document.querySelector(".menu-toggle");
-            const navMenu = document.querySelector(".navmenu");
-
-            menuToggle.addEventListener("click", () => {
-                navMenu.classList.toggle("show");
-            });
-        });
-    </script>
 </body>
 </html>
