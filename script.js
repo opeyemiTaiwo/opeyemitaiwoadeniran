@@ -1,4 +1,3 @@
-<!-- JavaScript for Menu Toggle -->
 // Wait for DOM to load
 document.addEventListener("DOMContentLoaded", function() {
     // Initialize AOS animation library
@@ -96,16 +95,6 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(element);
     });
 
-    // Handle form submissions if any forms exist
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Add your form submission logic here
-            console.log('Form submitted');
-        });
-    });
-
     // Back to top button functionality
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '↑';
@@ -127,33 +116,33 @@ document.addEventListener("DOMContentLoaded", function() {
             behavior: 'smooth'
         });
     });
-});
 
-// Add this CSS for the back to top button
-const style = document.createElement('style');
-style.textContent = `
-    .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #FF6384;
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
-        z-index: 1000;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .back-to-top:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-`;
-document.head.appendChild(style);
+    // Add CSS for back to top button
+    const style = document.createElement('style');
+    style.textContent = `
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #FF6384;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+    `;
+    document.head.appendChild(style);
+});
