@@ -114,112 +114,174 @@
                 display: flex;
             }
         }
-        
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #FF6384, #FF9068);
-            color: white;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
+    /* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #FF6384, #FF9068);
+    color: white;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        /* Pain Points Section */
-        .pain-points {
-            background: white;
-            padding: 50px 20px;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
+/* Pain Points Section */
+.pain-points {
+    background: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .pain-point-card {
-            background: #FFEBF0;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 10px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.pain-point-card {
+    background: #FFEBF0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        /* Journey Section */
-        .journey {
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #FF6384, #FF9068);
-            color: white;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
+/* Journey Section */
+.journey {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #FF6384, #FF9068);
+    color: white;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
 
-        .week-card {
-            background: white;
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 10px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.week-card {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 45%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        /* Pricing Section */
-        .pricing {
-            background: white;
-            padding: 50px 20px;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
+/* Pricing Section */
+.pricing {
+    background: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
 
-        .price-card {
-            background: #FFEBF0;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.price-card {
+    background: #FFEBF0;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        /* CTA Button */
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #FF6384;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-        }
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #FF6384;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-        /* FAQ Section */
-        .faq {
-            background: white;
-            padding: 50px 20px;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
+/* FAQ Section */
+.faq {
+    background: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
 
-        .faq-item {
-            background: #FFEBF0;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 10px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.faq-item {
+    background: #FFEBF0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .journey {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .week-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .pain-point-card {
+        width: 100%;
+    }
+
+    .week-card {
+        width: 100%;
+    }
+
+    .price-card {
+        width: 100%;
+    }
+
+    .faq-item {
+        width: 100%;
+    }
+}
+
     </style>
 </head>
 <body>
