@@ -183,41 +183,58 @@
 
 /* Pricing Section */
 .pricing {
-    background: white;
+    background: linear-gradient(135deg, #FF6384, #FF9068); /* Soft gradient */
     padding: 50px 20px;
     border-radius: 15px;
     margin: 20px auto;
     max-width: 1200px;
     text-align: center;
+    color: white; /* Ensuring text contrasts well */
 }
 
-.price-card {
-    background: #FFEBF0;
+.pricing-container {
+    display: flex;
+    justify-content: center;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
     padding: 30px;
-    border-radius: 10px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 500px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* CTA Button */
-.cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #FF6384;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
 
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.pricing-card:hover {
+    transform: scale(1.05);
 }
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ffffff;
+    color: #FF6384;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #FFD1DC;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .pricing-card {
+        width: 90%;
+    }
+}
+
 
 /* FAQ Section */
 .faq {
@@ -528,7 +545,7 @@
 
 
         <!-- Investment Section -->
-        <section class="pricing">
+      <section class="pricing">
     <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">Investment in Your Future</h2>
     <div class="pricing-container">
         <div class="pricing-card">
@@ -540,6 +557,7 @@
         </div>
     </div>
 </section>
+
 
         <!-- FAQ Section -->
         <section class="faq">
