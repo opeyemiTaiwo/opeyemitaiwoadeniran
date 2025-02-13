@@ -192,8 +192,66 @@
         max-width: 200px;
     }
 }
-       
 
+    /* Organization section */
+    .organizations {
+    margin-top: 60px;
+    text-align: left;
+}
+
+.org-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.org-item {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.org-item:hover {
+    transform: translateY(-5px);
+}
+
+.org-item h3 {
+    color: #FF6384;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.org-item p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.org-link {
+    color: #FF6384;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.org-link:hover {
+    color: #ff3366;
+}
+
+@media (max-width: 768px) {
+    .org-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .org-item {
+        padding: 20px;
+    }
+}
         /* Footer */
         #footer {
             background-color: #FFEBF0;
@@ -289,17 +347,47 @@
 <main>
     <h1 class="main-title">About Opeyemi Taiwo Adeniran</h1>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-container" data-aos="fade-up">
-                <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran Portrait">
-                <div class="about-details">
-                    <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
-                    <p>As the founder of initiatives like Morgan TechFest, TechTalents City, and She Model Tech, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-container" data-aos="fade-up">
+            <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran Portrait">
+            <div class="about-details">
+                <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
+                <p>As the founder of multiple tech initiatives, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth, inclusion, and social impact.</p>
+            </div>
+        </div>
+
+        <!-- Organizations Section -->
+        <div class="organizations" data-aos="fade-up">
+            <h2 style="font-size: 2rem; font-weight: 600; color: #FF6384; margin: 50px 0 30px;">Organizations & Initiatives</h2>
+            <div class="org-container">
+                <div class="org-item">
+                    <h3>Favored Online Ntw</h3>
+                    <p>A private organization dedicated to empowering individuals by showcasing how technology is revolutionizing career trajectories.</p>
+                    <a href="https://favoredonline.com/" target="_blank" class="org-link">Learn More →</a>
+                </div>
+
+                <div class="org-item">
+                    <h3>She Model Tech</h3>
+                    <p>Empowering women in technology through access to IT skills, leadership programs, mentorship, and creating opportunities to excel in tech industries.</p>
+                    <a href="https://www.shemodeltech.com/" target="_blank" class="org-link">Learn More →</a>
+                </div>
+
+                <div class="org-item">
+                    <h3>Morgan TechFest</h3>
+                    <p>A student-led conference inspiring students through tech talks, research symposiums, and panel discussions.</p>
+                    <a href="https://www.morgantechfest.com/" target="_blank" class="org-link">Learn More →</a>
+                </div>
+
+                <div class="org-item">
+                    <h3>TechTalents City</h3>
+                    <p>A global platform connecting individuals through collaboration on real-world opportunities for innovation and growth, empowering participants to thrive in the evolving tech industry.</p>
+                    <a href="https://www.techtalentscity.com/" target="_blank" class="org-link">Learn More →</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Details Section -->
     <section class="contact-details">
