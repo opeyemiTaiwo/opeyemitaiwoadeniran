@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Career Discovery Program</title>
+    <title>Opeyemi Adeniran - Tech Career Expert</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
@@ -193,6 +193,45 @@ header {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
+/* Tool Section */
+.tools-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.tools-heading {
+    margin-bottom: 50px;
+}
+
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tool-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+}
+
+.tool-icon {
+    font-size: 3rem;
+    color: #3498DB;
+    margin-bottom: 20px;
+}
+
 /* Footer */
 #footer {
     background-color: #EEF2F7;
@@ -221,6 +260,30 @@ header {
     font-size: 0.9rem;
     color: black;
     margin: 0;
+}
+
+/* Badge */
+.new-badge {
+    display: inline-block;
+    background: #FF6384;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Responsive Design */
@@ -295,6 +358,16 @@ header {
 
     .cta-section h2 {
         font-size: 1.8rem !important;
+    }
+
+    .tools-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tool-card {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -384,12 +457,12 @@ header {
             <div class="hero-content">
                 <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran" class="hero-image">
                 <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px;">
-                    Welcome to My World
+                    Transform Your Career In Tech
                 </h1>
                 <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
-                    I'm Opeyemi Taiwo Adeniran, passionate about technology, innovation, and empowering others to achieve their dreams.
+                    I help ambitious professionals discover their perfect tech path and build the skills to succeed in today's digital economy.
                 </p>
-                <a href="#featured" class="cta-button">Explore My Journey</a>
+                <a href="TechCareers.html" class="cta-button">Discover Your Tech Path</a>
             </div>
         </section>
 
@@ -398,29 +471,53 @@ header {
             <div class="featured-grid">
                 <div class="featured-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-laptop featured-icon"></i>
-                    <h3>Tech Innovation</h3>
-                    <p>Exploring the frontiers of AI/ML and creating solutions that matter.</p>
+                    <h3>AI-Powered Career Analysis</h3>
+                    <p>Get personalized insights into which tech roles match your skills, experience, and goals with my data-driven approach.</p>
                 </div>
                 <div class="featured-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="bi bi-people featured-icon"></i>
-                    <h3>Community Building</h3>
-                    <p>Creating spaces for learning, growth, and connection in tech.</p>
+                    <i class="bi bi-graph-up featured-icon"></i>
+                    <h3>Skills Gap Assessment</h3>
+                    <p>Identify exactly which skills you need to develop for your target tech roles with custom learning roadmaps.</p>
                 </div>
                 <div class="featured-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="bi bi-stars featured-icon"></i>
-                    <h3>Career Guidance</h3>
-                    <p>Helping others navigate their path in the tech industry.</p>
+                    <i class="bi bi-rocket featured-icon"></i>
+                    <h3>Transition Strategy</h3>
+                    <p>Follow a proven framework to successfully transition into tech with networking, personal branding, and interview preparation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section class="tools-section" data-aos="fade-up">
+            <div class="tools-heading">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Tools & Resources</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
+                    Cutting-edge solutions to accelerate your tech career journey
+                </p>
+            </div>
+            <div class="tools-container">
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-lightning tool-icon"></i>
+                    <h3>AI Career Analyzer <span class="new-badge">NEW</span></h3>
+                    <p>Get personalized tech career recommendations and a detailed roadmap based on your unique background.</p>
+                    <a href="TechCareers.html" class="cta-button" style="margin-top: 20px;">Try It Now</a>
+                </div>
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-book tool-icon"></i>
+                    <h3>AI Book Collection</h3>
+                    <p>Curated resources to help you master artificial intelligence concepts and applications.</p>
+                    <a href="books.html" class="cta-button" style="margin-top: 20px;">Explore Books</a>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action Section -->
         <section class="cta-section" data-aos="fade-up">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Start Your Journey?</h2>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Launch Your Tech Career?</h2>
             <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
-                Let's connect and explore how to work together to achieve your tech goals.
+                Take the first step toward your ideal tech role with my AI-powered career analysis tool. Get personalized recommendations and a clear roadmap in minutes.
             </p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <a href="TechCareers.html" class="cta-button">Find Your Tech Path Today</a>
         </section>
     </main>
 
@@ -437,7 +534,24 @@ header {
 
 <!-- At the end of your body tag -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.navmenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
     
 </body>
 </html>
