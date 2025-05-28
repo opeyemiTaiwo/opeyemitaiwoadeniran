@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free AI Tech Career Analyzer - Find Your Perfect Tech Path</title>
 
+    <!-- Favicon Implementation -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -16,7 +23,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
     <style>
-         * {
+        :root {
+            --navy-blue: #2C3E50;
+            --light-blue: #3498DB;
+            --green: #27AE60;
+            --background: #F5F7FA;
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -24,8 +38,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F5F7FA;
-            color: #2C3E50;
+            background-color: var(--background);
+            color: var(--navy-blue);
             line-height: 1.8;
             padding-top: 80px;
         }
@@ -42,210 +56,194 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--light-blue);
+        }
+
+        .logo a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo a:hover {
+            color: var(--light-blue);
+        }
+
+        /* Navigation Menu */
+        .navmenu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navmenu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navmenu ul li {
+            display: inline;
+        }
+
+        .navmenu ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .navmenu ul li a:hover {
+            background: rgba(44, 62, 80, 0.1);
+            color: var(--navy-blue);
+        }
+
+        .navmenu ul li a.active {
+            background: var(--navy-blue);
+            color: white;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--navy-blue);
+            transition: color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: var(--light-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            color: white;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            background: white;
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pain-point-card {
+            background: #EEF2F7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .logo img {
-            width: 120px;
+        /* Features Section */
+        .features {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            color: white;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
 
-/* Navigation Menu */
-.navmenu {
-    display: flex;
-    align-items: center;
-}
+        .feature-card {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            width: 45%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.navmenu ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--light-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
 
-.navmenu ul li {
-    display: inline;
-}
+        .cta-button:hover {
+            background: #5DADE2;
+            transform: translateY(-3px);
+        }
 
-.navmenu ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 8px 20px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
+        /* FAQ Section */
+        .faq {
+            background: white;
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
 
-.navmenu ul li a:hover {
-    background: rgba(44, 62, 80, 0.1);
-    color: #2C3E50;
-}
-
-.navmenu ul li a.active {
-    background: #2C3E50;
-    color: white;
-}
-
-/* Mobile Menu */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 10px 15px;
-    }
-
-    .logo a {
-        font-size: 1.2rem;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .navmenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .navmenu.active {
-        display: block;
-    }
-
-    .navmenu ul {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-
-    .navmenu ul li {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .navmenu ul li a {
-        display: inline-block;
-        width: 80%;
-    }
-}
-    /* Hero Section */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #2C3E50, #3498DB);
-    color: white;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Pain Points Section */
-.pain-points {
-    background: white;
-    padding: 50px 20px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pain-point-card {
-    background: #EEF2F7;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Features Section */
-.features {
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #2C3E50, #3498DB);
-    color: white;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.feature-card {
-    background: white;
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    width: 45%;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #27AE60;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-    background: #2ECC71;
-    transform: translateY(-3px);
-}
-
-/* FAQ Section */
-.faq {
-    background: white;
-    padding: 50px 20px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    text-align: center;
-}
-
-.faq-item {
-    background: #EEF2F7;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px auto;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        .faq-item {
+            background: #EEF2F7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
         
- /* Footer */
+        /* Footer */
         #footer {
             background-color: #EEF2F7;
             text-align: center;
             padding: 20px 0;
-            border-top: 2px solid #2C3E50;
+            border-top: 2px solid var(--navy-blue);
             margin-top: 50px;
         }
 
@@ -261,7 +259,7 @@
         }
 
         #footer .social-links a:hover {
-            color: #3498DB;
+            color: var(--light-blue);
         }
 
         #footer p {
@@ -269,162 +267,206 @@
             margin: 0;
         }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
+        .perfect-for-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
+        .perfect-for-card {
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .feature-card {
-        width: 80%;
-    }
-}
+        .perfect-for-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
 
-@media (max-width: 768px) {
-    .hero {
-        padding: 70px 20px;
-    }
+        .perfect-for-card i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
+        .faq-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
 
-    .pain-point-card {
-        width: 100%;
-    }
+        .faq-item {
+            background: #EBF3FD;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px auto;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: left;
+        }
 
-    .feature-card {
-        width: 100%;
-    }
+        .faq-item:hover {
+            background: #D6EAF8;
+        }
 
-    .faq-item {
-        width: 100%;
-    }
-}
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
 
-    .perfect-for-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
-}
+        /* Stats Section */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
 
-.perfect-for-card {
-    background: linear-gradient(135deg, #2C3E50, #3498DB);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.perfect-for-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--light-blue);
+            margin-bottom: 5px;
+        }
 
-.perfect-for-card i {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
+        /* Free Notice */
+        .free-notice {
+            background: linear-gradient(135deg, var(--light-blue), #5DADE2);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-@media (max-width: 768px) {
-    .perfect-for-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
+        .free-notice h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
 
-@media (max-width: 480px) {
-    .perfect-for-container {
-        grid-template-columns: 1fr;
-    }
-}
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
 
-.faq-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
 
-.faq-item {
-    background: #FFEBF0;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px auto;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    text-align: left;
-}
+            .feature-card {
+                width: 80%;
+            }
+        }
 
-.faq-item:hover {
-    background: #DCE4EC;
-}
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
 
-.faq-answer {
-    display: none;
-    padding: 10px;
-    font-size: 0.9rem;
-}
+            .logo a {
+                font-size: 1.2rem;
+            }
 
-@media (max-width: 600px) {
-    .faq-item {
-        padding: 10px;
-    }
-}
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
 
-/* Stats Section */
-.stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 30px auto;
-}
+            .menu-toggle {
+                display: block;
+            }
 
-.stat-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+            .navmenu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #27AE60;
-    margin-bottom: 5px;
-}
+            .navmenu.active {
+                display: block;
+            }
 
-/* Free Notice */
-.free-notice {
-    background: linear-gradient(135deg, #27AE60, #2ECC71);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+            .navmenu ul {
+                flex-direction: column;
+                padding: 10px 0;
+            }
 
-.free-notice h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
+            .navmenu ul li {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .navmenu ul li a {
+                display: inline-block;
+                width: 80%;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .pain-point-card {
+                width: 100%;
+            }
+
+            .feature-card {
+                width: 100%;
+            }
+
+            .faq-item {
+                width: 100%;
+            }
+
+            .perfect-for-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .faq-item {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .perfect-for-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
+    <!-- HEADER -->
     <header id="header">
         <div class="logo">
             <!-- Optional: Add your photo as logo icon -->
@@ -438,25 +480,13 @@
         </div>
         <nav class="navmenu">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="TechCareers.html">Tech Careers</a></li>
+                <li><a href="TechCareers.html" class="active">Tech Careers</a></li>
                 <li><a href="books.html">AI Books</a></li>
             </ul>
         </nav>
     </header>
-
- <!-- JavaScript for Menu Toggle -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.navmenu');
-
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-        });
-    </script>
 
     <main>
         <!-- Hero Section -->
@@ -596,18 +626,63 @@
         <p>© 2025 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
     </footer>
     
-<!-- AOS Animation Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+    <!-- AOS Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true,
+            offset: 100
+        });
 
-<!-- FAQ Expand/Collapse Script -->
-<script>
-    function toggleFAQ(element) {
-        const answer = element.querySelector('.faq-answer');
-        answer.style.display = answer.style.display === "block" ? "none" : "block";
-    }
-</script>
+        function toggleMenu() {
+            const navmenu = document.querySelector('.navmenu');
+            const menuToggle = document.querySelector('.menu-toggle i');
+            
+            navmenu.classList.toggle('active');
+            
+            // Toggle icon between hamburger and close
+            if (navmenu.classList.contains('active')) {
+                menuToggle.classList.remove('bi-list');
+                menuToggle.classList.add('bi-x');
+            } else {
+                menuToggle.classList.remove('bi-x');
+                menuToggle.classList.add('bi-list');
+            }
+        }
+
+        // Close menu when clicking on a link (mobile)
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navmenu = document.querySelector('.navmenu');
+                const menuToggle = document.querySelector('.menu-toggle i');
+                
+                if (window.innerWidth <= 768) {
+                    navmenu.classList.remove('active');
+                    menuToggle.classList.remove('bi-x');
+                    menuToggle.classList.add('bi-list');
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                const navmenu = document.querySelector('.navmenu');
+                const menuToggle = document.querySelector('.menu-toggle i');
+                
+                navmenu.classList.remove('active');
+                menuToggle.classList.remove('bi-x');
+                menuToggle.classList.add('bi-list');
+            }
+        });
+
+        // FAQ Expand/Collapse Script
+        function toggleFAQ(element) {
+            const answer = element.querySelector('.faq-answer');
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
