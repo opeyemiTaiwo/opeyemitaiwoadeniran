@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opeyemi Adeniran - Tech Career Expert</title>
+    <title>Opeyemi Adeniran - AI Research Engineer & Author</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
@@ -274,6 +274,17 @@ header {
     animation: pulse 2s infinite;
 }
 
+.coming-soon-badge {
+    display: inline-block;
+    background: #27AE60;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    animation: pulse 2s infinite;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -418,6 +429,32 @@ header {
     }
 }
 
+/* Publication Cards */
+.publication-card:hover {
+    transform: translateY(-10px);
+}
+
+.publications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .publications-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .publication-card {
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+}
+
 /* Animation Classes */
 .fade-up {
     opacity: 0;
@@ -445,6 +482,7 @@ header {
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="TechCareers.html">Tech Careers</a></li>
             <li><a href="books.html">AI Books</a></li>
         </ul>
     </nav>
@@ -456,12 +494,12 @@ header {
             <div class="hero-content">
                 <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran" class="hero-image">
                 <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px;">
-                    Transform Your Career In Tech
+                    AI Research Engineer & Author
                 </h1>
                 <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
-                    I help ambitious professionals discover their perfect tech path and build the skills to succeed in today's digital economy.
+                    I conduct cutting-edge research in artificial intelligence and help professionals harness AI technologies to transform their careers and industries.
                 </p>
-                <a href="TechCareers.html" class="cta-button">Discover Your Tech Path</a>
+                <a href="TechCareers.html" class="cta-button">Explore AI Career Paths</a>
             </div>
         </section>
 
@@ -469,19 +507,49 @@ header {
         <section class="featured-section" id="featured">
             <div class="featured-grid">
                 <div class="featured-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="bi bi-laptop featured-icon"></i>
-                    <h3>AI-Powered Career Analysis</h3>
-                    <p>Get personalized insights into which tech roles match your skills, experience, and goals with my data-driven approach.</p>
+                    <i class="bi bi-cpu featured-icon"></i>
+                    <h3>AI Research & Development</h3>
+                    <p>Leading innovative research in machine learning applications across healthcare, blockchain security, and emerging technologies with published work in peer-reviewed journals.</p>
                 </div>
                 <div class="featured-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="bi bi-graph-up featured-icon"></i>
-                    <h3>Skills Gap Assessment</h3>
-                    <p>Identify exactly which skills you need to develop for your target tech roles with custom learning roadmaps.</p>
+                    <i class="bi bi-heart-pulse featured-icon"></i>
+                    <h3>Medical AI & Image Analysis</h3>
+                    <p>Published research in medical image segmentation and Alzheimer's disease detection using explainable ensemble learning architectures for enhanced diagnostic accuracy.</p>
                 </div>
                 <div class="featured-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="bi bi-rocket featured-icon"></i>
-                    <h3>Transition Strategy</h3>
-                    <p>Follow a proven framework to successfully transition into tech with networking, personal branding, and interview preparation.</p>
+                    <i class="bi bi-person-workspace featured-icon"></i>
+                    <h3>AI Career Guidance</h3>
+                    <p>Helping professionals transition into AI and tech careers with personalized roadmaps based on current industry demands and emerging technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="publications-section" data-aos="fade-up" style="padding: 80px 20px; background: white; text-align: center;">
+            <div class="publications-heading" style="margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Recent Publications</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; color: #2C3E50;">
+                    Peer-reviewed research spanning medical AI, blockchain security, and machine learning applications
+                </p>
+            </div>
+            <div class="publications-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto;">
+                <div class="publication-card" style="background: linear-gradient(135deg, #2C3E50, #3498DB); color: white; padding: 30px; border-radius: 20px; width: 350px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-file-earmark-medical" style="font-size: 2.5rem; color: #FF6384; margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Performance Analysis of Selected Medical Image Segmentation Algorithms</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9;">Research on optimizing medical image segmentation techniques for improved diagnostic accuracy.</p>
+                    <a href="https://www.researchgate.net" target="_blank" style="color: #FF6384; text-decoration: none; font-weight: bold;">View on ResearchGate →</a>
+                </div>
+                <div class="publication-card" style="background: linear-gradient(135deg, #27AE60, #2ECC71); color: white; padding: 30px; border-radius: 20px; width: 350px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-brain" style="font-size: 2.5rem; color: #FFD700; margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Explainable MRI-Based Ensemble Learnable Architecture for Alzheimer's Disease Detection</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9;">Novel ensemble learning approach for early Alzheimer's detection with interpretable AI mechanisms.</p>
+                    <a href="https://www.mdpi.com" target="_blank" style="color: #FFD700; text-decoration: none; font-weight: bold;">View on MDPI →</a>
+                </div>
+                <div class="publication-card" style="background: linear-gradient(135deg, #8E44AD, #9B59B6); color: white; padding: 30px; border-radius: 20px; width: 350px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bi bi-shield-check" style="font-size: 2.5rem; color: #FFA500; margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9;">Advanced ML framework for automated detection of security vulnerabilities in blockchain smart contracts.</p>
+                    <a href="#" target="_blank" style="color: #FFA500; text-decoration: none; font-weight: bold;">View Publication →</a>
                 </div>
             </div>
         </section>
@@ -491,32 +559,32 @@ header {
             <div class="tools-heading">
                 <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Tools & Resources</h2>
                 <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
-                    Cutting-edge solutions to accelerate your tech career journey
+                    Cutting-edge AI tools and educational resources to accelerate your journey in artificial intelligence
                 </p>
             </div>
             <div class="tools-container">
                 <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-lightning tool-icon"></i>
-                    <h3>AI Career Analyzer <span class="new-badge">NEW</span></h3>
-                    <p>Get personalized tech career recommendations and a detailed roadmap based on your unique background.</p>
+                    <h3>AI Career Analyzer <span class="new-badge">FREE</span></h3>
+                    <p>Get personalized AI and tech career recommendations based on your background, with roadmaps tailored to current industry trends.</p>
                     <a href="TechCareers.html" class="cta-button" style="margin-top: 20px;">Try It Now</a>
                 </div>
                 <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="bi bi-book tool-icon"></i>
-                    <h3>AI Book Collection</h3>
-                    <p>Curated resources to help you master artificial intelligence concepts and applications.</p>
-                    <a href="books.html" class="cta-button" style="margin-top: 20px;">Explore Books</a>
+                    <i class="bi bi-book-half tool-icon"></i>
+                    <h3>AI for Medical Practitioners <span class="coming-soon-badge">COMING SOON</span></h3>
+                    <p>A comprehensive beginner's guide to artificial intelligence specifically designed for healthcare professionals and medical practitioners.</p>
+                    <a href="books.html" class="cta-button" style="margin-top: 20px;">Learn More</a>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action Section -->
         <section class="cta-section" data-aos="fade-up">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Launch Your Tech Career?</h2>
-            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
-                Take the first step toward your ideal tech role with my AI-powered career analysis tool. Get personalized recommendations and a clear roadmap in minutes.
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Get My AI Books & Resources</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">
+                Access my upcoming "AI for Medical Practitioners: Beginner's Guide" designed to help professionals integrate artificial intelligence into their work and careers.
             </p>
-            <a href="TechCareers.html" class="cta-button">Find Your Tech Path Today</a>
+            <a href="books.html" class="cta-button">Explore My Books</a>
         </section>
     </main>
 
