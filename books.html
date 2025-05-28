@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI for Medical Practitioners - Opeyemi Adeniran</title>
 
+    <!-- Favicon Implementation -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -16,380 +23,414 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        :root {
+            --navy-blue: #2C3E50;
+            --light-blue: #3498DB;
+            --green: #27AE60;
+            --background: #F5F7FA;
+        }
 
-    body {
-        font-family: 'Lora', serif;
-        background-color: #F5F7FA;
-        color: #2C3E50;
-        line-height: 1.8;
-        padding-top: 80px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Header Styling */
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background);
+            color: var(--navy-blue);
+            line-height: 1.8;
+            padding-top: 80px;
+        }
 
-    .logo img {
-        width: 120px;
-    }
-
-    .logo a {
-        text-decoration: none;
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #333;
-        font-family: 'Playfair Display', serif;
-    }
-
-    /* Navigation Menu */
-    .navmenu {
-        display: flex;
-        align-items: center;
-    }
-
-    .navmenu ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-    }
-
-    .navmenu ul li a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        padding: 8px 20px;
-        border-radius: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .navmenu ul li a:hover {
-        background: rgba(44, 62, 80, 0.1);
-        color: #2C3E50;
-    }
-
-    .navmenu ul li a.active {
-        background: #2C3E50;
-        color: white;
-    }
-
-    /* Mobile Menu */
-    .menu-toggle {
-        display: none;
-        cursor: pointer;
-        font-size: 24px;
-    }
-
-    /* Hero Section */
-    .hero {
-        text-align: center;
-        padding: 100px 20px;
-        background: linear-gradient(135deg, #2C3E50, #3498DB);
-        color: white;
-        border-radius: 15px;
-        margin: 20px auto;
-        max-width: 1200px;
-    }
-
-    .hero h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 3.5rem;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Books Section */
-    .books-section {
-        padding: 50px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .books-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
-    }
-
-    .book-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .book-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .book-image {
-        height: 250px;
-        background: linear-gradient(135deg, #2C3E50, #3498DB);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 3rem;
-    }
-
-    .book-content {
-        padding: 20px;
-    }
-
-    .book-title {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-
-    .book-description {
-        color: #6c757d;
-        margin-bottom: 15px;
-    }
-
-    .book-status {
-        display: inline-block;
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        background: #e9f5ff;
-        color: #3498DB;
-    }
-
-    /* Countdown Timer */
-    .countdown {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .countdown div {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 15px;
-        border-radius: 10px;
-        text-align: center;
-        width: 80px;
-    }
-
-    .countdown div span {
-        font-size: 1.8rem;
-        font-weight: bold;
-    }
-
-    /* Subscription Form */
-    .subscribe-form {
-        margin: 40px auto;
-        max-width: 600px;
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .subscribe-form h3 {
-        font-family: 'Playfair Display', serif;
-        margin-bottom: 20px;
-        color: #2C3E50;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-    }
-
-    .form-group input {
-        width: 100%;
-        padding: 12px 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
-        transition: border-color 0.3s ease;
-    }
-
-    .form-group input:focus {
-        border-color: #3498DB;
-        outline: none;
-    }
-
-    .submit-btn {
-        background: linear-gradient(135deg, #2C3E50, #3498DB);
-        color: white;
-        border: none;
-        padding: 12px 25px;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        width: 100%;
-    }
-
-    .submit-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .success-message {
-        display: none;
-        background: #d4edda;
-        color: #155724;
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
-
-    /* Features Section */
-    .features-section {
-        padding: 50px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .features-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
-    }
-
-    .feature-card {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
-    }
-
-    .feature-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .feature-icon {
-        font-size: 2.5rem;
-        color: #3498DB;
-        margin-bottom: 20px;
-    }
-
-    /* Footer */
-    #footer {
-        background-color: #EEF2F7;
-        text-align: center;
-        padding: 20px 0;
-        border-top: 2px solid #2C3E50;
-        margin-top: 50px;
-    }
-
-    #footer .social-links {
-        margin-bottom: 15px;
-    }
-
-    #footer .social-links a {
-        margin: 0 15px;
-        font-size: 1.2rem;
-        color: black;
-        transition: color 0.3s ease;
-    }
-
-    #footer .social-links a:hover {
-        color: #3498DB;
-    }
-
-    #footer p {
-        font-size: 0.9rem;
-        margin: 0;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
+        /* Header Styling */
         header {
-            padding: 10px 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--light-blue);
         }
 
         .logo a {
-            font-size: 1.2rem;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s ease;
         }
 
-        .menu-toggle {
-            display: block;
+        .logo a:hover {
+            color: var(--light-blue);
         }
 
+        /* Navigation Menu */
         .navmenu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: white;
-            padding: 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .navmenu.active {
-            display: block;
+            display: flex;
+            align-items: center;
         }
 
         .navmenu ul {
-            flex-direction: column;
-            padding: 10px 0;
-        }
-
-        .navmenu ul li {
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
         }
 
         .navmenu ul li a {
-            display: inline-block;
-            width: 80%;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .navmenu ul li a:hover {
+            background: rgba(44, 62, 80, 0.1);
+            color: var(--navy-blue);
+        }
+
+        .navmenu ul li a.active {
+            background: var(--navy-blue);
+            color: white;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--navy-blue);
+            transition: color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: var(--light-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            color: white;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Books Section */
+        .books-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .book-content {
+            padding: 20px;
+        }
+
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .book-description {
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .book-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background: #e9f5ff;
+            color: var(--light-blue);
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
         }
 
         .countdown div {
-            width: 70px;
-            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80px;
         }
 
         .countdown div span {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
         }
-    }
+
+        /* Subscription Form */
+        .subscribe-form {
+            margin: 40px auto;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscribe-form h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            color: var(--navy-blue);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: var(--light-blue);
+            outline: none;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--light-blue);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #EEF2F7;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 2px solid var(--navy-blue);
+            margin-top: 50px;
+        }
+
+        #footer .social-links {
+            margin-bottom: 15px;
+        }
+
+        #footer .social-links a {
+            margin: 0 15px;
+            font-size: 1.2rem;
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        #footer .social-links a:hover {
+            color: var(--light-blue);
+        }
+
+        #footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+
+            .logo a {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .navmenu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .navmenu.active {
+                display: block;
+            }
+
+            .navmenu ul {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            .navmenu ul li {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .navmenu ul li a {
+                display: inline-block;
+                width: 80%;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .countdown div {
+                width: 70px;
+                padding: 10px;
+            }
+
+            .countdown div span {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -408,10 +449,10 @@
         </div>
         <nav class="navmenu">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="TechCareers.html">Tech Careers</a></li>
-                <li><a href="books.html">AI Books</a></li>
+                <li><a href="books.html" class="active">AI Books</a></li>
             </ul>
         </nav>
     </header>
@@ -541,12 +582,53 @@
     <script>
         AOS.init({
             duration: 800,
-            once: true
+            once: true,
+            offset: 100
         });
-    </script>
 
-    <!-- Countdown Timer Script -->
-    <script>
+        function toggleMenu() {
+            const navmenu = document.querySelector('.navmenu');
+            const menuToggle = document.querySelector('.menu-toggle i');
+            
+            navmenu.classList.toggle('active');
+            
+            // Toggle icon between hamburger and close
+            if (navmenu.classList.contains('active')) {
+                menuToggle.classList.remove('bi-list');
+                menuToggle.classList.add('bi-x');
+            } else {
+                menuToggle.classList.remove('bi-x');
+                menuToggle.classList.add('bi-list');
+            }
+        }
+
+        // Close menu when clicking on a link (mobile)
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navmenu = document.querySelector('.navmenu');
+                const menuToggle = document.querySelector('.menu-toggle i');
+                
+                if (window.innerWidth <= 768) {
+                    navmenu.classList.remove('active');
+                    menuToggle.classList.remove('bi-x');
+                    menuToggle.classList.add('bi-list');
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                const navmenu = document.querySelector('.navmenu');
+                const menuToggle = document.querySelector('.menu-toggle i');
+                
+                navmenu.classList.remove('active');
+                menuToggle.classList.remove('bi-x');
+                menuToggle.classList.add('bi-list');
+            }
+        });
+
+        // Countdown Timer Script
         const countdown = () => {
             const releaseDate = new Date("September 1, 2025 00:00:00").getTime();
             const now = new Date().getTime();
@@ -562,29 +644,16 @@
             const textMinute = Math.floor((gap % hour) / minute);
             const textSecond = Math.floor((gap % minute) / second);
 
-            document.getElementById("days").innerText = textDay;
-            document.getElementById("hours").innerText = textHour;
-            document.getElementById("minutes").innerText = textMinute;
-            document.getElementById("seconds").innerText = textSecond;
+            document.getElementById("days").innerText = textDay < 10 ? '0' + textDay : textDay;
+            document.getElementById("hours").innerText = textHour < 10 ? '0' + textHour : textHour;
+            document.getElementById("minutes").innerText = textMinute < 10 ? '0' + textMinute : textMinute;
+            document.getElementById("seconds").innerText = textSecond < 10 ? '0' + textSecond : textSecond;
         };
 
         setInterval(countdown, 1000);
-    </script>
+        countdown(); // Run immediately
 
-    <!-- JavaScript for Menu Toggle -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.navmenu');
-
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-        });
-    </script>
-
-    <!-- Form Submission Script -->
-    <script>
+        // Form Submission Script
         document.getElementById('subscribeForm').addEventListener('submit', function(e) {
             // Submit form to Google Form using the default form action
             setTimeout(function() {
