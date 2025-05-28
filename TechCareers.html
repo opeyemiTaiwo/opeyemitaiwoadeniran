@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tech Career Analyzer - Find Your Perfect Tech Path</title>
+    <title>Free AI Tech Career Analyzer - Find Your Perfect Tech Path</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
@@ -203,42 +203,10 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Pricing Section */
-.pricing {
-    background: linear-gradient(135deg, #2C3E50, #3498DB); /* Soft gradient */
-    padding: 50px 20px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    text-align: center;
-    color: white; /* Ensuring text contrasts well */
-}
-
-.pricing-container {
-    display: flex;
-    justify-content: center;
-}
-
-.pricing-card {
-    background: rgba(255, 255, 255, 0.15); /* Glassmorphism effect */
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-}
-
-.pricing-card:hover {
-    transform: scale(1.05);
-}
-
 .cta-button {
     display: inline-block;
     padding: 12px 25px;
-    background: #FF6384;
+    background: #27AE60;
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -247,16 +215,9 @@
 }
 
 .cta-button:hover {
-    background: #FF9068;
+    background: #2ECC71;
     transform: translateY(-3px);
 }
-
-@media (max-width: 768px) {
-    .pricing-card {
-        width: 90%;
-    }
-}
-
 
 /* FAQ Section */
 .faq {
@@ -341,10 +302,6 @@
         width: 100%;
     }
 
-    .price-card {
-        width: 100%;
-    }
-
     .faq-item {
         width: 100%;
     }
@@ -388,49 +345,6 @@
 @media (max-width: 480px) {
     .perfect-for-container {
         grid-template-columns: 1fr;
-    }
-}
-.pricing-container {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-.pricing-card {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-}
-
-.pricing-card:hover {
-    transform: scale(1.05);
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #FF6384;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-    background: #FF9068;
-    transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-    .pricing-card {
-        width: 90%;
     }
 }
 
@@ -486,33 +400,25 @@
 .stat-number {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #3498DB;
+    color: #27AE60;
     margin-bottom: 5px;
 }
 
-/* Limited Time Offer */
-.limited-offer {
-    background: linear-gradient(135deg, #FF6384, #FF9068);
+/* Free Notice */
+.free-notice {
+    background: linear-gradient(135deg, #27AE60, #2ECC71);
     color: white;
     text-align: center;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 15px;
     margin: 20px auto;
-    max-width: 600px;
+    max-width: 800px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.03);
-    }
-    100% {
-        transform: scale(1);
-    }
+.free-notice h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
     </style>
 </head>
@@ -552,30 +458,30 @@
         <!-- Hero Section -->
         <section class="hero" data-aos="fade-up">
             <h1>Discover Your Perfect Tech Career Path</h1>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Get personalized AI analysis of your skills, interests, and potential in just minutes</p>
-            <a href="https://career.techtalentscity.com/career" class="cta-button">Start Your Career Analysis</a>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Get personalized AI analysis of your skills, interests, and potential - completely free!</p>
+            <a href="https://career.techtalentscity.com/career" class="cta-button">Start Your Free Analysis</a>
         </section>
 
-        <!-- Limited Time Offer -->
-        <div class="limited-offer" data-aos="fade-up">
-            <h3>🔥 Special Launch Price: $60 🔥</h3>
-            <p>Complete career analysis with personalized roadmap</p>
+        <!-- Free Notice -->
+        <div class="free-notice" data-aos="fade-up">
+            <h3>🎉 100% Free Career Analysis 🎉</h3>
+            <p>Complete tech career guidance with personalized roadmap - no cost, no signup required!</p>
         </div>
 
         <!-- Stats Section -->
         <section data-aos="fade-up" style="text-align: center; margin: 40px auto;">
             <div class="stats-container">
                 <div class="stat-card">
-                    <div class="stat-number">35%</div>
-                    <p>Faster transition to tech roles</p>
+                    <div class="stat-number">1000+</div>
+                    <p>Career paths analyzed</p>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">$65K-160K</div>
-                    <p>Salary range in recommended paths</p>
+                    <div class="stat-number">15+</div>
+                    <p>Tech specializations covered</p>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">0.1%</div>
-                    <p>Investment of first-year salary</p>
+                    <div class="stat-number">100%</div>
+                    <p>Completely free service</p>
                 </div>
             </div>
         </section>
@@ -584,25 +490,25 @@
         <section class="pain-points" data-aos="fade-up">
             <h2 style="text-align: center; margin-bottom: 30px;">Struggling With...</h2>
             <div class="pain-point-card">
-                <i class="bi bi-x-circle" style="color: #FF6384;"></i>
+                <i class="bi bi-x-circle" style="color: #E74C3C;"></i>
                 <p>Figuring out which tech career is right for your unique background and skills?</p>
             </div>
             <div class="pain-point-card">
-                <i class="bi bi-x-circle" style="color: #FF6384;"></i>
+                <i class="bi bi-x-circle" style="color: #E74C3C;"></i>
                 <p>Identifying which specific skills you need to develop for your target role?</p>
             </div>
             <div class="pain-point-card">
-                <i class="bi bi-x-circle" style="color: #FF6384;"></i>
+                <i class="bi bi-x-circle" style="color: #E74C3C;"></i>
                 <p>Creating a structured roadmap for your tech career transition?</p>
             </div>
         </section>
 
         <!-- Features Section -->
         <section class="features" data-aos="fade-up">
-            <h2 style="width: 100%; text-align: center; margin-bottom: 30px;">What You'll Get</h2>
+            <h2 style="width: 100%; text-align: center; margin-bottom: 30px;">What You'll Get - Completely Free</h2>
             <div class="feature-card">
                 <h3>Career Path Recommendations</h3>
-                <p>Get matched with ideal tech careers based on your background with match percentages</p>
+                <p>Get matched with ideal tech careers based on your background with detailed compatibility analysis</p>
             </div>
             <div class="feature-card">
                 <h3>Skills Gap Analysis</h3>
@@ -610,11 +516,11 @@
             </div>
             <div class="feature-card">
                 <h3>Learning Roadmap</h3>
-                <p>Month-by-month plan with specific courses and projects to build your skills</p>
+                <p>Step-by-step plan with free resources, courses, and projects to build your skills</p>
             </div>
             <div class="feature-card">
                 <h3>Transition Strategy</h3>
-                <p>Networking, personal branding, and interview preparation tailored to your goals</p>
+                <p>Portfolio building, networking tips, and interview preparation guidance</p>
             </div>
         </section>
 
@@ -632,25 +538,7 @@
                 </div>
                 <div class="perfect-for-card">
                     <i class="bi bi-graph-up"></i>
-                    <p>Professionals Wanting Higher Tech Salaries</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Investment Section -->
-        <section class="pricing">
-            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">Your Investment</h2>
-            <div class="pricing-container">
-                <div class="pricing-card">
-                    <p style="color: white; margin-bottom: 10px;">Special Launch Price</p>
-                    <h3 style="color: white; text-decoration: line-through; opacity: 0.8;">$79</h3>
-                    <p style="font-size: 2.5rem; font-weight: bold; color: white; margin: 10px 0;">$60</p>
-                    <ul style="color: white; text-align: left; list-style-type: none; margin: 20px auto; max-width: 80%;">
-                        <li style="margin-bottom: 10px;">✓ Full Access for 30 Days</li>
-                        <li style="margin-bottom: 10px;">✓ Comprehensive Analysis</li>
-                        <li style="margin-bottom: 10px;">✓ Downloadable PDF Report</li>
-                    </ul>
-                    <a href="https://career.techtalentscity.com/career" class="cta-button">Start Your Analysis</a>
+                    <p>Professionals Wanting to Enter Tech</p>
                 </div>
             </div>
         </section>
@@ -662,7 +550,13 @@
                 <div class="faq-item" onclick="toggleFAQ(this)">
                     <h3>How long does the assessment take?</h3>
                     <div class="faq-answer">
-                        <p>The assessment typically takes 15-20 minutes to complete. We recommend setting aside uninterrupted time to thoughtfully answer each question.</p>
+                        <p>The assessment typically takes 10-15 minutes to complete. We recommend setting aside uninterrupted time to thoughtfully answer each question.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h3>Is this really completely free?</h3>
+                    <div class="faq-answer">
+                        <p>Yes! This is a completely free service with no hidden costs, no signup required, and no credit card needed. We believe everyone should have access to career guidance.</p>
                     </div>
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
@@ -674,7 +568,7 @@
                 <div class="faq-item" onclick="toggleFAQ(this)">
                     <h3>How accurate are the recommendations?</h3>
                     <div class="faq-answer">
-                        <p>Our recommendations are based on analysis of thousands of successful career transitions. While individual results vary, most users find our suggestions highly relevant.</p>
+                        <p>Our recommendations are based on analysis of thousands of successful career transitions and current market demand. Most users find our suggestions highly relevant and actionable.</p>
                     </div>
                 </div>
             </div>
@@ -683,8 +577,8 @@
         <!-- Final CTA -->
         <section style="text-align: center; padding: 50px 20px;" data-aos="fade-up">
             <h2>Ready to Discover Your Tech Career Path?</h2>
-            <p style="margin: 20px 0;">Get your personalized career analysis today.</p>
-            <a href="https://career.techtalentscity.com/career" class="cta-button">Start Your Analysis Now</a>
+            <p style="margin: 20px 0;">Get your free personalized career analysis today - no cost, no commitment!</p>
+            <a href="https://career.techtalentscity.com/career" class="cta-button">Start Your Free Analysis Now</a>
         </section>
     </main>
 
