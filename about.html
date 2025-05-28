@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Opeyemi Taiwo Adeniran</title>
 
+    <!-- Favicon Implementation -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -16,84 +23,117 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
     <style>
+        :root {
+            --navy-blue: #2C3E50;
+            --light-blue: #3498DB;
+            --green: #27AE60;
+            --background: #F5F7FA;
+        }
+
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #F5F7FA;
-    color: #2C3E50;
-    line-height: 1.8;
-    padding-top: 80px;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--navy-blue);
+            line-height: 1.8;
+            padding-top: 80px;
+        }
 
-/* Header Styling */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
+        /* Header Styling */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
 
-.logo a {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-/* Navigation Menu */
-.navmenu {
-    display: flex;
-    align-items: center;
-}
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--light-blue);
+        }
 
-.navmenu ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+        .logo a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-.navmenu ul li {
-    display: inline;
-}
+        .logo a:hover {
+            color: var(--light-blue);
+        }
 
-.navmenu ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 8px 20px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
+        /* Navigation Menu */
+        .navmenu {
+            display: flex;
+            align-items: center;
+        }
 
-.navmenu ul li a:hover {
-    background: rgba(44, 62, 80, 0.1);
-    color: #2C3E50;
-}
+        .navmenu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-.navmenu ul li a.active {
-    background: #2C3E50;
-    color: white;
-}
+        .navmenu ul li {
+            display: inline;
+        }
 
-/* Mobile Menu */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-}
+        .navmenu ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navmenu ul li a:hover {
+            background: rgba(44, 62, 80, 0.1);
+            color: var(--navy-blue);
+        }
+
+        .navmenu ul li a.active {
+            background: var(--navy-blue);
+            color: white;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--navy-blue);
+            transition: color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: var(--light-blue);
+        }
 
         /* Main Title */
         .main-title {
@@ -122,6 +162,9 @@ header {
             align-items: flex-start;
             gap: 30px;
             margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .about img {
@@ -129,6 +172,7 @@ header {
             height: 300px;
             border-radius: 50%;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
 
         .about-details {
@@ -142,126 +186,118 @@ header {
             line-height: 1.8;
         }
 
-
         /* Contact Section */
-.contact-details {
-    background: linear-gradient(135deg, #2C3E50, #3498DB);
-    padding: 50px 20px;
-    border-radius: 15px;
-    margin: 50px auto;
-    max-width: 1200px;
-    color: white;
-}
+        .contact-details, .professional-materials {
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin: 50px auto;
+            max-width: 1200px;
+            color: white;
+        }
 
-.link-card {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    transition: transform 0.3s ease;
-}
+        .professional-materials {
+            background: white;
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin: 50px auto;
+            max-width: 1200px;
+            color: var(--navy-blue);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.link-card i {
-    font-size: 2rem;
-    color: #FF6384;
-    margin-bottom: 10px;
-}
+        .link-card {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
 
-.link-card p {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: black;
-}
+        .link-card i {
+            font-size: 2rem;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
 
-.link-card a {
-    color: black;
-    text-decoration: none;
-    font-size: 0.9rem;
-    word-wrap: break-word;
-    display: block;
-    width: 100%;
-    overflow-wrap: break-word;
-}
+        .link-card p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: black;
+        }
 
-.link-card:hover {
-    transform: translateY(-5px);
-}
+        .link-card a {
+            color: black;
+            text-decoration: none;
+            font-size: 0.9rem;
+            word-wrap: break-word;
+            display: block;
+            width: 100%;
+            overflow-wrap: break-word;
+        }
 
-/* Add this for mobile responsiveness */
-@media (max-width: 768px) {
-    .link-card {
-        width: 100%;
-        max-width: 200px;
-    }
-}
+        .link-card:hover {
+            transform: translateY(-5px);
+        }
 
-    /* Organization section */
-    .organizations {
-    margin-top: 60px;
-    text-align: left;
-}
+        /* Organizations section */
+        .organizations {
+            margin-top: 60px;
+            text-align: left;
+        }
 
-.org-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
+        .org-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
 
-.org-item {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
+        .org-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-.org-item:hover {
-    transform: translateY(-5px);
-}
+        .org-item:hover {
+            transform: translateY(-5px);
+        }
 
-.org-item h3 {
-    color: var(--navy-blue);
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-}
+        .org-item h3 {
+            color: var(--navy-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
 
-.org-item p {
-    color: #666;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    line-height: 1.6;
-}
+        .org-item p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
 
-.org-link {
-    color: #FF6384;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: color 0.3s ease;
-}
+        .org-link {
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
 
-.org-link:hover {
-    color: #ff3366;
-}
+        .org-link:hover {
+            color: #1e8449;
+        }
 
-@media (max-width: 768px) {
-    .org-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .org-item {
-        padding: 20px;
-    }
-}
         /* Footer */
         #footer {
             background-color: #EEF2F7;
             text-align: center;
             padding: 20px 0;
-            border-top: 2px solid #2C3E50;
+            border-top: 2px solid var(--navy-blue);
             margin-top: 50px;
         }
 
@@ -277,7 +313,7 @@ header {
         }
 
         #footer .social-links a:hover {
-            color: #3498DB;
+            color: var(--light-blue);
         }
 
         #footer p {
@@ -285,68 +321,103 @@ header {
             margin: 0;
         }
 
-          /* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 10px 15px;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
 
-    .logo a {
-        font-size: 1.2rem;
-    }
+            .logo a {
+                font-size: 1.2rem;
+            }
 
-    .menu-toggle {
-        display: block;
-    }
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
 
-    .navmenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+            .menu-toggle {
+                display: block;
+            }
 
-    .navmenu.active {
-        display: block;
-    }
+            .navmenu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-    .navmenu ul {
-        flex-direction: column;
-        padding: 10px 0;
-    }
+            .navmenu.active {
+                display: block;
+            }
 
-    .navmenu ul li {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
+            .navmenu ul {
+                flex-direction: column;
+                padding: 10px 0;
+            }
 
-    .navmenu ul li a {
-        display: inline-block;
-        width: 80%;
-    }
-     .main-title {
-         font-size: 8vw;
-         margin-top: 60px;
-     }
-    .about {
-        padding: 40px 15px;
-    }
-    .about img {
-        width: 200px;
-        height: 200px;
-    }
-}
+            .navmenu ul li {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .navmenu ul li a {
+                display: inline-block;
+                width: 80%;
+            }
+
+            .main-title {
+                font-size: 8vw;
+                margin-top: 60px;
+            }
+
+            .about {
+                padding: 40px 15px;
+            }
+
+            .about img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-details {
+                text-align: center;
+            }
+
+            .org-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .org-item {
+                padding: 20px;
+            }
+
+            .link-card {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .contact-details, .professional-materials {
+                margin: 30px 10px;
+                padding: 30px 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- HEADER -->
-       <header id="header">
+    <header id="header">
         <div class="logo">
             <!-- Optional: Add your photo as logo icon -->
             <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Adeniran" class="logo-icon">
@@ -359,102 +430,100 @@ header {
         </div>
         <nav class="navmenu">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="TechCareers.html">Tech Careers</a></li>
                 <li><a href="books.html">AI Books</a></li>
             </ul>
         </nav>
     </header>
  
-<!-- MAIN -->
-<main>
-   
-<section id="about" class="about">
-    <div class="container">
-        <div class="about-container" data-aos="fade-up">
-            <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran Portrait">
-            <div class="about-details">
-                <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
-                <p>As the founder of multiple tech initiatives, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth and social impact.</p>
-            </div>
-        </div>
-
-        <!-- Organizations Section -->
-        <div class="organizations" data-aos="fade-up">
-            <h2 style="font-size: 2rem; font-weight: 600; color: var(--navy-blue); margin: 50px 0 30px; text-align: center;"> Organizations & Initiatives</h2>
-
-            <div class="org-container">
-                <div class="org-item">
-                    <h3>Favored Online Ntw</h3>
-                    <p>An online learning platform that helps people identify their career path in Information Technology.</p>
-                    <a href="https://favoredonline.com/" target="_blank" class="org-link">Learn More →</a>
+    <!-- MAIN -->
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-container" data-aos="fade-up">
+                    <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran Portrait">
+                    <div class="about-details">
+                        <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
+                        <p>As the founder of multiple tech initiatives, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth and social impact.</p>
+                    </div>
                 </div>
 
-                <div class="org-item">
-                    <h3>She Model Tech</h3>
-                    <p>Empowering women in technology through access to IT skills, leadership programs and mentorship.</p>
-                    <a href="https://www.shemodeltech.com/" target="_blank" class="org-link">Learn More →</a>
+                <!-- Organizations Section -->
+                <div class="organizations" data-aos="fade-up">
+                    <h2 style="font-size: 2rem; font-weight: 600; color: var(--navy-blue); margin: 50px 0 30px; text-align: center;">Organizations & Initiatives</h2>
+
+                    <div class="org-container">
+                        <div class="org-item">
+                            <h3>Favored Online Ntw</h3>
+                            <p>An online learning platform that helps people identify their career path in Information Technology.</p>
+                            <a href="https://favoredonline.com/" target="_blank" class="org-link">Learn More →</a>
+                        </div>
+
+                        <div class="org-item">
+                            <h3>She Model Tech</h3>
+                            <p>Empowering women in technology through access to IT skills, leadership programs and mentorship.</p>
+                            <a href="https://www.shemodeltech.com/" target="_blank" class="org-link">Learn More →</a>
+                        </div>
+
+                        <div class="org-item">
+                            <h3>Morgan TechFest</h3>
+                            <p>A student-led conference inspiring students through tech talks, research symposium, and panel discussions.</p>
+                            <a href="https://www.morgantechfest.com/" target="_blank" class="org-link">Learn More →</a>
+                        </div>
+
+                        <div class="org-item">
+                            <h3>TechTalents City</h3>
+                            <p>A global platform connecting individuals through collaboration on real-world projects for innovation and growth.</p>
+                            <a href="https://www.techtalentscity.com/" target="_blank" class="org-link">Learn More →</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="org-item">
-                    <h3>Morgan TechFest</h3>
-                    <p>A student-led conference inspiring students through tech talks, research symposium, and panel discussions.</p>
-                    <a href="https://www.morgantechfest.com/" target="_blank" class="org-link">Learn More →</a>
+        <!-- Contact Details Section -->
+        <section class="contact-details">
+            <h2 style="font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 30px;">Get in Touch</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">Connect with me for inquiries, speaking engagements, and collaborations.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <div class="link-card">
+                    <i class="bi bi-envelope"></i>
+                    <p>Email</p>
+                    <a href="mailto:opeyemitaiwo81@gmail.com">opeyemitaiwo81@gmail.com</a>
                 </div>
-
-                <div class="org-item">
-                    <h3>TechTalents City</h3>
-                    <p>A global platform connecting individuals through collaboration on real-world projects for innovation and growth.</p>
-                    <a href="https://www.techtalentscity.com/" target="_blank" class="org-link">Learn More →</a>
+                <div class="link-card">
+                    <i class="bi bi-file-person"></i>
+                    <p>Resume</p>
+                    <a href="https://opethaiwoh.github.io/opeyemi.github.io/" target="_blank">View Resume</a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-    <!-- Contact Details Section -->
-    <section class="contact-details">
-        <h2 style="font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 30px;">Get in Touch</h2>
-        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">Connect with me for inquiries, speaking engagements, and collaborations.</p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <div class="link-card">
-                <i class="bi bi-envelope"></i>
-                <p>Email</p>
-                <a href="mailto:opeyemitaiwo81@gmail.com">opeyemitaiwo81@gmail.com</a>
+        <!-- Professional Materials Section -->
+        <section class="professional-materials">
+            <h2 style="font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 30px;">Explore My Professional Materials</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">Access my publications, biography, and professional headshots.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <div class="link-card">
+                    <i class="bi bi-journal-text"></i>
+                    <p>Publications</p>
+                    <a href="https://scholar.google.com/citations?user=Krnac-4AAAAJ&hl" target="_blank">View Publications</a>
+                </div>
+                <div class="link-card">
+                    <i class="bi bi-file-text"></i>
+                    <p>Long Bio</p>
+                    <a href="https://docs.google.com/document/d/1fwHGUdVhgyZ8MSyUjcHT28i4tYdfvFBFHyClC0E68Gc/edit" target="_blank">Download Long Bio</a>
+                </div>
+                <div class="link-card">
+                    <i class="bi bi-camera"></i>
+                    <p>Headshot</p>
+                    <a href="https://drive.google.com/drive/folders/1Ajy_vh_t_8VmQUljrs_lzGMeUv8GkJLC?usp=sharing" target="_blank">Download</a>
+                </div>
             </div>
-            <div class="link-card">
-                <i class="bi bi-file-person"></i>
-                <p>Resume</p>
-                <a href="https://opethaiwoh.github.io/opeyemi.github.io/" target="_blank">View Resume</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Materials Section -->
-    <section class="professional-materials">
-        <h2 style="font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 30px;">Explore My Professional Materials</h2>
-        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">Access my publications, biography, and professional headshots.</p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <div class="link-card">
-                <i class="bi bi-journal-text"></i>
-                <p>Publications</p>
-                <a href="https://scholar.google.com/citations?user=Krnac-4AAAAJ&hl" target="_blank">View Publications</a>
-            </div>
-            <div class="link-card">
-                <i class="bi bi-file-text"></i>
-                <p>Long Bio</p>
-                <a href="https://docs.google.com/document/d/1fwHGUdVhgyZ8MSyUjcHT28i4tYdfvFBFHyClC0E68Gc/edit" target="_blank">Download Long Bio</a>
-            </div>
-            <div class="link-card">
-                <i class="bi bi-camera"></i>
-                <p>Headshot</p>
-                <a href="https://drive.google.com/drive/folders/1Ajy_vh_t_8VmQUljrs_lzGMeUv8GkJLC?usp=sharing" target="_blank">Download</a>
-            </div>
-        </div>
-    </section>
-</main>
-
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer id="footer">
@@ -476,14 +545,47 @@ header {
             offset: 100
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.navmenu');
+        function toggleMenu() {
+            const navmenu = document.querySelector('.navmenu');
+            const menuToggle = document.querySelector('.menu-toggle i');
+            
+            navmenu.classList.toggle('active');
+            
+            // Toggle icon between hamburger and close
+            if (navmenu.classList.contains('active')) {
+                menuToggle.classList.remove('bi-list');
+                menuToggle.classList.add('bi-x');
+            } else {
+                menuToggle.classList.remove('bi-x');
+                menuToggle.classList.add('bi-list');
+            }
+        }
 
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
+        // Close menu when clicking on a link (mobile)
+        document.querySelectorAll('.navmenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navmenu = document.querySelector('.navmenu');
+                const menuToggle = document.querySelector('.menu-toggle i');
+                
+                if (window.innerWidth <= 768) {
+                    navmenu.classList.remove('active');
+                    menuToggle.classList.remove('bi-x');
+                    menuToggle.classList.add('bi-list');
+                }
             });
         });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                const navmenu = document.querySelector('.navmenu');
+                const menuToggle = document.querySelector('.menu-toggle i');
+                
+                navmenu.classList.remove('active');
+                menuToggle.classList.remove('bi-x');
+                menuToggle.classList.add('bi-list');
+            }
+        });
     </script>
- </body>
+</body>
 </html>
