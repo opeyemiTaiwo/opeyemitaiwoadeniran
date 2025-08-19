@@ -13,8 +13,7 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -24,28 +23,56 @@
 
     <style>
         :root {
-            --navy-blue: #2C3E50;
-            --light-blue: #3498DB;
-            --green: #27AE60;
-            --pink: #FF6384;
-            --background: #F5F7FA;
+            --primary-dark: #0F1419;
+            --primary-light: #1A1F2E;
+            --accent-gold: #D4AF37;
+            --accent-blue: #4A90E2;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B8BCC8;
+            --text-muted: #8B92A5;
+            --surface: #1E2328;
+            --surface-light: #252A31;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.25);
+            --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.35);
         }
 
-        /* General Reset */
+        /* General Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--background);
-            color: var(--navy-blue);
-            line-height: 1.8;
-            padding-top: 80px;
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding-top: 0;
             min-height: 100vh;
-            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold);
+            border-radius: 4px;
         }
 
         /* Header Styles */
@@ -54,657 +81,961 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: white;
-            padding: 15px 20px;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 15px;
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--light-blue);
+            border: 2px solid var(--accent-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-icon:hover {
+            transform: scale(1.1);
         }
 
         .logo a {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: black;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .logo a:hover {
-            color: var(--light-blue);
+            color: var(--accent-gold);
         }
 
         /* Navigation Menu */
-        .navmenu {
-            display: flex;
-            align-items: center;
-        }
-
         .navmenu ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 40px;
+            align-items: center;
         }
 
         .navmenu ul li a {
             text-decoration: none;
-            color: black;
-            font-weight: bold;
-            padding: 8px 20px;
-            border-radius: 20px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 12px 0;
+            position: relative;
             transition: all 0.3s ease;
         }
 
+        .navmenu ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
         .navmenu ul li a:hover {
-            background: rgba(44, 62, 80, 0.1);
-            color: var(--navy-blue);
+            color: var(--text-primary);
+        }
+
+        .navmenu ul li a:hover::after,
+        .navmenu ul li a.active::after {
+            width: 100%;
         }
 
         .navmenu ul li a.active {
-            background: var(--navy-blue);
-            color: white;
+            color: var(--accent-gold);
         }
 
         /* Menu Toggle */
         .menu-toggle {
             display: none;
             cursor: pointer;
-            font-size: 24px;
-            color: var(--navy-blue);
+            font-size: 28px;
+            color: var(--text-primary);
             transition: color 0.3s ease;
         }
 
         .menu-toggle:hover {
-            color: var(--light-blue);
+            color: var(--accent-gold);
         }
 
         /* Hero Section */
         .hero-section {
             position: relative;
-            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
-            color: white;
-            padding: 120px 20px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+            padding: 140px 40px 100px;
             text-align: center;
             overflow: hidden;
-            min-height: calc(100vh - 180px);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23D4AF37" stop-opacity="0.1"/><stop offset="100%" stop-color="%23D4AF37" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="300" r="100" fill="url(%23a)"/><circle cx="800" cy="200" r="150" fill="url(%23a)"/><circle cx="600" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero-image {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            border: 8px solid white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            border: 4px solid var(--accent-gold);
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 40px;
             transition: transform 0.3s ease;
             object-fit: cover;
+            position: relative;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            background: var(--gradient-gold);
+            z-index: -1;
+            opacity: 0.3;
         }
 
         .hero-image:hover {
             transform: scale(1.05);
         }
 
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            margin-bottom: 30px;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
         /* Featured Section */
         .featured-section {
-            padding: 80px 20px;
-            background: white;
-            margin-top: -50px;
-            border-radius: 30px 30px 0 0;
+            padding: 120px 40px;
+            background: var(--primary-light);
             position: relative;
+        }
+
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: var(--primary-dark);
+            clip-path: polygon(0 100%, 100% 0, 100% 100%);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 60px;
         }
 
         .featured-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
         }
 
         .featured-card {
-            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
-            color: white;
-            padding: 30px;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
             border-radius: 20px;
             text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .featured-card:hover {
             transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--accent-gold);
+        }
+
+        .featured-card:hover::before {
+            transform: scaleX(1);
         }
 
         .featured-icon {
-            font-size: 2.5rem;
-            color: var(--pink);
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+        }
+
+        .featured-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
             margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .featured-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* About Section */
         .about {
-            padding: 60px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-            background: white;
+            padding: 120px 40px;
+            background: var(--primary-dark);
         }
 
         .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 30px;
-            margin-top: 40px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
         }
 
-        .about img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 20px;
             object-fit: cover;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease;
         }
 
-        .about-details {
-            max-width: 600px;
-            text-align: left;
+        .about-image:hover {
+            transform: scale(1.02);
+        }
+
+        .about-details h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .about-details p {
-            margin-bottom: 20px;
+            color: var(--text-secondary);
             font-size: 1.1rem;
             line-height: 1.8;
+            margin-bottom: 25px;
         }
 
-        /* Organizations section */
+        /* Organizations Section */
         .organizations {
-            margin-top: 60px;
-            text-align: left;
-            max-width: 1200px;
+            padding: 80px 40px;
+            background: var(--surface);
+            margin: 80px 0;
+            border-radius: 30px;
+            max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
-            padding: 0 20px;
         }
 
         .org-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .org-item {
-            background: white;
-            padding: 25px;
+            background: var(--surface-light);
+            padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
 
         .org-item:hover {
             transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--accent-gold);
         }
 
         .org-item h3 {
-            color: var(--navy-blue);
-            margin-bottom: 15px;
+            color: var(--text-primary);
             font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
         .org-item p {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 1rem;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
         }
 
         .org-link {
-            color: var(--green);
+            color: var(--accent-gold);
             text-decoration: none;
             font-weight: 600;
-            display: inline-block;
-            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
         }
 
         .org-link:hover {
-            color: #1e8449;
+            transform: translateX(5px);
         }
 
-        /* Leadership Positions Section */
+        /* Leadership Positions */
         .leadership-positions {
-            margin-top: 40px;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 15px;
-            border-left: 4px solid var(--light-blue);
-        }
-
-        .leadership-positions h3 {
-            color: var(--navy-blue);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .leadership-positions p {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 10px;
+            margin-top: 60px;
+            padding: 40px;
+            background: var(--surface-light);
+            border-radius: 20px;
+            border-left: 4px solid var(--accent-gold);
         }
 
         .position-list {
-            margin-top: 15px;
+            display: grid;
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .position-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin: 10px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            background: var(--surface);
+            padding: 20px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
 
         .position-item:hover {
-            transform: translateX(5px);
+            transform: translateX(8px);
+            border-color: var(--accent-gold);
         }
 
         .position-title {
             font-weight: 600;
-            color: var(--navy-blue);
+            color: var(--text-primary);
         }
 
         .position-year {
-            background: var(--light-blue);
+            background: var(--gradient-primary);
             color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
+            padding: 6px 16px;
+            border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
         }
 
         /* Publications Section */
         .publications-section {
-            padding: 80px 20px;
-            background: white;
-            text-align: center;
+            padding: 120px 40px;
+            background: var(--primary-light);
         }
 
         .publications-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .publication-card {
-            color: white;
-            padding: 30px;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
             border-radius: 20px;
-            width: 350px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .publication-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
         }
 
         .publication-card:hover {
             transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .publication-card i {
+            font-size: 3rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+        }
+
+        .publication-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .publication-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .publication-card a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .publication-card a:hover {
+            transform: translateX(5px);
         }
 
         /* Contact Section */
-        .contact-details, .professional-materials {
-            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
-            padding: 50px 20px;
-            border-radius: 15px;
-            margin: 50px auto;
-            max-width: 1200px;
-            color: white;
-        }
-
+        .contact-details,
         .professional-materials {
-            background: white;
-            padding: 50px 20px;
-            border-radius: 15px;
-            margin: 50px auto;
-            max-width: 1200px;
-            color: var(--navy-blue);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 80px 40px;
+            background: var(--surface);
+            border-radius: 30px;
+            margin: 80px auto;
+            max-width: 1400px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .link-card {
-            background: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            transition: transform 0.3s ease;
-        }
-
-        .link-card i {
-            font-size: 2rem;
-            color: var(--green);
-            margin-bottom: 10px;
-        }
-
-        .link-card p {
-            margin-bottom: 10px;
-            font-weight: bold;
-            color: black;
-        }
-
-        .link-card a {
-            color: black;
-            text-decoration: none;
-            font-size: 0.9rem;
-            word-wrap: break-word;
-            display: block;
-            width: 100%;
-            overflow-wrap: break-word;
-        }
-
-        .link-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Books Section */
-        .books-section {
-            padding: 80px 20px;
-            text-align: center;
-            background: var(--background);
-        }
-
-        .books-container {
+        .link-cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 40px;
-            max-width: 1200px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .book-card {
-            background: white;
+        .link-card {
+            background: var(--surface-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            text-align: center;
             border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--accent-gold);
+        }
+
+        .link-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .link-card i {
+            font-size: 2.5rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .link-card p {
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .link-card a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .link-card:hover a {
+            color: var(--accent-gold);
+        }
+
+        /* Books Section */
+        .books-section {
+            padding: 120px 40px;
+            background: var(--primary-dark);
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .countdown div {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .countdown div:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-gold);
+        }
+
+        .countdown div span {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: block;
+        }
+
+        .countdown div small {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .book-card {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .book-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-medium);
         }
 
         .book-image {
-            height: 250px;
-            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            height: 300px;
+            background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 3rem;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .book-card:hover .book-image::before {
+            transform: translateX(100%);
         }
 
         .book-content {
-            padding: 20px;
+            padding: 30px;
         }
 
         .book-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
         }
 
         .book-description {
-            color: #6c757d;
-            margin-bottom: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .book-status {
             display: inline-block;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            background: #e9f5ff;
-            color: var(--light-blue);
-        }
-
-        /* Countdown Timer */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .countdown div {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            width: 80px;
-        }
-
-        .countdown div span {
-            font-size: 1.8rem;
-            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: var(--gradient-accent);
+            color: white;
         }
 
         /* Features Section */
         .features-section {
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 120px 40px;
+            background: var(--surface);
+            margin: 80px 0;
+            border-radius: 30px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .features-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 60px;
         }
 
         .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
+            background: var(--surface-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--accent-gold);
         }
 
         .feature-icon {
-            font-size: 2.5rem;
-            color: var(--light-blue);
-            margin-bottom: 20px;
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* Subscription Form */
         .subscribe-form {
-            margin: 40px auto;
             max-width: 600px;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            margin: 60px auto;
         }
 
         .subscribe-form h3 {
             font-family: 'Playfair Display', serif;
-            margin-bottom: 20px;
-            color: var(--navy-blue);
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .subscribe-form > p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-primary);
         }
 
         .form-group input {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 15px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            background: var(--surface-light);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus {
-            border-color: var(--light-blue);
+            border-color: var(--accent-gold);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--navy-blue), var(--light-blue));
+            background: var(--gradient-primary);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             width: 100%;
+            font-size: 1.1rem;
         }
 
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
         }
 
         .success-message {
             display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
             margin-top: 20px;
+            text-align: center;
         }
 
         /* Footer */
         #footer {
-            background-color: #EEF2F7;
-            padding: 20px 0;
+            background: var(--primary-light);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px 40px 40px;
             text-align: center;
-            width: 100%;
-            border-top: 2px solid var(--navy-blue);
         }
 
-        #footer .social-links {
-            margin-bottom: 10px;
+        .social-links {
+            margin-bottom: 30px;
         }
 
-        #footer .social-links a {
-            margin: 0 15px;
-            font-size: 1.2rem;
-            color: black;
-            transition: color 0.3s ease;
+        .social-links a {
+            margin: 0 20px;
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
         }
 
-        #footer .social-links a:hover {
-            color: var(--light-blue);
+        .social-links a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
         }
 
         #footer p {
-            font-size: 0.9rem;
-            color: black;
+            font-size: 1rem;
+            color: var(--text-secondary);
             margin: 0;
         }
 
-        /* Badge */
-        .new-badge {
+        /* Badges */
+        .new-badge, .coming-soon-badge {
             display: inline-block;
-            background: var(--pink);
+            background: var(--gradient-accent);
             color: white;
             font-size: 0.8rem;
-            padding: 5px 10px;
-            border-radius: 20px;
-            margin-left: 10px;
+            padding: 6px 15px;
+            border-radius: 25px;
+            margin-left: 15px;
             animation: pulse 2s infinite;
-        }
-
-        .coming-soon-badge {
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            font-size: 0.8rem;
-            padding: 5px 10px;
-            border-radius: 20px;
-            margin-left: 10px;
-            animation: pulse 2s infinite;
+            font-weight: 600;
         }
 
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .header-container {
+                padding: 0 30px;
+            }
+            
+            .hero-section,
+            .featured-section,
+            .about,
+            .publications-section,
+            .books-section,
+            .features-section {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
         @media (max-width: 768px) {
-            header {
-                padding: 10px 15px;
-            }
-
-            .logo a {
-                font-size: 1.2rem;
-            }
-
-            .logo-icon {
-                width: 30px;
-                height: 30px;
+            .header-container {
+                padding: 0 20px;
             }
 
             .menu-toggle {
@@ -717,9 +1048,10 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: white;
-                padding: 0;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                background: rgba(15, 20, 25, 0.98);
+                backdrop-filter: blur(20px);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 20px 0;
             }
 
             .navmenu.active {
@@ -728,212 +1060,284 @@
 
             .navmenu ul {
                 flex-direction: column;
-                padding: 10px 0;
-            }
-
-            .navmenu ul li {
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
+                gap: 20px;
+                padding: 0 20px;
             }
 
             .navmenu ul li a {
-                display: inline-block;
-                width: 80%;
+                display: block;
+                padding: 15px 0;
+                text-align: center;
             }
 
             .hero-section {
-                padding: 60px 15px;
-                min-height: calc(100vh - 150px);
+                padding: 120px 20px 80px;
+                min-height: 90vh;
             }
 
-            .hero-content h1 {
-                font-size: 2rem !important;
+            .hero-title {
+                font-size: 2.5rem;
             }
 
-            .hero-content p {
-                font-size: 1rem !important;
-                padding: 0 15px;
+            .hero-subtitle {
+                font-size: 1.1rem;
+                padding: 0 10px;
             }
 
-            .featured-section {
-                margin-top: -30px;
-                padding: 40px 15px;
+            .featured-section,
+            .about,
+            .publications-section,
+            .books-section,
+            .features-section {
+                padding: 80px 20px;
             }
 
             .featured-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 10px;
-            }
-
-            .about {
-                padding: 40px 15px;
-            }
-
-            .about img {
-                width: 200px;
-                height: 200px;
+                gap: 30px;
             }
 
             .about-container {
-                flex-direction: column;
-                align-items: center;
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
             }
 
-            .about-details {
-                text-align: center;
+            .about-image {
+                max-width: 300px;
+                height: 300px;
+            }
+
+            .organizations {
+                padding: 60px 20px;
+                margin: 60px 10px;
             }
 
             .org-container {
                 grid-template-columns: 1fr;
             }
-            
-            .org-item {
-                padding: 20px;
-            }
-
-            .link-card {
-                width: 100%;
-                max-width: 200px;
-            }
-
-            .contact-details, .professional-materials {
-                margin: 30px 10px;
-                padding: 30px 15px;
-            }
-
-            .leadership-positions {
-                margin: 30px 0;
-                padding: 20px;
-            }
 
             .position-item {
                 flex-direction: column;
                 text-align: center;
-                gap: 10px;
+                gap: 15px;
+            }
+
+            .publications-container {
+                grid-template-columns: 1fr;
+            }
+
+            .publication-card {
+                padding: 30px;
+            }
+
+            .contact-details,
+            .professional-materials {
+                margin: 60px 10px;
+                padding: 60px 20px;
+            }
+
+            .link-cards-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .countdown {
+                gap: 20px;
             }
 
             .countdown div {
-                width: 70px;
-                padding: 10px;
+                min-width: 80px;
+                padding: 20px 15px;
+            }
+
+            .countdown div span {
+                font-size: 1.8rem;
+            }
+
+            .features-section {
+                margin: 60px 10px;
+            }
+
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+
+            .subscribe-form {
+                margin: 60px 10px;
+                padding: 40px 20px;
+            }
+
+            .social-links a {
+                margin: 0 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            #footer {
+                padding: 50px 20px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .countdown {
+                gap: 15px;
+            }
+
+            .countdown div {
+                min-width: 70px;
+                padding: 15px 10px;
             }
 
             .countdown div span {
                 font-size: 1.5rem;
             }
 
-            .publications-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .publication-card {
-                width: 100% !important;
-                max-width: 350px !important;
-            }
-        }
-
-        /* Small Mobile Devices */
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.8rem !important;
-            }
-
-            #footer .social-links a {
+            .social-links a {
                 margin: 0 10px;
-                font-size: 1rem;
-            }
-
-            #footer p {
-                font-size: 0.8rem;
-                padding: 0 10px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
         }
 
-        /* Landscape Mode */
-        @media (max-height: 500px) and (orientation: landscape) {
+        /* Landscape orientation */
+        @media (max-height: 600px) and (orientation: landscape) {
             .hero-section {
                 min-height: auto;
-                padding: 40px 15px;
+                padding: 100px 20px 60px;
             }
 
             .hero-image {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 15px;
+                width: 150px;
+                height: 150px;
+                margin-bottom: 20px;
             }
         }
 
-        /* Larger Screens */
-        @media (min-width: 1200px) {
+        /* Large screens */
+        @media (min-width: 1400px) {
             .container {
-                max-width: 1140px;
+                max-width: 1320px;
                 margin: 0 auto;
-            }
-
-            .hero-content {
-                max-width: 900px;
             }
 
             .featured-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        /* Smooth animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Glowing border effect */
+        .glow-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            transition: left 0.5s ease;
+            opacity: 0.3;
+        }
+
+        .glow-border:hover::before {
+            left: 100%;
+        }
     </style>
 </head>
 <body>
     <!-- HEADER -->
     <header id="header">
-        <div class="logo">
-            <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Adeniran" class="logo-icon">
-            <a href="#home">
-                Opeyemi Adeniran
-            </a>
+        <div class="header-container">
+            <div class="logo">
+                <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Adeniran" class="logo-icon">
+                <a href="#home">Opeyemi Adeniran</a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="bi bi-list"></i>
+            </div>
+            <nav class="navmenu">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#books">AI Books</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <i class="bi bi-list"></i>
-        </div>
-        <nav class="navmenu">
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#books">AI Books</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
     
     <main>
-        <!-- Enhanced Hero Section -->
+        <!-- Hero Section -->
         <section id="home" class="hero-section" data-aos="fade-up">
             <div class="hero-content">
                 <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran" class="hero-image">
-                <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px;">
-                    AI Research Engineer & Author
-                </h1>
-                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
-                    I conduct cutting-edge research in artificial intelligence and help professionals harness AI technologies to transform their careers and industries.
+                <h1 class="hero-title">AI Research Engineer & Author</h1>
+                <p class="hero-subtitle">
+                    Pioneering cutting-edge research in artificial intelligence and empowering professionals to harness AI technologies for transformative impact across industries.
                 </p>
-                <a href="#books" class="cta-button" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, var(--pink), #FF9068); color: white; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 20px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">Explore My Books</a>
+                <a href="#books" class="cta-button glow-border">Explore My Books</a>
             </div>
         </section>
 
         <!-- Featured Section -->
         <section class="featured-section" id="featured">
+            <h2 class="section-title">Research Excellence</h2>
+            <p class="section-subtitle">Leading innovation in AI research with published work spanning medical diagnostics, blockchain security, and machine learning applications.</p>
             <div class="featured-grid">
-                <div class="featured-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="featured-card hover-lift" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-cpu featured-icon"></i>
                     <h3>AI Research & Development</h3>
                     <p>Leading innovative research in machine learning applications across healthcare, blockchain security, and emerging technologies with published work in peer-reviewed journals.</p>
                 </div>
-                <div class="featured-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="featured-card hover-lift" data-aos="fade-up" data-aos-delay="200">
                     <i class="bi bi-heart-pulse featured-icon"></i>
                     <h3>Medical AI & Explainability</h3>
                     <p>Published research in medical image segmentation and Alzheimer's disease detection using explainable ensemble learning architectures for enhanced diagnostic accuracy.</p>
                 </div>
-                <div class="featured-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="featured-card hover-lift" data-aos="fade-up" data-aos-delay="300">
                     <i class="bi bi-book featured-icon"></i>
                     <h3>AI Education & Advocacy</h3>
                     <p>Empowering professionals through accessible AI education and promoting diversity in tech through community leadership and educational initiatives.</p>
@@ -943,97 +1347,94 @@
 
         <!-- About Section -->
         <section id="about" class="about">
-            <div class="container">
-                <h2 style="font-size: 2.5rem; font-weight: 600; color: var(--navy-blue); margin-bottom: 30px; text-align: center; font-family: 'Playfair Display', serif;">About Me</h2>
-                <div class="about-container" data-aos="fade-up">
-                    <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran Portrait">
-                    <div class="about-details">
-                        <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
-                        <p>As the founder of Morgan TechFest, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth and social impact.</p>
+            <div class="about-container" data-aos="fade-up">
+                <div class="about-image-wrapper">
+                    <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Taiwo Adeniran Portrait" class="about-image">
+                </div>
+                <div class="about-details">
+                    <h2>About Me</h2>
+                    <p>Opeyemi Taiwo Adeniran is a passionate AI/ML researcher and technology entrepreneur dedicated to driving innovation and solving real-world problems. With expertise in machine learning, computer vision, and image processing, she develops AI-driven solutions for object detection, facial recognition, and predictive analytics.</p>
+                    <p>As the founder of Morgan TechFest, Opeyemi empowers aspiring technologists, promotes diversity in tech, and supports career development. Her mission is to create transformative, human-centric technology that fosters growth and social impact.</p>
+                </div>
+            </div>
+
+            <!-- Organizations Section -->
+            <div class="organizations" data-aos="fade-up">
+                <h2 class="section-title">Founded Organization</h2>
+
+                <div class="org-container">
+                    <div class="org-item hover-lift">
+                        <h3>Morgan TechFest</h3>
+                        <p>A student-led conference inspiring students through tech talks, research symposium, and panel discussions.</p>
+                        <a href="https://www.morgantechfest.com/" target="_blank" class="org-link">Learn More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Organizations Section -->
-                <div class="organizations" data-aos="fade-up">
-                    <h2 style="font-size: 2rem; font-weight: 600; color: var(--navy-blue); margin: 50px 0 30px; text-align: center;">Founded Organization</h2>
-
-                    <div class="org-container">
-                        <div class="org-item">
-                            <h3>Morgan TechFest</h3>
-                            <p>A student-led conference inspiring students through tech talks, research symposium, and panel discussions.</p>
-                            <a href="https://www.morgantechfest.com/" target="_blank" class="org-link">Learn More →</a>
+                <!-- Leadership Positions Section -->
+                <div class="leadership-positions" data-aos="fade-up">
+                    <h3><i class="bi bi-award" style="margin-right: 10px; color: var(--accent-gold);"></i>Past Leadership & Non-profit Positions</h3>
+                    <p>Throughout my journey in technology and community building, I have held various leadership positions that have contributed to my growth and the global tech community:</p>
+                    <div class="position-list">
+                        <div class="position-item">
+                            <span class="position-title">Google Women Tech Makers Ambassador</span>
+                            <span class="position-year">2022</span>
+                        </div>
+                        <div class="position-item">
+                            <span class="position-title">Global AI Hub Community Lead</span>
+                            <span class="position-year">2021-2023</span>
+                        </div>
+                        <div class="position-item">
+                            <span class="position-title">Omdena Lagos Nigeria, Chapter Lead</span>
+                            <span class="position-year">2021-2023</span>
+                        </div>
+                        <div class="position-item">
+                            <span class="position-title">Director, Favored Online Inc</span>
+                            <span class="position-year">2017-2025</span>
                         </div>
                     </div>
-
-                    <!-- Leadership Positions Section -->
-                    <div class="leadership-positions" data-aos="fade-up">
-                        <h3><i class="bi bi-award" style="margin-right: 10px; color: var(--light-blue);"></i>Past Leadership & Non-profit Positions</h3>
-                        <p>Throughout my journey in technology and community building, I have held various leadership positions that have contributed to my growth and the global tech community:</p>
-                        <div class="position-list">
-                            <div class="position-item">
-                                <span class="position-title">Google Women Tech Makers Ambassador</span>
-                                <span class="position-year">2022</span>
-                            </div>
-                            <div class="position-item">
-                                <span class="position-title">Global AI Hub Community Lead</span>
-                                <span class="position-year">2021-2023</span>
-                            </div>
-                            <div class="position-item">
-                                <span class="position-title">Omdena Lagos Nigeria, Chapter Lead</span>
-                                <span class="position-year">2021-2023</span>
-                            </div>
-                            <div class="position-item">
-                                <span class="position-title">Director, Favored Online Inc</span>
-                                <span class="position-year">2017-2025</span>
-                            </div>
-                        </div>
-                        <p style="margin-top: 15px; font-style: italic;">These leadership roles have helped shape my experience in community building, empowering women in technology, and connecting global tech talents.</p>
-                    </div>
+                    <p style="margin-top: 15px; font-style: italic; color: var(--text-secondary);">These leadership roles have helped shape my experience in community building, empowering women in technology, and connecting global tech talents.</p>
                 </div>
             </div>
         </section>
 
         <!-- Publications Section -->
         <section id="publications" class="publications-section" data-aos="fade-up">
-            <div class="publications-heading" style="margin-bottom: 50px;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-family: 'Playfair Display', serif;">Recent Publications</h2>
-                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; color: #2C3E50;">
-                    Peer-reviewed research spanning medical AI, blockchain security, and machine learning applications
-                </p>
-            </div>
+            <h2 class="section-title">Recent Publications</h2>
+            <p class="section-subtitle">Peer-reviewed research spanning medical AI, blockchain security, and machine learning applications</p>
+            
             <div class="publications-container">
-                <div class="publication-card" style="background: linear-gradient(135deg, #2C3E50, #3498DB);" data-aos="fade-up" data-aos-delay="100">
-                    <i class="bi bi-file-earmark-medical" style="font-size: 2.5rem; color: #FF6384; margin-bottom: 20px;"></i>
-                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Early Detection of Alzheimer's Disease Using an Ensemble of Diverse Convolutional Neural Networks and Vision Transformer</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9;">Pioneering research that combines cutting-edge AI techniques to detect Alzheimer's disease in its earliest stages, potentially enabling earlier intervention and treatment.</p>
-                    <a href="https://www.proquest.com/openview/a84fd5b4480237866fb7787798bae4c3/1?pq-origsite=gscholar&cbl=18750&diss=y" target="_blank" style="color: #FF6384; text-decoration: none; font-weight: bold;">View Publication →</a>
+                <div class="publication-card hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-file-earmark-medical"></i>
+                    <h3>Early Detection of Alzheimer's Disease Using an Ensemble of Diverse Convolutional Neural Networks and Vision Transformer</h3>
+                    <p>Pioneering research that combines cutting-edge AI techniques to detect Alzheimer's disease in its earliest stages, potentially enabling earlier intervention and treatment.</p>
+                    <a href="https://www.proquest.com/openview/a84fd5b4480237866fb7787798bae4c3/1?pq-origsite=gscholar&cbl=18750&diss=y" target="_blank">View Publication <i class="bi bi-arrow-right"></i></a>
                 </div>
-                <div class="publication-card" style="background: linear-gradient(135deg, #27AE60, #2ECC71);" data-aos="fade-up" data-aos-delay="200">
-                    <i class="bi bi-brain" style="font-size: 2.5rem; color: #FFD700; margin-bottom: 20px;"></i>
-                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Explainable MRI-Based Ensemble Learnable Architecture for Alzheimer's Disease Detection</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9;">Novel ensemble learning approach for early Alzheimer's detection with interpretable AI mechanisms.</p>
-                    <a href="https://www.mdpi.com/1999-4893/18/3/163" target="_blank" style="color: #FFD700; text-decoration: none; font-weight: bold;">View on MDPI →</a>
+                <div class="publication-card hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-brain"></i>
+                    <h3>Explainable MRI-Based Ensemble Learnable Architecture for Alzheimer's Disease Detection</h3>
+                    <p>Novel ensemble learning approach for early Alzheimer's detection with interpretable AI mechanisms.</p>
+                    <a href="https://www.mdpi.com/1999-4893/18/3/163" target="_blank">View on MDPI <i class="bi bi-arrow-right"></i></a>
                 </div>
-                <div class="publication-card" style="background: linear-gradient(135deg, #8E44AD, #9B59B6);" data-aos="fade-up" data-aos-delay="300">
-                    <i class="bi bi-shield-check" style="font-size: 2.5rem; color: #FFA500; margin-bottom: 20px;"></i>
-                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9;">Advanced ML framework for automated detection of security vulnerabilities in blockchain smart contracts.</p>
-                    <a href="https://ieeexplore.ieee.org/abstract/document/10944738" target="_blank" style="color: #FFA500; text-decoration: none; font-weight: bold;">View Publication →</a>
+                <div class="publication-card hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bi bi-shield-check"></i>
+                    <h3>SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts</h3>
+                    <p>Advanced ML framework for automated detection of security vulnerabilities in blockchain smart contracts.</p>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10944738" target="_blank">View Publication <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- Contact Details Section -->
         <section id="contact" class="contact-details">
-            <h2 style="font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 30px;">Get in Touch</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">Connect with me for inquiries, speaking engagements, and collaborations.</p>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                <div class="link-card">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Connect with me for inquiries, speaking engagements, and collaborations.</p>
+            <div class="link-cards-container">
+                <div class="link-card hover-lift">
                     <i class="bi bi-envelope"></i>
                     <p>Email</p>
                     <a href="mailto:opeyemitaiwo81@gmail.com">opeyemitaiwo81@gmail.com</a>
                 </div>
-                <div class="link-card">
+                <div class="link-card hover-lift">
                     <i class="bi bi-file-person"></i>
                     <p>Resume</p>
                     <a href="https://opethaiwoh.github.io/opeyemi.github.io/" target="_blank">View Resume</a>
@@ -1043,20 +1444,20 @@
 
         <!-- Professional Materials Section -->
         <section class="professional-materials">
-            <h2 style="font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 30px;">Explore My Professional Materials</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">Access my publications, biography, and professional headshots.</p>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                <div class="link-card">
+            <h2 class="section-title" style="color: var(--text-primary);">Professional Materials</h2>
+            <p class="section-subtitle" style="color: var(--text-secondary);">Access my publications, biography, and professional headshots.</p>
+            <div class="link-cards-container">
+                <div class="link-card hover-lift">
                     <i class="bi bi-journal-text"></i>
                     <p>Publications</p>
                     <a href="https://scholar.google.com/citations?user=Krnac-4AAAAJ&hl" target="_blank">View Publications</a>
                 </div>
-                <div class="link-card">
+                <div class="link-card hover-lift">
                     <i class="bi bi-file-text"></i>
                     <p>Long Bio</p>
                     <a href="https://docs.google.com/document/d/1fwHGUdVhgyZ8MSyUjcHT28i4tYdfvFBFHyClC0E68Gc/edit" target="_blank">Download Long Bio</a>
                 </div>
-                <div class="link-card">
+                <div class="link-card hover-lift">
                     <i class="bi bi-camera"></i>
                     <p>Headshot</p>
                     <a href="https://drive.google.com/drive/folders/1Ajy_vh_t_8VmQUljrs_lzGMeUv8GkJLC?usp=sharing" target="_blank">Download</a>
@@ -1066,37 +1467,35 @@
 
         <!-- Books Section -->
         <section id="books" class="books-section" data-aos="fade-up">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 15px; font-family: 'Playfair Display', serif;">AI for Medical Practitioners: Beginner's Guide</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 20px; color: #6c757d;">Your essential guide to understanding and implementing artificial intelligence in healthcare, written by an AI research engineer with published work in medical image analysis and Alzheimer's disease detection.</p>
+            <h2 class="section-title">AI for Medical Practitioners: Beginner's Guide</h2>
+            <p class="section-subtitle">Your essential guide to understanding and implementing artificial intelligence in healthcare, written by an AI research engineer with published work in medical image analysis and Alzheimer's disease detection.</p>
             
             <div class="countdown">
-                <div><span id="days">00</span><br>Days</div>
-                <div><span id="hours">00</span><br>Hours</div>
-                <div><span id="minutes">00</span><br>Minutes</div>
-                <div><span id="seconds">00</span><br>Seconds</div>
+                <div><span id="days">00</span><small>Days</small></div>
+                <div><span id="hours">00</span><small>Hours</small></div>
+                <div><span id="minutes">00</span><small>Minutes</small></div>
+                <div><span id="seconds">00</span><small>Seconds</small></div>
             </div>
             
-            <div class="books-container" style="max-width: 500px; margin: 0 auto;">
-                <div class="book-card" data-aos="fade-up">
-                    <div class="book-image" style="height: 300px;">
-                        <i class="bi bi-heart-pulse"></i>
-                    </div>
-                    <div class="book-content">
-                        <h3 class="book-title">AI for Medical Practitioners: Beginner's Guide</h3>
-                        <p class="book-description">Learn how artificial intelligence is transforming healthcare. This comprehensive guide covers AI fundamentals, medical applications, implementation strategies, and ethical considerations specifically tailored for healthcare professionals with no prior AI experience.</p>
-                        <span class="book-status">Coming Soon</span>
-                    </div>
+            <div class="book-card hover-lift" data-aos="fade-up">
+                <div class="book-image">
+                    <i class="bi bi-heart-pulse"></i>
+                </div>
+                <div class="book-content">
+                    <h3 class="book-title">AI for Medical Practitioners: Beginner's Guide</h3>
+                    <p class="book-description">Learn how artificial intelligence is transforming healthcare. This comprehensive guide covers AI fundamentals, medical applications, implementation strategies, and ethical considerations specifically tailored for healthcare professionals with no prior AI experience.</p>
+                    <span class="book-status">Coming Soon</span>
                 </div>
             </div>
         </section>
 
         <!-- Features Section -->
         <section class="features-section" data-aos="fade-up">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 15px; font-family: 'Playfair Display', serif;">What You'll Learn</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 20px; color: #6c757d;">Practical knowledge designed specifically for medical professionals to understand and implement AI in healthcare settings.</p>
+            <h2 class="section-title">What You'll Learn</h2>
+            <p class="section-subtitle">Practical knowledge designed specifically for medical professionals to understand and implement AI in healthcare settings.</p>
             
             <div class="features-container">
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card hover-lift" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-icon">
                         <i class="bi bi-cpu"></i>
                     </div>
@@ -1104,7 +1503,7 @@
                     <p>Understand machine learning, deep learning, and AI concepts explained in medical terms with healthcare-specific examples.</p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card hover-lift" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon">
                         <i class="bi bi-activity"></i>
                     </div>
@@ -1112,7 +1511,7 @@
                     <p>Explore real-world AI applications in diagnostics, treatment planning, drug discovery, and patient monitoring systems.</p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-card hover-lift" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="bi bi-shield-check"></i>
                     </div>
@@ -1120,7 +1519,7 @@
                     <p>Navigate ethical considerations, regulatory compliance, and practical implementation strategies for AI in medical practice.</p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-card hover-lift" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="bi bi-graph-up"></i>
                     </div>
@@ -1128,7 +1527,7 @@
                     <p>Stay ahead with insights into emerging AI technologies, trends, and their potential impact on medical practice.</p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-card hover-lift" data-aos="fade-up" data-aos-delay="500">
                     <div class="feature-icon">
                         <i class="bi bi-tools"></i>
                     </div>
@@ -1136,7 +1535,7 @@
                     <p>Access ready-to-use checklists, evaluation frameworks, and vendor selection guides for healthcare AI solutions.</p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-card hover-lift" data-aos="fade-up" data-aos-delay="600">
                     <div class="feature-icon">
                         <i class="bi bi-people"></i>
                     </div>
@@ -1149,8 +1548,8 @@
         <!-- Subscription Form -->
         <section data-aos="fade-up">
             <div class="subscribe-form">
-                <h3 style="text-align: center;">Be the First to Know</h3>
-                <p style="text-align: center; margin-bottom: 20px;">Subscribe to receive updates about book releases, exclusive previews, and special offers.</p>
+                <h3>Be the First to Know</h3>
+                <p>Subscribe to receive updates about book releases, exclusive previews, and special offers.</p>
                 
                 <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScWCycwRNkzJPva2dXtos72C41pW2bul1D1z3k9uHWAujG4wA/formResponse" method="POST" id="subscribeForm" target="hidden_iframe">
                     <div class="form-group">
@@ -1262,6 +1661,16 @@
             });
         });
 
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 20, 25, 0.98)';
+            } else {
+                header.style.background = 'rgba(15, 20, 25, 0.95)';
+            }
+        });
+
         // Countdown Timer Script
         const countdown = () => {
             const releaseDate = new Date("September 1, 2025 00:00:00").getTime();
@@ -1293,6 +1702,24 @@
                 document.getElementById('successMessage').style.display = 'block';
                 document.getElementById('subscribeForm').reset();
             }, 1000);
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
