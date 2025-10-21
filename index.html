@@ -629,7 +629,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -639,13 +639,88 @@
         }
 
         .book-image {
-            height: 300px;
+            height: 400px;
             background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .book-slide {
+            min-width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .book-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
             color: white;
-            font-size: 4rem;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .slider-arrow:hover {
+            background: var(--accent-gold);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-arrow.prev {
+            left: 10px;
+        }
+
+        .slider-arrow.next {
+            right: 10px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--accent-gold);
+            transform: scale(1.2);
         }
 
         .book-content {
@@ -1149,7 +1224,28 @@
             <p class="section-subtitle">Your essential roadmap to building a thriving career in technology, written by a tech career strategist and AI research engineer with extensive experience in professional development and industry insights from leading practitioners.</p>
             <div class="book-card" data-aos="fade-up">
                 <div class="book-image">
-                    <img src="me/FT-n.png" alt="Career Path in Tech Book Cover" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="book-slider" id="bookSlider">
+                        <div class="book-slide">
+                            <img src="me/FT-n.png" alt="Career Path in Tech - Front Cover">
+                        </div>
+                        <div class="book-slide">
+                            <img src="me/BK-n.png" alt="Career Path in Tech - Back Cover">
+                        </div>
+                        <div class="book-slide">
+                            <img src="me/Full.png" alt="Career Path in Tech - Full Spread">
+                        </div>
+                    </div>
+                    <button class="slider-arrow prev" onclick="moveSlide(-1)">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="slider-arrow next" onclick="moveSlide(1)">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <button class="slider-dot active" onclick="goToSlide(0)"></button>
+                        <button class="slider-dot" onclick="goToSlide(1)"></button>
+                        <button class="slider-dot" onclick="goToSlide(2)"></button>
+                    </div>
                 </div>
                 <div class="book-content">
                     <h3 class="book-title">Career Path in Tech: A Comprehensive Guide for the AI Age</h3>
