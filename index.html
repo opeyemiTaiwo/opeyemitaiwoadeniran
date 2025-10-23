@@ -814,13 +814,20 @@
 
 .book-status {
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 25px;
-  font-size: 0.9rem;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
   font-weight: 600;
-  background: var(--gradient-accent);
-  color: white;
+  background: var(--gradient-primary); /* same as Explore & Subscribe buttons */
+  color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
 }
+        .book-status-link {
+            text-decoration: none;
+        }
 
         /* Subscribe Form */
         .subscribe-form {
@@ -1361,7 +1368,7 @@
   </p>
 
   <a href="#subscribe" class="book-status-link">
-    <span class="book-status">📘 Get Early Access</span>
+    <span class="book-status">📘Get Early Access — Be the First to Know</span>
   </a>
 </div>
   </div>
