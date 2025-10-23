@@ -575,14 +575,19 @@
             font-weight: 600;
             color: var(--text-primary);
         }
-
+        
         .position-year {
-            background: var(--gradient-primary);
+            background: #000; /* solid black background */
             color: white;
+            border: 2px solid white; /* white border */
             padding: 6px 16px;
-            border-radius: 20px;
+            border-radius: 50px; /* round shape */
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
+            min-width: 60px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default; /* makes it look non-clickable */
         }
 
         /* Contact Details */
