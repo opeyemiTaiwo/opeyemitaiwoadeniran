@@ -790,6 +790,43 @@
   transform: scale(1.3);
 }
 
+/* Speaking Slider */
+.speaking-slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.speaking-image {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.speaking-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.speaking-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.speaking-slide img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+        
+
 /* ===========================
    BOOK CONTENT
    =========================== */
@@ -1137,6 +1174,12 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .speaking-slide img {
+                max-height: 300px;
+            }
+        }
+
         @media (max-height: 600px) and (orientation: landscape) {
             .hero-section {
                 min-height: auto;
@@ -1478,6 +1521,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
     <script>
         AOS.init({duration: 800, easing: 'ease-in-out', once: true, offset: 100});
 
@@ -1582,5 +1626,34 @@
             }, 1000);
         });
     </script>
+    <script>
+let currentSpeakingSlide = 0;
+const slides = document.querySelectorAll('.speaking-slide');
+const dots = document.querySelectorAll('.slider-dot');
+
+function showSpeakingSlide(index) {
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+    currentSpeakingSlide = index;
+
+    const slider = document.getElementById('speakingSlider');
+    slider.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+}
+
+function moveSpeakingSlide(step) {
+    showSpeakingSlide(currentSpeakingSlide + step);
+}
+
+function goToSpeakingSlide(index) {
+    showSpeakingSlide(index);
+}
+
+// Initialize slider
+showSpeakingSlide(0);
+</script>
+
 </body>
 </html>
