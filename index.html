@@ -1291,36 +1291,57 @@
         <section id="speaking" class="speaking-section" data-aos="fade-up">
             <i class="bi bi-mic-fill speaking-icon"></i>
             <h2 class="section-title">Speaking Engagements</h2>
-            <p class="section-subtitle">Sharing insights on AI, technology, and innovation at conferences and events worldwide</p>
-            <a href="https://drive.google.com/drive/folders/1HKJXbyr7cbsnTj4c12i8Qb0GJVWym31f?usp=sharing" target="_blank" class="speaking-link-button">View Past Speaking Engagements</a>
-        </section>
+            <p class="section-subtitle">Some insights into my speaking engagements at conferences and events worldwide</p>
+            
+            <div class="speaking-slider-container">
+                <div class="speaking-image">
+                    <div class="speaking-slider" id="speakingSlider">
+                        <div class="speaking-slide">
+                            <img src="assets/img/Sp1.png" alt="Speaking Engagement 1">
+                        </div>
+                        <div class="speaking-slide">
+                            <img src="assets/img/Sp2.jpeg" alt="Speaking Engagement 2">
+                        </div>
+                        <div class="speaking-slide">
+                            <img src="assets/img/Sp3.jpeg" alt="Speaking Engagement 3">
+                        </div>
+                        <div class="speaking-slide">
+                            <img src="assets/img/Sp4.png" alt="Speaking Engagement 4">
+                        </div>
+                        <div class="speaking-slide">
+                            <img src="assets/img/Sp5.jpg" alt="Speaking Engagement 5">
+                        </div>
+                        <div class="speaking-slide">
+                            <img src="assets/img/Sp6.png" alt="Speaking Engagement 6">
+                        </div>
+                        <div class="speaking-slide">
+                            <img src="assets/img/Sp7.jpg" alt="Speaking Engagement 7">
+                        </div>
+                    </div>
 
-        <section id="publications" class="publications-section" data-aos="fade-up">
-            <h2 class="section-title">Recent Publications</h2>
-            <p class="section-subtitle">Peer-reviewed research spanning medical AI, blockchain security, and machine learning applications</p>
-            <div class="publications-container">
-                <div class="publication-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="bi bi-file-earmark-medical"></i>
-                    <h3>Early Detection of Alzheimer's Disease Using an Ensemble of Diverse Convolutional Neural Networks and Vision Transformer</h3>
-                    <p>Pioneering research that combines cutting-edge AI techniques to detect Alzheimer's disease in its earliest stages, potentially enabling earlier intervention and treatment.</p>
-                </div>
-                <div class="publication-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="bi bi-brain"></i>
-                    <h3>Explainable MRI-Based Ensemble Learnable Architecture for Alzheimer's Disease Detection</h3>
-                    <p>Novel ensemble learning approach for early Alzheimer's detection with interpretable AI mechanisms.</p>
-                </div>
-                <div class="publication-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="bi bi-shield-check"></i>
-                    <h3>SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts</h3>
-                    <p>Advanced ML framework for automated detection of security vulnerabilities in blockchain smart contracts.</p>
+                    <button class="slider-arrow prev" onclick="moveSpeakingSlide(-1)">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="slider-arrow next" onclick="moveSpeakingSlide(1)">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+
+                    <div class="slider-dots">
+                        <button class="slider-dot active" onclick="goToSpeakingSlide(0)"></button>
+                        <button class="slider-dot" onclick="goToSpeakingSlide(1)"></button>
+                        <button class="slider-dot" onclick="goToSpeakingSlide(2)"></button>
+                        <button class="slider-dot" onclick="goToSpeakingSlide(3)"></button>
+                        <button class="slider-dot" onclick="goToSpeakingSlide(4)"></button>
+                        <button class="slider-dot" onclick="goToSpeakingSlide(5)"></button>
+                        <button class="slider-dot" onclick="goToSpeakingSlide(6)"></button>
+                    </div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="https://scholar.google.com/citations?user=Krnac-4AAAAJ&hl" target="_blank" class="cta-button">View All Publications</a>
-            </div>
+            <a href="https://drive.google.com/drive/folders/1HKJXbyr7cbsnTj4c12i8Qb0GJVWym31f?usp=sharing" target="_blank" class="speaking-link-button">View More Speaking Engagements</a>
         </section>
 
+     
         <section id="books" class="books-section" data-aos="fade-up">
   <h2 class="section-title">Career Path in Tech</h2>
   <h3 class="section-subtitle">A Comprehensive Guide for the AI Age</h3>
