@@ -6,7 +6,6 @@
     <title>Opeyemi Adeniran - AI Research Engineer, Author & Career Strategist</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
         :root {
@@ -387,35 +386,6 @@
             margin-bottom: 0;
         }
 
-        /* Icons */
-        .featured-icon,
-        .feature-icon {
-            font-size: 3rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 25px;
-        }
-
-        .publication-card i {
-            font-size: 3rem;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 25px;
-        }
-
-        .link-card i {
-            font-size: 2.5rem;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-        }
-
         /* Links */
         .org-link {
             color: var(--accent-gold);
@@ -470,15 +440,6 @@
             text-align: center;
             padding-top: 100px;
             padding-bottom: 100px;
-        }
-
-        .speaking-icon {
-            font-size: 5rem;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 30px;
         }
 
         /* About Section */
@@ -577,17 +538,17 @@
         }
         
         .position-year {
-            background: #000; /* solid black background */
+            background: #000;
             color: white;
-            border: 2px solid white; /* white border */
+            border: 2px solid white;
             padding: 6px 16px;
-            border-radius: 50px; /* round shape */
+            border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 600;
             min-width: 60px;
             text-align: center;
             transition: all 0.3s ease;
-            cursor: default; /* makes it look non-clickable */
+            cursor: default;
         }
 
         /* Contact Details */
@@ -625,9 +586,7 @@
             color: var(--accent-gold);
         }
 
-        /* ===========================
-   BOOKS SECTION STYLE
-   =========================== */
+        /* BOOKS SECTION STYLE */
 
 .books-section {
   text-align: center;
@@ -639,7 +598,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #FFD700; /* classic yellow */
+  color: #FFD700;
   margin-bottom: 0.3em;
 }
 
@@ -661,9 +620,7 @@
   margin: 0 auto 3em;
 }
 
-/* ===========================
-   BOOK CARD DESIGN
-   =========================== */
+        /* BOOK CARD DESIGN */
 
 .book-card {
   background: var(--surface);
@@ -681,9 +638,7 @@
   box-shadow: var(--shadow-medium);
 }
 
-/* ===========================
-   IMAGE SLIDER
-   =========================== */
+        /* IMAGE SLIDER */
 
 .book-image {
   height: 450px;
@@ -714,9 +669,7 @@
   object-fit: contain;
 }
 
-/* ===========================
-   SLIDER CONTROLS
-   =========================== */
+        /* SLIDER CONTROLS */
 
 .slider-arrow {
   position: absolute;
@@ -755,9 +708,15 @@
   right: 10px;
 }
 
-/* ===========================
-   SLIDER DOTS
-   =========================== */
+.slider-arrow.prev::before {
+  content: '‹';
+}
+
+.slider-arrow.next::before {
+  content: '›';
+}
+
+        /* SLIDER DOTS */
 
 .slider-dots {
   position: absolute;
@@ -790,9 +749,7 @@
   transform: scale(1.3);
 }
 
-/* ===========================
-   BOOK CONTENT
-   =========================== */
+        /* BOOK CONTENT */
 
 .book-content {
   padding: 30px;
@@ -818,13 +775,14 @@
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 600;
-  background: var(--gradient-primary); /* same as Explore & Subscribe buttons */
+  background: var(--gradient-primary);
   color: #fff;
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: var(--shadow-soft);
   text-align: center;
 }
+
         .book-status-link {
             text-decoration: none;
         }
@@ -924,16 +882,16 @@
 
         .social-links a {
             margin: 0 20px;
-            font-size: 1.8rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
+            text-decoration: none;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
+            padding: 12px 24px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            border-radius: 8px;
         }
 
         .social-links a:hover {
@@ -963,6 +921,14 @@
 
             .menu-toggle {
                 display: block;
+            }
+
+            .menu-toggle::before {
+                content: '☰';
+            }
+
+            .menu-toggle.active::before {
+                content: '✕';
             }
 
             .navmenu {
@@ -1053,10 +1019,9 @@
             }
 
             .social-links a {
-                margin: 0 15px;
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
+                margin: 0 10px;
+                padding: 10px 18px;
+                font-size: 1rem;
             }
 
             #footer {
@@ -1103,10 +1068,9 @@
             }
 
             .social-links a {
-                margin: 0 10px;
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
+                margin: 0 8px;
+                padding: 8px 16px;
+                font-size: 0.95rem;
             }
 
             .slider-arrow {
@@ -1158,9 +1122,7 @@
                 <img src="me/Opeyemi_1C.PNG" alt="Opeyemi Adeniran" class="logo-icon">
                 <a href="#home">Opeyemi Adeniran</a>
             </div>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <i class="bi bi-list"></i>
-            </div>
+            <div class="menu-toggle" onclick="toggleMenu()"></div>
             <nav class="navmenu">
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
@@ -1233,36 +1195,24 @@
                         <h3>Morgan TechFest</h3>
                         <p>A student-led conference inspiring students through tech talks, research symposium, and panel discussions.</p>
                         <div class="org-links">
-                            <a href="https://www.morgantechfest.com/" target="_blank" class="org-link">
-                                <i class="bi bi-globe"></i> Website
-                            </a>
-                            <a href="https://www.instagram.com/morgantechfest/" target="_blank" class="org-link">
-                                <i class="bi bi-instagram"></i> Instagram
-                            </a>
-                            <a href="https://medium.com/@morgantechfest" target="_blank" class="org-link">
-                                <i class="bi bi-medium"></i> Medium
-                            </a>
+                            <a href="https://www.morgantechfest.com/" target="_blank" class="org-link">Website</a>
+                            <a href="https://www.instagram.com/morgantechfest/" target="_blank" class="org-link">Instagram</a>
+                            <a href="https://medium.com/@morgantechfest" target="_blank" class="org-link">Medium</a>
                         </div>
                     </div>
                     <div class="org-item">
                         <h3>Favored Online</h3>
                         <p>A faith-based nonprofit organization empowering individuals through spiritual growth and community support.</p>
                         <div class="org-links">
-                            <a href="https://favoredonline.com/" target="_blank" class="org-link">
-                                <i class="bi bi-globe"></i> Website
-                            </a>
-                            <a href="https://www.instagram.com/favoredonline/" target="_blank" class="org-link">
-                                <i class="bi bi-instagram"></i> Instagram
-                            </a>
-                            <a href="https://medium.com/@opefavored" target="_blank" class="org-link">
-                                <i class="bi bi-medium"></i> Medium
-                            </a>
+                            <a href="https://favoredonline.com/" target="_blank" class="org-link">Website</a>
+                            <a href="https://www.instagram.com/favoredonline/" target="_blank" class="org-link">Instagram</a>
+                            <a href="https://medium.com/@opefavored" target="_blank" class="org-link">Medium</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="leadership-positions" data-aos="fade-up">
-                    <h3><i class="bi bi-award" style="margin-right: 10px; color: var(--accent-gold);"></i>Past Leadership & Non-profit Positions</h3>
+                    <h3>Past Leadership & Non-profit Positions</h3>
                     <p>Throughout my journey in technology and community building, I have held various leadership positions that have contributed to my growth and the global tech community:</p>
                     <div class="position-list">
                         <div class="position-item">
@@ -1336,12 +1286,8 @@
         </div>
       </div>
 
-      <button class="slider-arrow prev" onclick="moveSlide(-1)">
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <button class="slider-arrow next" onclick="moveSlide(1)">
-        <i class="bi bi-chevron-right"></i>
-      </button>
+      <button class="slider-arrow prev" onclick="moveSlide(-1)"></button>
+      <button class="slider-arrow next" onclick="moveSlide(1)"></button>
 
       <div class="slider-dots">
         <button class="slider-dot active" onclick="goToSlide(0)"></button>
@@ -1419,12 +1365,10 @@
             <p class="section-subtitle">Connect with me for inquiries, speaking engagements, and collaborations.</p>
             <div class="link-cards-container">
                 <div class="link-card">
-                    <i class="bi bi-envelope"></i>
                     <p>Email</p>
                     <a href="mailto:opeyemitaiwo81@gmail.com">opeyemitaiwo81@gmail.com</a>
                 </div>
                 <div class="link-card">
-                    <i class="bi bi-file-person"></i>
                     <p>Resume</p>
                     <a href="https://opethaiwoh.github.io/opeyemi.github.io/" target="_blank">View Resume</a>
                 </div>
@@ -1434,9 +1378,9 @@
 
     <footer id="footer">
         <div class="social-links">
-            <a href="https://x.com/opethaiwoh"><i class="bi bi-twitter"></i></a>
-            <a href="https://instagram.com/stories/opethaiwoh/"><i class="bi bi-instagram"></i></a>
-            <a href="https://linkedin.com/in/opeyemi-adeniran/"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/opethaiwoh">Twitter</a>
+            <a href="https://instagram.com/stories/opethaiwoh/">Instagram</a>
+            <a href="https://linkedin.com/in/opeyemi-adeniran/">LinkedIn</a>
         </div>
         <p>© 2025 Opeyemi Taiwo Adeniran. All Rights Reserved.</p>
     </footer>
@@ -1457,7 +1401,6 @@
             dots = document.querySelectorAll('.slider-dot');
             slider = document.getElementById('bookSlider');
             
-            // Start auto-slide
             autoSlideInterval = setInterval(() => {
                 moveSlide(1);
             }, 5000);
@@ -1484,25 +1427,22 @@
             updateSlider();
         }
 
-        // Initialize slider when DOM is loaded
         document.addEventListener('DOMContentLoaded', initSlider);
 
         function toggleMenu() {
             const nav = document.querySelector('.navmenu');
-            const icon = document.querySelector('.menu-toggle i');
+            const toggle = document.querySelector('.menu-toggle');
             nav.classList.toggle('active');
-            icon.classList.toggle('bi-list');
-            icon.classList.toggle('bi-x');
+            toggle.classList.toggle('active');
         }
 
         document.querySelectorAll('.navmenu a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
                     const nav = document.querySelector('.navmenu');
-                    const icon = document.querySelector('.menu-toggle i');
+                    const toggle = document.querySelector('.menu-toggle');
                     nav.classList.remove('active');
-                    icon.classList.remove('bi-x');
-                    icon.classList.add('bi-list');
+                    toggle.classList.remove('active');
                 }
             });
         });
@@ -1510,9 +1450,7 @@
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 document.querySelector('.navmenu').classList.remove('active');
-                const icon = document.querySelector('.menu-toggle i');
-                icon.classList.remove('bi-x');
-                icon.classList.add('bi-list');
+                document.querySelector('.menu-toggle').classList.remove('active');
             }
         });
 
